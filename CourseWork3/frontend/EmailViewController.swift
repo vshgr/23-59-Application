@@ -30,7 +30,7 @@ class EmailViewController: UIViewController {
         
         self.view.addSubview(emailLabel)
         
-        var grid = Grid(view: self.view)
+        let grid = Grid(view: self.view)
         
         emailLabel.pin(to: self.view, [.left:
                                         grid.pin, .bottom: 493])
@@ -43,6 +43,7 @@ class EmailViewController: UIViewController {
         
         self.view.addSubview(emailInput)
         
-        emailInput.pin(to: self.view, [.left: 20, .bottom: 461])
+        let grid = Grid(view: self.view)
+        emailInput.pin(to: self.view, [.left: grid.pin, .bottom: 461])
     }
 }
