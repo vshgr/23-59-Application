@@ -15,6 +15,8 @@
 		4860886F2937E57B008B76ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4860886E2937E57B008B76ED /* Assets.xcassets */; };
 		486088722937E57B008B76ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486088702937E57B008B76ED /* LaunchScreen.storyboard */; };
 		48A4801A293E0FDD006540DC /* Mailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A48019293E0FDD006540DC /* Mailer.swift */; };
+		48A48028293E33CF006540DC /* mainFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48027293E3177006540DC /* mainFont.otf */; };
+		48A48029293E33D1006540DC /* blackFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48026293E3170006540DC /* blackFont.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		486088712937E57B008B76ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		486088732937E57B008B76ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48A48019293E0FDD006540DC /* Mailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailer.swift; sourceTree = "<group>"; };
+		48A48026293E3170006540DC /* blackFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = blackFont.otf; path = ../../../../Users/alisa/Library/Fonts/blackFont.otf; sourceTree = "<group>"; };
+		48A48027293E3177006540DC /* mainFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mainFont.otf; path = ../../../../Users/alisa/Library/Fonts/mainFont.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		486088642937E57B008B76ED /* CourseWork3 */ = {
 			isa = PBXGroup;
 			children = (
+				48A48025293E3154006540DC /* fonts */,
 				48A48018293E0C9A006540DC /* backend */,
 				48A48017293E0C90006540DC /* frontend */,
 				486088652937E57B008B76ED /* AppDelegate.swift */,
@@ -87,6 +92,15 @@
 				48A48019293E0FDD006540DC /* Mailer.swift */,
 			);
 			path = backend;
+			sourceTree = "<group>";
+		};
+		48A48025293E3154006540DC /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				48A48027293E3177006540DC /* mainFont.otf */,
+				48A48026293E3170006540DC /* blackFont.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +161,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A48029293E33D1006540DC /* blackFont.otf in Resources */,
+				48A48028293E33CF006540DC /* mainFont.otf in Resources */,
 				486088722937E57B008B76ED /* LaunchScreen.storyboard in Resources */,
 				4860886F2937E57B008B76ED /* Assets.xcassets in Resources */,
 			);
