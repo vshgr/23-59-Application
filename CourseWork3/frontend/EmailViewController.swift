@@ -11,6 +11,8 @@ class EmailViewController: UIViewController {
     private let emailLabel = UILabel()
     private let emailInput = UITextField()
     private let codeButton = UIButton()
+    private let underline = UIView()
+    private let errorMessage = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,12 +20,14 @@ class EmailViewController: UIViewController {
         setupTextFeatures()
         setupInputEmail()
         setupSendCodeButton()
+        setupUnderline()
+        setupErrorMessage()
     }
     
     private func setupView() {
         navigationItem.hidesBackButton = true
         self.view.backgroundColor = .white
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
     }
     
     private func setupTextFeatures() {
@@ -39,9 +43,32 @@ class EmailViewController: UIViewController {
                                         grid.pin, .bottom: 493])
     }
     
+    private func setupUnderline() {
+        let grid = Grid(view: self.view)
+        self.view.addSubview(underline)
+        underline.setHeight(to: 1)
+        underline.backgroundColor = UIColor(named: "black")
+        underline.pin(to: self.view, [.left: grid.pin, .right: grid.pin])
+        underline.pin(to: emailInput, [.top: 26])
+    }
+    
+    private func setupErrorMessage(){
+        let grid = Grid(view: self.view)
+        self.view.addSubview(errorMessage)
+        errorMessage.text = "incorrect email"
+        errorMessage.textColor = UIColor(named: "attentionColor")
+        errorMessage.font = UIFont(name: "Raleway-Medium", size: 15)
+        errorMessage.pin(to: self.view, [.left: grid.pin, .right: grid.pin])
+        errorMessage.pin(to: underline, [.top: 8])
+        errorMessage.isHidden = true
+    }
+    
     private func setupInputEmail() {
         emailInput.textColor = .black
-        emailInput.placeholder = "enter email"
+        emailInput.attributedPlaceholder = NSAttributedString(
+            string: "enter email",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "hintColor")]
+        )
         emailInput.font = UIFont(name: "Raleway-Medium", size: 15)
         
         self.view.addSubview(emailInput)
@@ -69,7 +96,32 @@ class EmailViewController: UIViewController {
     
     @objc
     private func sendCodeButtonPressed() {
-        let codeInputController = CodeInputViewController()
-        navigationController?.pushViewController(codeInputController, animated: true)
+        let mailer = Mailer()
+        if (mailer.checkIfEmailFilled(email: emailInput.text ?? "")) {
+            let codeInputController = CodeInputViewController()
+            navigationController?.pushViewController(codeInputController, animated: true)
+        } else {
+            emailInput.textColor = UIColor(named: "attentionColor")
+            emailLabel.textColor = UIColor(named: "attentionColor")
+            underline.backgroundColor = UIColor(named: "attentionColor")
+            
+            errorMessage.isHidden = false
+            emailInput.attributedPlaceholder = NSAttributedString(
+                string: "enter email",
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "attentionColor")!]
+            )
+            
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+                self.emailInput.attributedPlaceholder = NSAttributedString(
+                    string: "enter email",
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "hintColor")!]
+                )
+                self.errorMessage.isHidden = true
+                self.emailInput.textColor = UIColor(named: "black")
+                self.emailLabel.textColor = UIColor(named: "black")
+                self.underline.backgroundColor = UIColor(named: "black")
+            }
+        }
+        
     }
 }
