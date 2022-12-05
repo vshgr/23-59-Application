@@ -23,6 +23,7 @@ class EmailViewController: UIViewController {
     private func setupView() {
         navigationItem.hidesBackButton = true
         self.view.backgroundColor = .white
+        self.hideKeyboardWhenTappedAround() 
     }
     
     private func setupTextFeatures() {
