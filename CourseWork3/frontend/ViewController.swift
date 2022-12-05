@@ -39,9 +39,14 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = view.frame.size.height * 0.08 / 2
         button.pin(to: self.view, [.left: 48, .right: 48, .bottom: 40])
         
-//        button.addTarget(self, action: #selector(thumbsUpButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
     }
     
+    @objc
+    private func signInButtonPressed() {
+        let emailViewController = EmailViewController()
+        navigationController?.pushViewController(emailViewController, animated: true)
+    }
     
 }
 
