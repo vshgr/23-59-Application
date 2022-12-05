@@ -8,12 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     let onloardingIconView = UIImageView(image: UIImage(named: "onboarding_logo"))
     let button = UIButton(type: .custom)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
     }
     
     private func setupView() {
@@ -29,6 +31,8 @@ class ViewController: UIViewController {
     }
     
     private func configureButton() {
+        let grid = Grid(view: self.view)
+        
         button.setTitle("Sign in", for: .normal)
         button.setTitleColor(UIColor(named: "white"), for: .normal)
         button.titleLabel?.font = UIFont(name: "FONTSPRINGDEMO-PontiacBoldRegular", size: 18)
@@ -37,7 +41,8 @@ class ViewController: UIViewController {
         
         button.setHeight(to: view.frame.size.height * 0.08)
         button.layer.cornerRadius = view.frame.size.height * 0.08 / 2
-        button.pin(to: self.view, [.left: 48, .right: 48, .bottom: 40])
+        
+        button.pin(to: self.view, [.left: grid.margin * 2, .right: grid.margin * 2, .bottom: grid.margin * 2])
         
         button.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
     }
