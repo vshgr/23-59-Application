@@ -13,5 +13,6 @@ class CodeInputViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         navigationItem.hidesBackButton = true
+        print("Hello")
     }
 }
