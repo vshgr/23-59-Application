@@ -19,6 +19,8 @@
 		48A48031293E45AE006540DC /* mainFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48030293E45AE006540DC /* mainFont.otf */; };
 		48A48034293E49DC006540DC /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48032293E49DC006540DC /* Raleway-Bold.ttf */; };
 		48A48035293E49DC006540DC /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48033293E49DC006540DC /* Raleway-Medium.ttf */; };
+		48A48038293E4BD2006540DC /* blackFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48037293E4BD2006540DC /* blackFont.otf */; };
+		48A48039293E4BD7006540DC /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48036293E4B78006540DC /* Raleway-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		48A48030293E45AE006540DC /* mainFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mainFont.otf; path = ../../Users/alisa/Library/Fonts/mainFont.otf; sourceTree = SOURCE_ROOT; };
 		48A48032293E49DC006540DC /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "../../../../Users/alisa/Library/Fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		48A48033293E49DC006540DC /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.ttf"; path = "../../../../Users/alisa/Library/Fonts/Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		48A48036293E4B78006540DC /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "../../../../Users/alisa/Library/Fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		48A48037293E4BD2006540DC /* blackFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = blackFont.otf; path = ../../../../Users/alisa/Library/Fonts/blackFont.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				48A48030293E45AE006540DC /* mainFont.otf */,
+				48A48037293E4BD2006540DC /* blackFont.otf */,
 				48A48032293E49DC006540DC /* Raleway-Bold.ttf */,
+				48A48036293E4B78006540DC /* Raleway-Regular.ttf */,
 				48A48033293E49DC006540DC /* Raleway-Medium.ttf */,
 			);
 			path = fonts;
@@ -169,6 +175,8 @@
 			files = (
 				48A48031293E45AE006540DC /* mainFont.otf in Resources */,
 				486088722937E57B008B76ED /* LaunchScreen.storyboard in Resources */,
+				48A48038293E4BD2006540DC /* blackFont.otf in Resources */,
+				48A48039293E4BD7006540DC /* Raleway-Regular.ttf in Resources */,
 				48A48035293E49DC006540DC /* Raleway-Medium.ttf in Resources */,
 				4860886F2937E57B008B76ED /* Assets.xcassets in Resources */,
 				48A48034293E49DC006540DC /* Raleway-Bold.ttf in Resources */,
