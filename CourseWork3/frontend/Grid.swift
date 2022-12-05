@@ -16,6 +16,6 @@ class Grid {
     
     init(view: UIView) {
         columnWeight = Double(view.frame.size.width - margin * 5) / columns
-        pin = columnWeight
+        pin = margin
     }
 }
