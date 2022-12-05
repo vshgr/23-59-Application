@@ -52,7 +52,7 @@ class EmailViewController: UIViewController {
     private func setupSendCodeButton() {
         let grid = Grid(view: self.view)
         
-        codeButton.setTitle("Sign in", for: .normal)
+        codeButton.setTitle("Send code", for: .normal)
         codeButton.setTitleColor(UIColor(named: "white"), for: .normal)
         codeButton.titleLabel?.font = UIFont(name: "FONTSPRINGDEMO-PontiacBoldRegular", size: 18)
         codeButton.backgroundColor = UIColor(named: "black")
