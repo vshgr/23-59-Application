@@ -30,8 +30,10 @@ class EmailViewController: UIViewController {
         
         self.view.addSubview(emailLabel)
         
+        var grid = Grid(view: self.view)
+        
         emailLabel.pin(to: self.view, [.left:
-                                            20, .bottom: 493])
+                                        grid.pin, .bottom: 493])
     }
     
     private func setupInputEmail() {
