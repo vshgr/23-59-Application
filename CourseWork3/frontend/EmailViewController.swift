@@ -67,7 +67,7 @@ class EmailViewController: UIViewController {
         emailInput.textColor = .black
         emailInput.attributedPlaceholder = NSAttributedString(
             string: "enter email",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "hintColor")]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "hintColor")!]
         )
         emailInput.font = UIFont(name: "Raleway-Medium", size: 15)
         
