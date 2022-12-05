@@ -5,6 +5,12 @@
 //  Created by Алиса Вышегородцева on 05.12.2022.
 //
 
-import Foundation
+import UIKit
+import MessageUI
 
-
+class Mailer {
+    func sendEmail(email: String) {
+        
+        
+    }
+}
