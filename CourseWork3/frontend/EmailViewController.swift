@@ -43,5 +43,4 @@ class EmailViewController: UIViewController {
         
         emailInput.pin(to: self.view, [.left: 20, .bottom: 461])
     }
-    
 }

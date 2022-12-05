@@ -15,12 +15,15 @@
 		4860886F2937E57B008B76ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4860886E2937E57B008B76ED /* Assets.xcassets */; };
 		486088722937E57B008B76ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486088702937E57B008B76ED /* LaunchScreen.storyboard */; };
 		48A4801A293E0FDD006540DC /* Mailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A48019293E0FDD006540DC /* Mailer.swift */; };
+		48A48028293E33CF006540DC /* mainFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48027293E3177006540DC /* mainFont.otf */; };
+		48A48029293E33D1006540DC /* blackFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48026293E3170006540DC /* blackFont.otf */; };
+		48A4802D293E3D98006540DC /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A4802C293E3D98006540DC /* Grid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C04E878293E15FD00DF73B3 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		3C283FAF293E181400C3A42E /* UIView+Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pin.swift"; sourceTree = "<group>"; };
-		486088622937E57B008B76ED /* CourseWork3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseWork3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		486088622937E57B008B76ED /* 23:59.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "23:59.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		486088652937E57B008B76ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		486088672937E57B008B76ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		486088692937E57B008B76ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +31,9 @@
 		486088712937E57B008B76ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		486088732937E57B008B76ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48A48019293E0FDD006540DC /* Mailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailer.swift; sourceTree = "<group>"; };
+		48A48026293E3170006540DC /* blackFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = blackFont.otf; path = ../../../../Users/alisa/Library/Fonts/blackFont.otf; sourceTree = "<group>"; };
+		48A48027293E3177006540DC /* mainFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mainFont.otf; path = ../../../../Users/alisa/Library/Fonts/mainFont.otf; sourceTree = "<group>"; };
+		48A4802C293E3D98006540DC /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,7 @@
 		486088632937E57B008B76ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				486088622937E57B008B76ED /* CourseWork3.app */,
+				486088622937E57B008B76ED /* 23:59.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,6 +83,7 @@
 				486088692937E57B008B76ED /* ViewController.swift */,
 				3C04E878293E15FD00DF73B3 /* EmailViewController.swift */,
 				3C283FAF293E181400C3A42E /* UIView+Pin.swift */,
+				48A4802C293E3D98006540DC /* Grid.swift */,
 			);
 			path = frontend;
 			sourceTree = "<group>";
@@ -106,7 +113,7 @@
 			);
 			name = CourseWork3;
 			productName = CourseWork3;
-			productReference = 486088622937E57B008B76ED /* CourseWork3.app */;
+			productReference = 486088622937E57B008B76ED /* 23:59.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -164,6 +171,7 @@
 				3C283FB0293E181400C3A42E /* UIView+Pin.swift in Sources */,
 				486088662937E57B008B76ED /* AppDelegate.swift in Sources */,
 				486088682937E57B008B76ED /* SceneDelegate.swift in Sources */,
+				48A4802D293E3D98006540DC /* Grid.swift in Sources */,
 				3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +324,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = FCS.CourseWork3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "23:59";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,7 +351,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = FCS.CourseWork3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "23:59";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
