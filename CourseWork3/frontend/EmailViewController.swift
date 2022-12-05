@@ -38,9 +38,10 @@ class EmailViewController: UIViewController {
         self.view.addSubview(emailLabel)
         
         let grid = Grid(view: self.view)
-        
+
+        // ВОТ ТУТ ПИН ОТНОСИТЕЛЬНО ЭКРАНА ДЛЯ ЛЕЙБЛОВ (Я сделала так что лейбл начинается относительно экрана в середине по высоте экрана (адаптивная верстка хули))
         emailLabel.pin(to: self.view, [.left:
-                                        grid.pin, .bottom: 493])
+                                        grid.pin, .bottom: 1.1 * self.view.center.y])
     }
     
     private func setupUnderline() {
@@ -49,6 +50,7 @@ class EmailViewController: UIViewController {
         underline.setHeight(to: 1)
         underline.backgroundColor = UIColor(named: "black")
         underline.pin(to: self.view, [.left: grid.pin, .right: grid.pin])
+        // тут короче чтобы задавать растояние до следующего элемента ты его пинишь к элементу выше и задаешь значение = размер шрифта + расстояние из фигмы (например тут размер шрифта элемента emailInput - 15, а расстояние от emailInput до линни - 11, то есть значение 15 + 11 = 26)
         underline.pin(to: emailInput, [.top: 26])
     }
     
@@ -74,7 +76,8 @@ class EmailViewController: UIViewController {
         self.view.addSubview(emailInput)
         
         let grid = Grid(view: self.view)
-        emailInput.pin(to: self.view, [.left: grid.pin, .bottom: 461])
+        emailInput.pin(to: self.view, [.left: grid.pin])
+        emailInput.pin(to: emailLabel, [.top: 29])
     }
     
     private func setupSendCodeButton() {
