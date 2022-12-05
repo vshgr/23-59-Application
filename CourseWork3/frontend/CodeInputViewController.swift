@@ -5,6 +5,7 @@
 //  Created by Барбашина Яна on 05.12.2022.
 //
 
+
 import UIKit
 
 class CodeInputViewController: UIViewController {
@@ -15,4 +16,5 @@ class CodeInputViewController: UIViewController {
         navigationItem.hidesBackButton = true
     }
 }
+
 
