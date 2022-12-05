@@ -5,6 +5,7 @@
 //  Created by Барбашина Яна on 05.12.2022.
 //
 
+
 import UIKit
 
 class CodeInputViewController: UIViewController {
@@ -13,6 +14,7 @@ class CodeInputViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         navigationItem.hidesBackButton = true
-        print("Hello")
     }
 }
+
+

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04E878293E15FD00DF73B3 /* EmailViewController.swift */; };
 		3C283FB0293E181400C3A42E /* UIView+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C283FAF293E181400C3A42E /* UIView+Pin.swift */; };
+		3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC07A5C293E538E0061337F /* CodeInputViewController.swift */; };
 		486088662937E57B008B76ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088652937E57B008B76ED /* AppDelegate.swift */; };
 		486088682937E57B008B76ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088672937E57B008B76ED /* SceneDelegate.swift */; };
 		4860886A2937E57B008B76ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088692937E57B008B76ED /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		3C04E878293E15FD00DF73B3 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		3C283FAF293E181400C3A42E /* UIView+Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pin.swift"; sourceTree = "<group>"; };
+		3CC07A5C293E538E0061337F /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		486088622937E57B008B76ED /* 23:59.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "23:59.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		486088652937E57B008B76ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		486088672937E57B008B76ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				3C04E878293E15FD00DF73B3 /* EmailViewController.swift */,
 				3C283FAF293E181400C3A42E /* UIView+Pin.swift */,
 				48A4802C293E3D98006540DC /* Grid.swift */,
+				3CC07A5C293E538E0061337F /* CodeInputViewController.swift */,
 			);
 			path = frontend;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			files = (
 				4860886A2937E57B008B76ED /* ViewController.swift in Sources */,
 				48A4801A293E0FDD006540DC /* Mailer.swift in Sources */,
+				3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */,
 				3C283FB0293E181400C3A42E /* UIView+Pin.swift in Sources */,
 				486088662937E57B008B76ED /* AppDelegate.swift in Sources */,
 				486088682937E57B008B76ED /* SceneDelegate.swift in Sources */,
