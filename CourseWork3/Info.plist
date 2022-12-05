@@ -5,6 +5,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>mainFont.otf</string>
+		<string>Raleway-Medium.ttf</string>
+		<string>Raleway-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
