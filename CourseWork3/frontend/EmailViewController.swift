@@ -17,7 +17,5 @@ class EmailViewController: UIViewController {
     
     private func setupView() {
         view.backgroundColor = .white
-        
     }
-    
 }
