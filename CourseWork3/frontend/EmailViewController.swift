@@ -20,4 +20,14 @@ class EmailViewController: UIViewController {
         
     }
     
+    private func setupTextFeatures() {
+        emailLabel.textColor = .black
+        let fontDescriptor = UIFont(name: "Raleway-Medium", size: 14)!.fontDescriptor
+        emailLabel.text = "Email"
+        emailLabel.font = UIFont(descriptor: fontDescriptor, size: 14)
+        
+        view.addSubview(emailLabel)
+        emailLabel.pinCenter(to: self.view.centerXAnchor)
+    }
+    
 }
