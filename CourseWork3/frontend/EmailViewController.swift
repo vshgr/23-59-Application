@@ -9,25 +9,39 @@ import UIKit
 
 class EmailViewController: UIViewController {
     private let emailLabel = UILabel()
+    private let emailInput = UITextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupTextFeatures()
+        setupInputEmail()
     }
     
     private func setupView() {
-        view.backgroundColor = .white
-        
+        navigationItem.hidesBackButton = true
+        self.view.backgroundColor = .white
     }
     
     private func setupTextFeatures() {
         emailLabel.textColor = .black
-        let fontDescriptor = UIFont(name: "Raleway-Medium", size: 14)!.fontDescriptor
+        emailLabel.font = UIFont(name: "Raleway-Medium", size: 14)
         emailLabel.text = "Email"
-        emailLabel.font = UIFont(descriptor: fontDescriptor, size: 14)
         
-        view.addSubview(emailLabel)
-        emailLabel.pinCenter(to: self.view.centerXAnchor)
+        self.view.addSubview(emailLabel)
+        
+        emailLabel.pin(to: self.view, [.left:
+                                            20, .bottom: 493])
+    }
+    
+    private func setupInputEmail() {
+        emailInput.textColor = .black
+        emailInput.placeholder = "enter email"
+        emailInput.font = UIFont(name: "Raleway-Medium", size: 15)
+        
+        self.view.addSubview(emailInput)
+        
+        emailInput.pin(to: self.view, [.left: 20, .bottom: 461])
     }
     
 }
