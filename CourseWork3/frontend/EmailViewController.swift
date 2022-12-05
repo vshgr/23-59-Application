@@ -50,8 +50,8 @@ class EmailViewController: UIViewController {
         underline.setHeight(to: 1)
         underline.backgroundColor = UIColor(named: "black")
         underline.pin(to: self.view, [.left: grid.pin, .right: grid.pin])
-        // тут короче чтобы задавать растояние до следующего элемента ты его пинишь к элементу выше и задаешь значение = размер шрифта + расстояние из фигмы (например тут размер шрифта элемента emailInput - 15, а расстояние от emailInput до линни - 11, то есть значение 15 + 11 = 26)
-        underline.pin(to: emailInput, [.top: 26])
+        // тут короче чтобы задавать растояние до следующего элемента ты его пинишь к элементу выше и задаешь значение = размер шрифта + расстояние из фигмы (например тут размер шрифта элемента: расстояние от emailInput до линни - 11, то есть значение font.pointSize + 11)
+        underline.pin(to: emailInput, [.top: (Double)(emailInput.font!.pointSize) + 11])
     }
     
     private func setupErrorMessage(){
@@ -77,7 +77,7 @@ class EmailViewController: UIViewController {
         
         let grid = Grid(view: self.view)
         emailInput.pin(to: self.view, [.left: grid.pin])
-        emailInput.pin(to: emailLabel, [.top: 29])
+        emailInput.pin(to: emailLabel, [.top: (Double)(emailLabel.font!.pointSize) + 14])
     }
     
     private func setupSendCodeButton() {
