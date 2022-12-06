@@ -8,8 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let onloardingIconView = UIImageView(image: UIImage(named: "onboarding_logo"))
-    let button = UIButton(type: .custom)
+    let onloardingIconView = UIImageView(image: UIImage(named: "onboarding_logo"))  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +29,12 @@ class ViewController: UIViewController {
     
     private func configureButton() {
         let grid = Grid(view: self.view)
+        let btn = CustomButton(title: "Sign in", height: view.frame.size.height)
+        self.view.addSubview(btn)
+
+        btn.pin(to: self.view, [.left: grid.margin * 2, .right: grid.margin * 2, .bottom: grid.margin * 2])
         
-        button.setTitle("Sign in", for: .normal)
-        button.setTitleColor(UIColor(named: "white"), for: .normal)
-        button.titleLabel?.font = UIFont(name: "FONTSPRINGDEMO-PontiacBoldRegular", size: 18)
-        button.backgroundColor = UIColor(named: "black")
-        self.view.addSubview(button)
-        
-        button.setHeight(to: view.frame.size.height * 0.08)
-        button.layer.cornerRadius = view.frame.size.height * 0.08 / 2
-        
-        button.pin(to: self.view, [.left: grid.margin * 2, .right: grid.margin * 2, .bottom: grid.margin * 2])
-        
-        button.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
     }
     
     @objc
