@@ -13,6 +13,7 @@
 		3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC07A5C293E538E0061337F /* CodeInputViewController.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
 		483EAA4D293F70D500A72D7F /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4C293F70D500A72D7F /* InputFieldView.swift */; };
+		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
 		486088662937E57B008B76ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088652937E57B008B76ED /* AppDelegate.swift */; };
 		486088682937E57B008B76ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088672937E57B008B76ED /* SceneDelegate.swift */; };
 		4860886A2937E57B008B76ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088692937E57B008B76ED /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		3CC07A5C293E538E0061337F /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		483EAA4C293F70D500A72D7F /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
+		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		486088622937E57B008B76ED /* 23:59.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "23:59.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		486088652937E57B008B76ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		486088672937E57B008B76ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				486088652937E57B008B76ED /* AppDelegate.swift */,
 				486088672937E57B008B76ED /* SceneDelegate.swift */,
 				486088702937E57B008B76ED /* LaunchScreen.storyboard */,
+				483EAA51293F7AA700A72D7F /* Assets.xcassets */,
 				486088732937E57B008B76ED /* Info.plist */,
 			);
 			path = CourseWork3;
@@ -197,6 +200,7 @@
 				486088722937E57B008B76ED /* LaunchScreen.storyboard in Resources */,
 				48A48038293E4BD2006540DC /* blackFont.otf in Resources */,
 				48A48039293E4BD7006540DC /* Raleway-Regular.ttf in Resources */,
+				483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */,
 				48A48035293E49DC006540DC /* Raleway-Medium.ttf in Resources */,
 				48A48034293E49DC006540DC /* Raleway-Bold.ttf in Resources */,
 			);

@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     let onloardingIconView = UIImageView(image: UIImage(named: "onboarding_logo"))
     let button = UIButton(type: .custom)
     
