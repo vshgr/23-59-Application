@@ -53,7 +53,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate {
         emailInput.textColor = .black
         emailInput.attributedPlaceholder = NSAttributedString(
             string: "enter email",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "hintColor")!]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "hintColor") ?? .gray]
         )
         emailInput.font = UIFont(name: "Raleway-Medium", size: 15)
         
@@ -122,14 +122,14 @@ class EmailViewController: UIViewController, UITextFieldDelegate {
         errorMessage.isHidden = false
         emailInput.attributedPlaceholder = NSAttributedString(
             string: "enter email",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "attentionColor")!]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "attentionColor") ?? .red]
         )
     }
     
     private func setDefaultState() {
         emailInput.attributedPlaceholder = NSAttributedString(
             string: "enter email",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "hintColor")!]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "hintColor") ?? .gray]
         )
         errorMessage.isHidden = true
         emailInput.textColor = UIColor(named: "black")
