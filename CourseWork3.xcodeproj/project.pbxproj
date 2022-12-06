@@ -13,12 +13,12 @@
 		3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC07A5C293E538E0061337F /* CodeInputViewController.swift */; };
 		481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D44F2293FCAB1006764A4 /* ButtonComponent.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
-		483EAA4D293F70D500A72D7F /* InputFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4C293F70D500A72D7F /* InputFieldComponent.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
 		486088662937E57B008B76ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088652937E57B008B76ED /* AppDelegate.swift */; };
 		486088682937E57B008B76ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088672937E57B008B76ED /* SceneDelegate.swift */; };
 		4860886A2937E57B008B76ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088692937E57B008B76ED /* ViewController.swift */; };
 		486088722937E57B008B76ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486088702937E57B008B76ED /* LaunchScreen.storyboard */; };
+		4886AC46293FDAB700640A4B /* FieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC45293FDAB700640A4B /* FieldComponent.swift */; };
 		4894B3A2293E5B5B008CE633 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B3A1293E5B5B008CE633 /* User.swift */; };
 		48A4801A293E0FDD006540DC /* Mailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A48019293E0FDD006540DC /* Mailer.swift */; };
 		48A4802D293E3D98006540DC /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A4802C293E3D98006540DC /* Grid.swift */; };
@@ -36,7 +36,6 @@
 		3CC07A5C293E538E0061337F /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		481D44F2293FCAB1006764A4 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		483EAA4C293F70D500A72D7F /* InputFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldComponent.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		486088622937E57B008B76ED /* 23:59.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "23:59.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		486088652937E57B008B76ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		486088692937E57B008B76ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		486088712937E57B008B76ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		486088732937E57B008B76ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4886AC45293FDAB700640A4B /* FieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldComponent.swift; sourceTree = "<group>"; };
 		4894B3A1293E5B5B008CE633 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		48A48019293E0FDD006540DC /* Mailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailer.swift; sourceTree = "<group>"; };
 		48A4802C293E3D98006540DC /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
@@ -68,8 +68,8 @@
 		481D44F1293FCA36006764A4 /* components */ = {
 			isa = PBXGroup;
 			children = (
-				483EAA4C293F70D500A72D7F /* InputFieldComponent.swift */,
 				481D44F2293FCAB1006764A4 /* ButtonComponent.swift */,
+				4886AC45293FDAB700640A4B /* FieldComponent.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 				483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */,
 				481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */,
 				4860886A2937E57B008B76ED /* ViewController.swift in Sources */,
-				483EAA4D293F70D500A72D7F /* InputFieldComponent.swift in Sources */,
+				4886AC46293FDAB700640A4B /* FieldComponent.swift in Sources */,
 				48A4801A293E0FDD006540DC /* Mailer.swift in Sources */,
 				3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */,
 				3C283FB0293E181400C3A42E /* UIView+Pin.swift in Sources */,
