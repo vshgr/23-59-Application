@@ -50,6 +50,29 @@ class EmailViewController: UIViewController {
             emailField.setErrorState()
         }
     }
+    
+    private func setErrorState() {
+        emailInput.textColor = UIColor(named: "attentionColor")
+        emailLabel.textColor = UIColor(named: "attentionColor")
+        underline.backgroundColor = UIColor(named: "attentionColor")
+        
+        errorMessage.isHidden = false
+        emailInput.attributedPlaceholder = NSAttributedString(
+            string: "enter email",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "attentionColor") ?? .red]
+        )
+    }
+    
+    private func setDefaultState() {
+        emailInput.attributedPlaceholder = NSAttributedString(
+            string: "enter email",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "hintColor") ?? .gray]
+        )
+        errorMessage.isHidden = true
+        emailInput.textColor = UIColor(named: "black")
+        emailLabel.textColor = UIColor(named: "black")
+        underline.backgroundColor = UIColor(named: "black")
+    }
 
 }
 
