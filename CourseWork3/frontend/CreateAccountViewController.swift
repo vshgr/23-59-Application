@@ -8,12 +8,10 @@
 import UIKit
 
 class CreateAccountViewController : UIViewController {
-    var photoArea = UIView()
+    var photoArea = UIImageView()
     let createButton = UIButton()
-    let addPhotoButtonView = UIView()
-    
-    let iconView = UIImageView(image: UIImage(named: "logo"))
-    let addPhotoView = UIImageView(image: UIImage(named: "logo"))
+    let addPhotoButtonView = UIButton()
+    let addPhotoIconView = UIImageView(image: UIImage(named: "photo"))
     
     
     override func viewDidLoad() {
@@ -26,35 +24,59 @@ class CreateAccountViewController : UIViewController {
         self.hideKeyboardWhenTappedAround()
         setupPhotoPicker()
         setupCreateButton()
+        setupAddPhotoView()
     }
     
     private func setupPhotoPicker() {
         self.view.addSubview(photoArea)
         
         photoArea.backgroundColor = UIColor(named: "mainColor")
-        photoArea.addSubview(iconView)
+
         photoArea.setWidth(to: 146)
         photoArea.setHeight(to: 146)
-        photoArea.layer.cornerRadius = photoArea.frame.size.height/2
-        photoArea.pinTop(to: self.view)
         
+        photoArea.layer.cornerRadius = 146/2
+        photoArea.pin(to: self.view, [.top: 131])
+        photoArea.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
+        
+    }
+    
+    private func setupAddPhotoView() {
+        let buttonLabel = UILabel()
+        
+        addPhotoButtonView.addSubview(buttonLabel)
+        addPhotoButtonView.addSubview(addPhotoIconView)
+        photoArea.addSubview(addPhotoButtonView)
+        
+        addPhotoButtonView.pinTop(to: photoArea.bottomAnchor, 15)
+        addPhotoButtonView.setWidth(to: 102)
+        addPhotoButtonView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
+        buttonLabel.text = "add photo"
+        buttonLabel.textColor = UIColor(named: "violet")
+        buttonLabel.font = UIFont(name: "Raleway-Medium", size: 15)
+        
+        addPhotoIconView.pinRight(to: addPhotoButtonView)
+        buttonLabel.pinLeft(to: addPhotoButtonView)
+        buttonLabel.centerYAnchor.constraint(equalTo: addPhotoIconView.centerYAnchor).isActive = true
+        
+        addPhotoButtonView.addTarget(self, action: #selector(addPhotoButtonPressed), for: .touchUpInside)
+    }
+    
+    @objc
+    private func addPhotoButtonPressed() {
+        //TODO: ПИКЕР ФОТО
     }
     
     private func setupCreateButton() {
         let grid = Grid(view: self.view)
+        let btn = CustomButton(title: "Create account", height: view.frame.size.height)
+        self.view.addSubview(btn)
+
+        btn.pin(to: self.view, [.left: grid.margin * 2, .right: grid.margin * 2, .bottom: grid.margin * 2])
         
-        createButton.setTitle("Create account", for: .normal)
-        createButton.setTitleColor(UIColor(named: "white"), for: .normal)
-        createButton.titleLabel?.font = UIFont(name: "FONTSPRINGDEMO-PontiacBoldRegular", size: 18)
-        createButton.backgroundColor = UIColor(named: "black")
-        self.view.addSubview(createButton)
-        
-        createButton.setHeight(to: view.frame.size.height * 0.08)
-        createButton.layer.cornerRadius = view.frame.size.height * 0.08 / 2
-        
-        createButton.pin(to: self.view, [.left: grid.margin * 2, .right: grid.margin * 2, .bottom: grid.margin * 2])
-        
-        createButton.addTarget(self, action: #selector(createButtonPressed), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(createButtonPressed), for: .touchUpInside)
     }
     
     @objc

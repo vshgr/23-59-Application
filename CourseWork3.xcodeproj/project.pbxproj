@@ -12,8 +12,9 @@
 		3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */; };
 		3C283FB0293E181400C3A42E /* UIView+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C283FAF293E181400C3A42E /* UIView+Pin.swift */; };
 		3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC07A5C293E538E0061337F /* CodeInputViewController.swift */; };
+		481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D44F2293FCAB1006764A4 /* ButtonComponent.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
-		483EAA4D293F70D500A72D7F /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4C293F70D500A72D7F /* InputFieldView.swift */; };
+		483EAA4D293F70D500A72D7F /* InputFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4C293F70D500A72D7F /* InputFieldComponent.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
 		486088662937E57B008B76ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088652937E57B008B76ED /* AppDelegate.swift */; };
 		486088682937E57B008B76ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088672937E57B008B76ED /* SceneDelegate.swift */; };
@@ -35,8 +36,9 @@
 		3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Borders.swift"; sourceTree = "<group>"; };
 		3C283FAF293E181400C3A42E /* UIView+Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pin.swift"; sourceTree = "<group>"; };
 		3CC07A5C293E538E0061337F /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
+		481D44F2293FCAB1006764A4 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
-		483EAA4C293F70D500A72D7F /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
+		483EAA4C293F70D500A72D7F /* InputFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldComponent.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		486088622937E57B008B76ED /* 23:59.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "23:59.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		486088652937E57B008B76ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		481D44F1293FCA36006764A4 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				483EAA4C293F70D500A72D7F /* InputFieldComponent.swift */,
+				481D44F2293FCAB1006764A4 /* ButtonComponent.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		486088592937E57B008B76ED = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +118,7 @@
 		48A48017293E0C90006540DC /* frontend */ = {
 			isa = PBXGroup;
 			children = (
+				481D44F1293FCA36006764A4 /* components */,
 				486088692937E57B008B76ED /* ViewController.swift */,
 				3C04E878293E15FD00DF73B3 /* EmailViewController.swift */,
 				3C283FAF293E181400C3A42E /* UIView+Pin.swift */,
@@ -217,8 +229,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */,
+				481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */,
 				4860886A2937E57B008B76ED /* ViewController.swift in Sources */,
-				483EAA4D293F70D500A72D7F /* InputFieldView.swift in Sources */,
+				483EAA4D293F70D500A72D7F /* InputFieldComponent.swift in Sources */,
 				48A4801A293E0FDD006540DC /* Mailer.swift in Sources */,
 				3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */,
 				3C283FB0293E181400C3A42E /* UIView+Pin.swift in Sources */,
