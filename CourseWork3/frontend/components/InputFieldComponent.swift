@@ -66,7 +66,7 @@ class InputFieldView: UIView {
         errorMessage.text = message
     }
     
-    private func configure(){
+    private func configure() {
         addSubview(label)
         label.pin(to: self)
         addSubview(input)
