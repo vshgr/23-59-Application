@@ -21,6 +21,7 @@ class CreateAccountViewController : UIViewController {
     
     private func setupView() {
         self.view.backgroundColor = UIColor(named: "white")
+        self.hideKeyboardWhenTappedAround()
         setupPhotoPicker()
         setupCreateButton()
         setupAddPhotoView()
