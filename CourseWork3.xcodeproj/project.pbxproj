@@ -11,11 +11,13 @@
 		3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */; };
 		3C283FB0293E181400C3A42E /* UIView+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C283FAF293E181400C3A42E /* UIView+Pin.swift */; };
 		3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC07A5C293E538E0061337F /* CodeInputViewController.swift */; };
+		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
+		483EAA4D293F70D500A72D7F /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4C293F70D500A72D7F /* InputFieldView.swift */; };
 		486088662937E57B008B76ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088652937E57B008B76ED /* AppDelegate.swift */; };
 		486088682937E57B008B76ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088672937E57B008B76ED /* SceneDelegate.swift */; };
 		4860886A2937E57B008B76ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088692937E57B008B76ED /* ViewController.swift */; };
-		4860886F2937E57B008B76ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4860886E2937E57B008B76ED /* Assets.xcassets */; };
 		486088722937E57B008B76ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486088702937E57B008B76ED /* LaunchScreen.storyboard */; };
+		4894B3A2293E5B5B008CE633 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B3A1293E5B5B008CE633 /* User.swift */; };
 		48A4801A293E0FDD006540DC /* Mailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A48019293E0FDD006540DC /* Mailer.swift */; };
 		48A4802D293E3D98006540DC /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A4802C293E3D98006540DC /* Grid.swift */; };
 		48A48031293E45AE006540DC /* mainFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48030293E45AE006540DC /* mainFont.otf */; };
@@ -30,13 +32,15 @@
 		3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		3C283FAF293E181400C3A42E /* UIView+Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pin.swift"; sourceTree = "<group>"; };
 		3CC07A5C293E538E0061337F /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
+		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		483EAA4C293F70D500A72D7F /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		486088622937E57B008B76ED /* 23:59.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "23:59.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		486088652937E57B008B76ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		486088672937E57B008B76ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		486088692937E57B008B76ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4860886E2937E57B008B76ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		486088712937E57B008B76ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		486088732937E57B008B76ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4894B3A1293E5B5B008CE633 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		48A48019293E0FDD006540DC /* Mailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailer.swift; sourceTree = "<group>"; };
 		48A4802C293E3D98006540DC /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		48A48030293E45AE006540DC /* mainFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mainFont.otf; path = CourseWork3/fonts/mainFont.otf; sourceTree = SOURCE_ROOT; };
@@ -81,11 +85,18 @@
 				48A48017293E0C90006540DC /* frontend */,
 				486088652937E57B008B76ED /* AppDelegate.swift */,
 				486088672937E57B008B76ED /* SceneDelegate.swift */,
-				4860886E2937E57B008B76ED /* Assets.xcassets */,
 				486088702937E57B008B76ED /* LaunchScreen.storyboard */,
 				486088732937E57B008B76ED /* Info.plist */,
 			);
 			path = CourseWork3;
+			sourceTree = "<group>";
+		};
+		4894B3A0293E5B4D008CE633 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4894B3A1293E5B5B008CE633 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		48A48017293E0C90006540DC /* frontend */ = {
@@ -97,6 +108,8 @@
 				48A4802C293E3D98006540DC /* Grid.swift */,
 				3CC07A5C293E538E0061337F /* CodeInputViewController.swift */,
 				3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */,
+				483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */,
+				483EAA4C293F70D500A72D7F /* InputFieldView.swift */,
 			);
 			path = frontend;
 			sourceTree = "<group>";
@@ -104,6 +117,7 @@
 		48A48018293E0C9A006540DC /* backend */ = {
 			isa = PBXGroup;
 			children = (
+				4894B3A0293E5B4D008CE633 /* Models */,
 				48A48019293E0FDD006540DC /* Mailer.swift */,
 			);
 			path = backend;
@@ -184,7 +198,6 @@
 				48A48038293E4BD2006540DC /* blackFont.otf in Resources */,
 				48A48039293E4BD7006540DC /* Raleway-Regular.ttf in Resources */,
 				48A48035293E49DC006540DC /* Raleway-Medium.ttf in Resources */,
-				4860886F2937E57B008B76ED /* Assets.xcassets in Resources */,
 				48A48034293E49DC006540DC /* Raleway-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +209,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */,
 				4860886A2937E57B008B76ED /* ViewController.swift in Sources */,
+				483EAA4D293F70D500A72D7F /* InputFieldView.swift in Sources */,
 				48A4801A293E0FDD006540DC /* Mailer.swift in Sources */,
 				3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */,
 				3C283FB0293E181400C3A42E /* UIView+Pin.swift in Sources */,
@@ -204,6 +219,7 @@
 				486088662937E57B008B76ED /* AppDelegate.swift in Sources */,
 				486088682937E57B008B76ED /* SceneDelegate.swift in Sources */,
 				48A4802D293E3D98006540DC /* Grid.swift in Sources */,
+				4894B3A2293E5B5B008CE633 /* User.swift in Sources */,
 				3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
