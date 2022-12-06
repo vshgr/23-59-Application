@@ -126,7 +126,6 @@
 				3CC07A5C293E538E0061337F /* CodeInputViewController.swift */,
 				3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */,
 				483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */,
-				483EAA4C293F70D500A72D7F /* InputFieldView.swift */,
 				3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */,
 			);
 			path = frontend;
