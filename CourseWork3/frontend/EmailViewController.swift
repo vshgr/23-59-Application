@@ -24,31 +24,33 @@ class EmailViewController: UIViewController {
         self.view.addSubview(emailField)
         self.hideKeyboardWhenTappedAround()
         emailField.pinToParent(parent: self.view)
-        let grid = Grid(view: self.view)
-        emailField.pin(to: self.view, [.left:
-                                        grid.pin, .bottom: 1.1 * self.view.center.y])
+        emailField.pinLeft(to: view, Grid.stripe)
+        emailField.pinBottom(to: view,  1.1 * self.view.center.y)
     }
 
 
     private func setupSendCodeButton() {
-        let grid = Grid(view: self.view)
         let btn = CustomButton(title: "Send code", height: view.frame.size.height)
         self.view.addSubview(btn)
 
-        btn.pin(to: self.view, [.left: grid.margin * 2, .right: grid.margin * 2, .bottom: grid.margin * 2])
+        btn.pinHorizontal(to: view, Grid.stripe * 2)
+        btn.pinBottom(to: view, Grid.stripe * 2)
         
         btn.addTarget(self, action: #selector(sendCodeButtonPressed), for: .touchUpInside)
     }
 
     @objc
     private func sendCodeButtonPressed() {
-        let mailer = Mailer()
-        if (mailer.checkIfEmailFilled(email: emailField.getText())) {
-            let codeInputController = CodeInputViewController()
-            navigationController?.pushViewController(codeInputController, animated: true)
-        } else {
-            emailField.setErrorState()
-        }
+//        let mailer = Mailer()
+//        if (mailer.checkIfEmailFilled(email: emailField.getText())) {
+//            let codeInputController = CodeInputViewController()
+//            navigationController?.pushViewController(codeInputController, animated: true)
+//        } else {
+//            emailField.setErrorState()
+//        }
+//
+        let codeInputController = CreateAccountViewController()
+        navigationController?.pushViewController(codeInputController, animated: true)
     }
 
 }

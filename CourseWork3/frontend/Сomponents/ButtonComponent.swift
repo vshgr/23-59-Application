@@ -27,7 +27,7 @@ class CustomButton: UIButton {
         titleLabel?.font = UIFont(name: "FONTSPRINGDEMO-PontiacBoldRegular", size: 18)
         backgroundColor = UIColor(named: "black")
         
-        setHeight(to: height * 0.08)
+        setHeight(height * 0.08)
         layer.cornerRadius = height * 0.08 / 2
     }
 }

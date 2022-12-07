@@ -19,7 +19,7 @@ class InputFieldView: UIView {
     
     private let underline: UIView = {
         let v  = UIView()
-        v.setHeight(to: 1)
+        v.setHeight(1)
         v.backgroundColor = UIColor(named: "black")
         return v
     } ()
@@ -49,10 +49,11 @@ class InputFieldView: UIView {
         configure()
     }
     
+    @available (*, unavailable)
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        configure()
+        fatalError("init(coder:) has not been implemented")
     }
+    
     
     private func setTitle(title: String) {
         label.text = title
@@ -78,8 +79,7 @@ class InputFieldView: UIView {
     }
     
     public func pinToParent(parent: UIView){
-        let grid = Grid(view: parent)
-        underline.setWidth(to: parent.frame.width - 2 * grid.margin)
+        underline.setWidth(parent.frame.width - 2 * Grid.stripe)
     }
         
     public func setErrorState() {

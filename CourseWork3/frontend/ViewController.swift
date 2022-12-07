@@ -28,11 +28,11 @@ class ViewController: UIViewController {
     }
     
     private func configureButton() {
-        let grid = Grid(view: self.view)
         let btn = CustomButton(title: "Sign in", height: view.frame.size.height)
         self.view.addSubview(btn)
 
-        btn.pin(to: self.view, [.left: grid.margin * 2, .right: grid.margin * 2, .bottom: grid.margin * 2])
+        btn.pinHorizontal(to: view, Grid.stripe * 2)
+        btn.pinBottom(to: view, Grid.stripe * 2)
         
         btn.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
     }

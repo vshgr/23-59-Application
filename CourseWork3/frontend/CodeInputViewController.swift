@@ -37,10 +37,8 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         
         self.view.addSubview(codeLabel)
         
-        let grid = Grid(view: self.view)
-        
-        codeLabel.pin(to: self.view, [.left:
-                                        grid.pin, .bottom: 493])
+        codeLabel.pinLeft(to: view, Grid.stripe)
+        codeLabel.pinBottom(to: view, 493)
         
         // New label
         checkEmailLabel.textColor = .black
@@ -49,8 +47,8 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         
         self.view.addSubview(checkEmailLabel)
         
-        checkEmailLabel.pin(to: self.view, [.left:
-                                        grid.pin, .bottom: 525])
+        checkEmailLabel.pinLeft(to: view, Grid.stripe)
+        checkEmailLabel.pinBottom(to: view, 525)
     }
     
     private func makeCodeTextField() -> UITextField {
@@ -73,8 +71,8 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         field.textAlignment = .center
         field.placeholder = "1"
         field.keyboardType = .asciiCapableNumberPad
-        field.setWidth(to: 38)
-        field.setHeight(to: 38)
+        field.setWidth(38)
+        field.setHeight(38)
         return field
     }
     
@@ -92,41 +90,27 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupInput() {
-        let firstTextField = setupTextFields()
-        let secondTextField = setupTextFields()
-        let thirdTextField = setupTextFields()
-        let fourthTextField = setupTextFields()
+        let stack = UIStackView()
+        stack.spacing = 12
         
-        view.addSubview(firstTextField)
-        view.addSubview(secondTextField)
-        view.addSubview(thirdTextField)
-        view.addSubview(fourthTextField)
-        
-        let grid = Grid(view: view)
-        firstTextField.pin(to: view, [.left:
-                                        grid.pin, .bottom: 444])
-        secondTextField.pin(to: view, [.left:
-                                        grid.pin + 50, .bottom: 444])
-        thirdTextField.pin(to: view, [.left:
-                                        grid.pin + 100, .bottom: 444])
-        fourthTextField.pin(to: view, [.left:
-                                        grid.pin + 150, .bottom: 444])
-
+        stack.pinBottom(to: view.centerYAnchor, 22)
+        for textField in [setupTextFields(), setupTextFields(), setupTextFields(), setupTextFields()] {
+            stack.addArrangedSubview(textField)
+        }
     }
     
     private func configureButton() {
-        let grid = Grid(view: self.view)
-        
         button.setTitle("Continue", for: .normal)
         button.setTitleColor(UIColor(named: "white"), for: .normal)
         button.titleLabel?.font = UIFont(name: "FONTSPRINGDEMO-PontiacBoldRegular", size: 18)
         button.backgroundColor = UIColor(named: "black")
         self.view.addSubview(button)
         
-        button.setHeight(to: view.frame.size.height * 0.08)
+        button.setHeight(view.frame.size.height * 0.08)
         button.layer.cornerRadius = view.frame.size.height * 0.08 / 2
-        
-        button.pin(to: self.view, [.left: grid.margin * 2, .right: grid.margin * 2, .bottom: grid.margin * 2])
+
+        button.pinHorizontal(to: view, Grid.stripe * 2)
+        button.pinBottom(to: view, Grid.stripe * 2)
         
         button.addTarget(self, action: #selector(continueButtonPressed), for: .touchUpInside)
     }
