@@ -11,7 +11,6 @@ final class ProfileView: UIView {
     // MARK: - Constants
     private enum Constants {
         static let logo: UIImage? = UIImage(named: "logo")
-        static let photoTop: Double = 10
         static let photoWidth: Double = 146
         static let contentSpacing: Double = 15
         static let imagePadding: Double = 10
@@ -45,7 +44,7 @@ final class ProfileView: UIView {
             view.pinCenterX(to: centerXAnchor)
         }
         
-        photoArea.pinTop(to: self, Constants.photoTop)
+        photoArea.pinTop(to: self)
         photoArea.setWidth(Constants.photoWidth)
         photoArea.pinHeight(to: photoArea.widthAnchor)
         photoArea.pinLeft(to: self)

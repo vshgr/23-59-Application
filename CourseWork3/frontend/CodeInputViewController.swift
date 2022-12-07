@@ -94,6 +94,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         stack.spacing = 12
         
         stack.pinBottom(to: view.centerYAnchor, 22)
+        stack.pinLeft(to: view, Grid.stripe)
         for textField in [setupTextFields(), setupTextFields(), setupTextFields(), setupTextFields()] {
             stack.addArrangedSubview(textField)
         }

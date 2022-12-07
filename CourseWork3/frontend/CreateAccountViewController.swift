@@ -22,8 +22,8 @@ class CreateAccountViewController : UIViewController {
     }
     
     private func setupView() {
-        self.view.backgroundColor = UIColor(named: "white")
-        self.hideKeyboardWhenTappedAround()
+        view.backgroundColor = UIColor(named: "white")
+        hideKeyboardWhenTappedAround()
         setupPhotoArea()
         setupCreateButton()
         setupFields()
@@ -32,22 +32,21 @@ class CreateAccountViewController : UIViewController {
     private func setupPhotoArea() {
         view.addSubview(profileView)
         
-        profileView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        profileView.pinCenterX(to: view.centerXAnchor)
         profileView.pinTop(to: view.topAnchor, 131)
         profileView.tapChangePic = addPhotoButtonPressed
     }
     
     
     private func setupFields() {
-        nameField.pinToParent(parent: self.view)
-        usernameField.pinToParent(parent: self.view)
-        emailField.pinToParent(parent: self.view)
+        nameField.pinToParent(parent: view)
+        usernameField.pinToParent(parent: view)
+        emailField.pinToParent(parent: view)
         
-        
-        self.view.addSubview(stack)
+        view.addSubview(stack)
         
         stack.axis = .vertical
-        stack.spacing = 83
+        stack.spacing = 25
         stack.alignment = .fill
         stack.distribution = .fillEqually
         
@@ -62,14 +61,15 @@ class CreateAccountViewController : UIViewController {
     @objc
     private func addPhotoButtonPressed() {
         print("Hello")
-        let popup = PhotoPicker(height: 0.5 * self.view.frame.size.height, width: self.view.frame.size.width - 2 * Grid.stripe)
-        self.view.addSubview(popup)
-        popup.center = self.view.center
+        let popup = PhotoPicker()
+        view.addSubview(popup)
+        popup.pinHorizontal(to: view, Grid.stripe)
+        popup.pinCenterY(to: view.centerYAnchor)
     }
     
     private func setupCreateButton() {
         let btn = CustomButton(title: "Create account", height: view.frame.size.height)
-        self.view.addSubview(btn)
+        view.addSubview(btn)
 
         btn.pinHorizontal(to: view, Grid.stripe * 2)
         btn.pinBottom(to: view, Grid.stripe * 2)

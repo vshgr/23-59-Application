@@ -1,41 +1,17 @@
 import UIKit
 
-class InputFieldView: UIView {
-    private let label: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor = .black
-        lbl.font = UIFont(name: "Raleway-Medium", size: 14)
-        lbl.textAlignment = .left
-        return lbl
-    } ()
-    
-    private let input: UITextField = {
-        let tf = UITextField()
-        tf.textColor = .black
-        tf.font = UIFont(name: "Raleway-Medium", size: 15)
-        return tf
-    } ()
-
-    
-    private let underline: UIView = {
-        let v  = UIView()
-        v.setHeight(1)
-        v.backgroundColor = UIColor(named: "black")
-        return v
-    } ()
-    
-    
-    private let errorMessage: UILabel = {
-        let er = UILabel()
-        er.textColor = UIColor(named: "attentionColor")
-        er.font = UIFont(name: "Raleway-Medium", size: 15)
-        return er
-    } ()
+class InputFieldView: UIView, UITextFieldDelegate {
+    // MARK: - Fields
+    private let label = UILabel()
+    private let input = UITextField()
+    private let underline = UIView()
+    private let errorMessage = UILabel()
     
     public func getText() -> String {
         return input.text ?? ""
     }
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -54,7 +30,48 @@ class InputFieldView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Configuration
+    private func configureLabel() {
+        label.textColor = .black
+        label.font = UIFont.dl.ralewayMedium(14)
+        label.textAlignment = .left
+    }
     
+    private func configureTextField() {
+        input.textColor = .black
+        input.font = UIFont.dl.ralewayMedium(15)
+        input.delegate = self
+    }
+    
+    private func configureUnderline() {
+        underline.setHeight(1)
+        underline.backgroundColor = UIColor(named: "black")
+    }
+    
+    private func configureErrorMessage() {
+        errorMessage.textColor = UIColor(named: "attentionColor")
+        errorMessage.font = UIFont.dl.ralewayMedium(15)
+    }
+    
+    private func configure() {
+        addSubview(label)
+        addSubview(input)
+        addSubview(underline)
+        addSubview(errorMessage)
+        
+        configureLabel()
+        configureTextField()
+        configureUnderline()
+        configureErrorMessage()
+        
+        label.pinTop(to: self)
+        input.pinTop(to: label.bottomAnchor, 14)
+        underline.pinTop(to: input.bottomAnchor, 11)
+        errorMessage.pinTop(to: underline.bottomAnchor, 8)
+        errorMessage.pinBottom(to: self)
+    }
+    
+    // MARK: - Setters
     private func setTitle(title: String) {
         label.text = title
     }
@@ -65,17 +82,6 @@ class InputFieldView: UIView {
     
     private func setErrorMessage(message: String){
         errorMessage.text = message
-    }
-    
-    private func configure() {
-        addSubview(label)
-        label.pin(to: self)
-        addSubview(input)
-        input.pinTop(to: label.bottomAnchor, 14)
-        addSubview(underline)
-        underline.pinTop(to: input.bottomAnchor, 11)
-        addSubview(errorMessage)
-        errorMessage.pinTop(to: underline.bottomAnchor, 8)
     }
     
     public func pinToParent(parent: UIView){

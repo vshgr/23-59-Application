@@ -15,19 +15,18 @@ class EmailViewController: UIViewController {
     private func setupView() {
         navigationItem.hidesBackButton = true
         self.view.backgroundColor = .white
+        self.hideKeyboardWhenTappedAround()
 
         setupField()
         setupSendCodeButton()
     }
     
     private func setupField(){
-        self.view.addSubview(emailField)
-        self.hideKeyboardWhenTappedAround()
+        view.addSubview(emailField)
         emailField.pinToParent(parent: self.view)
-        emailField.pinLeft(to: view, Grid.stripe)
-        emailField.pinBottom(to: view,  1.1 * self.view.center.y)
+        emailField.pinHorizontal(to: view, Grid.stripe)
+        emailField.pinCenterY(to: view.centerYAnchor)
     }
-
 
     private func setupSendCodeButton() {
         let btn = CustomButton(title: "Send code", height: view.frame.size.height)
@@ -41,16 +40,15 @@ class EmailViewController: UIViewController {
 
     @objc
     private func sendCodeButtonPressed() {
-//        let mailer = Mailer()
-//        if (mailer.checkIfEmailFilled(email: emailField.getText())) {
+        let mailer = Mailer()
+        if (mailer.checkIfEmailFilled(email: emailField.getText())) {
 //            let codeInputController = CodeInputViewController()
 //            navigationController?.pushViewController(codeInputController, animated: true)
-//        } else {
-//            emailField.setErrorState()
-//        }
-//
-        let codeInputController = CreateAccountViewController()
-        navigationController?.pushViewController(codeInputController, animated: true)
+            let codeInputController = CreateAccountViewController()
+            navigationController?.pushViewController(codeInputController, animated: true)
+        } else {
+            emailField.setErrorState()
+        }
     }
 
 }
