@@ -1,17 +1,16 @@
 import UIKit
 
-class EmailViewController: UIViewController {    
-    private let emailField: InputFieldView = {
-        let ifv = InputFieldView(title: "Email", hint: "enter email", message: "invalid email")
-        ifv.setDefaultState()
-        return ifv
-    } ()
+class EmailViewController: UIViewController {
+    // MARK: - Fields
+    private let emailField: InputFieldView = InputFieldView(title: "Email", hint: "enter email", message: "invalid email")
 
+    // MARK: - Load
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
 
+    // MARK: - Setups
     private func setupView() {
         navigationItem.hidesBackButton = true
         self.view.backgroundColor = .white
@@ -38,19 +37,19 @@ class EmailViewController: UIViewController {
         btn.addTarget(self, action: #selector(sendCodeButtonPressed), for: .touchUpInside)
     }
 
+    // MARK: - Actions
     @objc
     private func sendCodeButtonPressed() {
-        let mailer = Mailer()
-        if (mailer.checkIfEmailFilled(email: emailField.getText())) {
+//        let mailer = Mailer()
+//        if (mailer.checkIfEmailFilled(email: emailField.getText())) {
 //            let codeInputController = CodeInputViewController()
 //            navigationController?.pushViewController(codeInputController, animated: true)
-            let codeInputController = CreateAccountViewController()
-            navigationController?.pushViewController(codeInputController, animated: true)
-        } else {
-            emailField.setErrorState()
-        }
+//        } else {
+//            emailField.setErrorState()
+//        }
+        let codeInputController = CreateAccountViewController()
+        navigationController?.pushViewController(codeInputController, animated: true)
     }
-
 }
 
 

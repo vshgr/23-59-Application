@@ -23,9 +23,10 @@ class InputFieldView: UIView, UITextFieldDelegate {
         setPlaceholder(hint: hint)
         setErrorMessage(message: message)
         configure()
+        setDefaultState()
     }
     
-    @available (*, unavailable)
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

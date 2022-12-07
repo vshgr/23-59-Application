@@ -8,6 +8,12 @@
 import UIKit
 
 class CreateAccountViewController : UIViewController {
+    // MARK: - Constants
+    private enum Constants {
+        static let spacing: Double = 25
+    }
+    
+    // MARK: - Fields
     let profileView = ProfileView()
     let stack = UIStackView()
         
@@ -15,14 +21,16 @@ class CreateAccountViewController : UIViewController {
     let usernameField = InputFieldView(title: "Username", hint: "enter username", message: "")
     let emailField = InputFieldView(title: "Email", hint: "example@email.com", message: "")
     
-    
+    // MARK: - Load
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
+    // MARK: - Setups
     private func setupView() {
         view.backgroundColor = UIColor(named: "white")
+        emailField.isUserInteractionEnabled = false
         hideKeyboardWhenTappedAround()
         setupPhotoArea()
         setupCreateButton()
@@ -37,7 +45,6 @@ class CreateAccountViewController : UIViewController {
         profileView.tapChangePic = addPhotoButtonPressed
     }
     
-    
     private func setupFields() {
         nameField.pinToParent(parent: view)
         usernameField.pinToParent(parent: view)
@@ -46,7 +53,7 @@ class CreateAccountViewController : UIViewController {
         view.addSubview(stack)
         
         stack.axis = .vertical
-        stack.spacing = 25
+        stack.spacing = Constants.spacing
         stack.alignment = .fill
         stack.distribution = .fillEqually
         
@@ -54,17 +61,8 @@ class CreateAccountViewController : UIViewController {
         stack.addArrangedSubview(usernameField)
         stack.addArrangedSubview(emailField)
         
-        stack.pinTop(to: profileView.bottomAnchor, 25)
+        stack.pinTop(to: profileView.bottomAnchor, Constants.spacing)
         stack.pinHorizontal(to: view, Grid.stripe)
-    }
-    
-    @objc
-    private func addPhotoButtonPressed() {
-        print("Hello")
-        let popup = PhotoPicker()
-        view.addSubview(popup)
-        popup.pinHorizontal(to: view, Grid.stripe)
-        popup.pinCenterY(to: view.centerYAnchor)
     }
     
     private func setupCreateButton() {
@@ -77,17 +75,27 @@ class CreateAccountViewController : UIViewController {
         btn.addTarget(self, action: #selector(createButtonPressed), for: .touchUpInside)
     }
     
+    // MARK: - Actions
+    @objc
+    private func addPhotoButtonPressed() {
+        let popup = PhotoPickerController()
+        self.present(popup, animated: true, completion: nil)
+    }
+    
     @objc
     private func createButtonPressed() {
         var flag = true
+        
         if (nameField.getText().trimmingCharacters(in: .whitespaces) == ""){
             flag = false
             nameField.setErrorState()
         }
+        
         if (usernameField.getText().trimmingCharacters(in: .whitespaces) == ""){
             flag = false
             usernameField.setErrorState()
         }
+        
         Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
             self.nameField.setDefaultState()
             self.usernameField.setDefaultState()
