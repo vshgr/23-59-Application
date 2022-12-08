@@ -22,7 +22,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     
     private let checkEmailLabel = UILabel()
     private let codeLabel = UILabel()
-    private let button = UIButton(type: .custom)
+    private let button = UIButton(type: .system)
     private let sendCodeButton = UIButton(type: .system)
     private var codeInputCells: UIStackView = UIStackView()
     private var count = 59 {
@@ -152,8 +152,10 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         var config = UIButton.Configuration.plain()
         // Use timer here
         config.title = "send code again"
+        config.contentInsets = .zero
         config.baseForegroundColor = UIColor(named: "hintColor")
-        config.image = UIImage(named: "arrow_right")
+        // NУТ НУЖНО УЧЕСТЬ ЧТО ПРИ ИСТЕЧЕНИИ ТАЙМЕРА ЦВЕТ БУДЕТ МЕНЯТЬСЯ
+        config.image = UIImage(named: "arrow_right")?.withTintColor(UIColor.dl.hintCol()!)
         config.imagePlacement = .trailing
         config.imagePadding = Constants.imagePadding
         
