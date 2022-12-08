@@ -13,6 +13,8 @@
 		3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC07A5C293E538E0061337F /* CodeInputViewController.swift */; };
 		4814C0CD29420B8F00939BA5 /* DateBubbleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814C0CC29420B8F00939BA5 /* DateBubbleComponent.swift */; };
 		4815507529424602008EF3A1 /* UIView+TapAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815507429424602008EF3A1 /* UIView+TapAnimation.swift */; };
+		4815507729425134008EF3A1 /* TaskPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815507629425134008EF3A1 /* TaskPageController.swift */; };
+		4815507929425E57008EF3A1 /* UIButton+Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815507829425E57008EF3A1 /* UIButton+Select.swift */; };
 		481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D44F2293FCAB1006764A4 /* ButtonComponent.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		3CC07A5C293E538E0061337F /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		4814C0CC29420B8F00939BA5 /* DateBubbleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateBubbleComponent.swift; sourceTree = "<group>"; };
 		4815507429424602008EF3A1 /* UIView+TapAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TapAnimation.swift"; sourceTree = "<group>"; };
+		4815507629425134008EF3A1 /* TaskPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPageController.swift; sourceTree = "<group>"; };
+		4815507829425E57008EF3A1 /* UIButton+Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Select.swift"; sourceTree = "<group>"; };
 		481D44F2293FCAB1006764A4 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */,
+				4815507829425E57008EF3A1 /* UIButton+Select.swift */,
 				3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */,
 				485B199A2941FF6B00042F89 /* UIColor+.swift */,
 				485B198E29411F4F00042F89 /* UIFont+.swift */,
@@ -207,6 +212,7 @@
 				3CC07A5C293E538E0061337F /* CodeInputViewController.swift */,
 				3C04E878293E15FD00DF73B3 /* EmailViewController.swift */,
 				486088692937E57B008B76ED /* WelcomeViewController.swift */,
+				4815507629425134008EF3A1 /* TaskPageController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 				483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */,
 				4892320729420595002DCBEF /* TaskComponent.swift in Sources */,
 				485B198F29411F4F00042F89 /* UIFont+.swift in Sources */,
+				4815507929425E57008EF3A1 /* UIButton+Select.swift in Sources */,
 				481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */,
 				4892320929420702002DCBEF /* MainTasksPageController.swift in Sources */,
 				4815507529424602008EF3A1 /* UIView+TapAnimation.swift in Sources */,
@@ -298,6 +305,7 @@
 				3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */,
 				4886AC4A2940E39A00640A4B /* PhotoPickerPopup.swift in Sources */,
 				4886AC4C2940EF0B00640A4B /* ProfileView.swift in Sources */,
+				4815507729425134008EF3A1 /* TaskPageController.swift in Sources */,
 				3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */,
 				486088662937E57B008B76ED /* AppDelegate.swift in Sources */,
 				485B198D29411AE000042F89 /* Grid.swift in Sources */,

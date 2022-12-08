@@ -17,8 +17,8 @@ class CreateAccountViewController : UIViewController {
     let profileView = ProfileView()
     let stack = UIStackView()
         
-    let nameField = InputFieldView(title: "Name", hint: "enter name", message: "")
-    let usernameField = InputFieldView(title: "Username", hint: "enter username", message: "")
+    let nameField = InputFieldView(title: "Name", hint: "enter name", message: "required")
+    let usernameField = InputFieldView(title: "Username", hint: "enter username", message: "required")
     let emailField = InputFieldView(title: "Email", hint: "example@email.com", message: "")
     let btn = CustomButton(title: "Create account", height: 70)
     

@@ -21,5 +21,18 @@ class MainTasksPageController: UIViewController {
         view.addSubview(taskView)
         taskView.pinTop(to: view.topAnchor, 100)
         taskView.pinHorizontal(to: view, Grid.stripe)
+        
+        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(taskTapped))
+        gesture.numberOfTapsRequired = 1
+        taskView.isUserInteractionEnabled = true
+        taskView.addGestureRecognizer(gesture)
+    }
+    
+    @objc
+    private func taskTapped() {
+        taskView.showAnimation {
+            let taskPageController = TaskPageController()
+            self.present(taskPageController, animated: true)
+        }
     }
 }
