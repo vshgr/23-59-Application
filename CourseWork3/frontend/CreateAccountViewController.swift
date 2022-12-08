@@ -102,7 +102,8 @@ class CreateAccountViewController : UIViewController {
         }
         
         if(flag){
-            //  navigationController?.pushViewController(codeInputController, animated: true)
+            let mainTasksController = MainTasksPageController()
+            navigationController?.pushViewController(mainTasksController, animated: true)
         }
     }
     

@@ -25,6 +25,8 @@
 		4886AC46293FDAB700640A4B /* FieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC45293FDAB700640A4B /* FieldComponent.swift */; };
 		4886AC4A2940E39A00640A4B /* PhotoPickerPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */; };
 		4886AC4C2940EF0B00640A4B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC4B2940EF0B00640A4B /* ProfileView.swift */; };
+		4892320729420595002DCBEF /* TaskComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892320629420595002DCBEF /* TaskComponent.swift */; };
+		4892320929420702002DCBEF /* MainTasksPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892320829420702002DCBEF /* MainTasksPageController.swift */; };
 		4894B3A2293E5B5B008CE633 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B3A1293E5B5B008CE633 /* User.swift */; };
 		48A4801A293E0FDD006540DC /* Mailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A48019293E0FDD006540DC /* Mailer.swift */; };
 		48A48031293E45AE006540DC /* mainFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48030293E45AE006540DC /* mainFont.otf */; };
@@ -54,6 +56,8 @@
 		4886AC45293FDAB700640A4B /* FieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldComponent.swift; sourceTree = "<group>"; };
 		4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerPopup.swift; sourceTree = "<group>"; };
 		4886AC4B2940EF0B00640A4B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4892320629420595002DCBEF /* TaskComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskComponent.swift; sourceTree = "<group>"; };
+		4892320829420702002DCBEF /* MainTasksPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTasksPageController.swift; sourceTree = "<group>"; };
 		4894B3A1293E5B5B008CE633 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		48A48019293E0FDD006540DC /* Mailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailer.swift; sourceTree = "<group>"; };
 		48A48030293E45AE006540DC /* mainFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mainFont.otf; path = CourseWork3/fonts/mainFont.otf; sourceTree = SOURCE_ROOT; };
@@ -79,6 +83,7 @@
 				481D44F2293FCAB1006764A4 /* ButtonComponent.swift */,
 				4886AC45293FDAB700640A4B /* FieldComponent.swift */,
 				4886AC4B2940EF0B00640A4B /* ProfileView.swift */,
+				4892320629420595002DCBEF /* TaskComponent.swift */,
 			);
 			path = "Сomponents";
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 				483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */,
 				3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */,
 				4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */,
+				4892320829420702002DCBEF /* MainTasksPageController.swift */,
 			);
 			path = frontend;
 			sourceTree = "<group>";
@@ -260,8 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */,
+				4892320729420595002DCBEF /* TaskComponent.swift in Sources */,
 				485B198F29411F4F00042F89 /* UIFont+.swift in Sources */,
 				481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */,
+				4892320929420702002DCBEF /* MainTasksPageController.swift in Sources */,
 				4860886A2937E57B008B76ED /* ViewController.swift in Sources */,
 				4886AC46293FDAB700640A4B /* FieldComponent.swift in Sources */,
 				48A4801A293E0FDD006540DC /* Mailer.swift in Sources */,

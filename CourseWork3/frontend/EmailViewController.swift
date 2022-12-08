@@ -44,10 +44,11 @@ class EmailViewController: UIViewController {
         if (mailer.checkIfEmailFilled(email: emailField.getText())) {
             let codeInputController = CodeInputViewController()
             navigationController?.pushViewController(codeInputController, animated: true)
-//            let codeInputController = CreateAccountViewController()
-//            navigationController?.pushViewController(codeInputController, animated: true)
         } else {
             emailField.setErrorState()
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+                self.emailField.setDefaultState()
+            }
         }
     }
 }
