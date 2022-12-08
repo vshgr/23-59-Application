@@ -43,10 +43,10 @@ class WelcomeViewController: UIViewController {
     // MARK: - Actions
     @objc
     private func signInButtonPressed() {
-//        let emailViewController = EmailViewController()
-//        navigationController?.pushViewController(emailViewController, animated: true)
-        let tasks = MainTasksPageController()
-        navigationController?.pushViewController(tasks, animated: true)
+        let emailViewController = EmailViewController()
+        navigationController?.pushViewController(emailViewController, animated: true)
+//        let tasks = MainTasksPageController()
+//        navigationController?.pushViewController(tasks, animated: true)
     }
     
 }

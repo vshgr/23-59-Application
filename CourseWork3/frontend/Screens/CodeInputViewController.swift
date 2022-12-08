@@ -25,8 +25,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private let sendCodeButton = UIButton(type: .system)
     private var codeInputCells: UIStackView = UIStackView()
     
-    private var timer: Timer = Timer()
-    private var count: Int = 59
+    private var count: Int = 5
     private var timerString: String = String()
     
     override func viewDidLoad() {
@@ -42,16 +41,17 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupTimer() {
-        timer = Timer(timeInterval: 1.0, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-    }
-    
-    @objc private func timerCounter() {
-        if (count == 0) {
-            timer.invalidate()
-            button.configuration = getConfig()
-        } else {
-            count -= 1
-            button.configuration = getConfig()
+        count = 5
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
+            [weak self] timer in
+            if (self?.count == 0) {
+                timer.invalidate()
+                self?.button.isEnabled = true
+                self?.button.configuration = self?.getConfig()
+            } else {
+                self?.count -= 1
+                self?.button.configuration = self?.getConfig()
+            }
         }
     }
     
@@ -155,6 +155,11 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         button.configuration = getConfig()
         button.titleLabel?.font = Constants.buttonFont
         button.isEnabled = false
+        button.addTarget(self, action: #selector(restartTimer), for: .touchUpInside)
+    }
+    
+    @objc private func restartTimer() {
+        setupTimer()
     }
     
     private func getConfig() -> UIButton.Configuration {
@@ -163,7 +168,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         config.title = makeTimerLabelString(seconds: count)
         config.contentInsets = .zero
         if (count == 0) {
-            config.baseForegroundColor = UIColor(named: "black")
+            config.baseForegroundColor = .black
             config.image = UIImage(named: "arrow_right")?.withTintColor(.black)
         } else {
             config.baseForegroundColor = UIColor(named: "hintColor")
