@@ -16,7 +16,6 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         static let contentSpacing: Double = 15
         static let imagePadding: Double = 10
         static let buttonFont: UIFont? = UIFont.dl.ralewayMedium(14)
-        static let backImageViewColor: UIColor? = UIColor(named: "mainColor")
         static let error: String = "init(coder:) has not been implemented"
     }
     
@@ -25,14 +24,10 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private let button = UIButton(type: .system)
     private let sendCodeButton = UIButton(type: .system)
     private var codeInputCells: UIStackView = UIStackView()
-    private var count = 59 {
-        didSet {
-            timerLabel = "send code again 0:\(count)"
-        }
-    }
     
-    private var timer = Timer()
-    private var timerLabel = String()
+    private var timer: Timer = Timer()
+    private var count: Int = 59
+    private var timerString: String = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,20 +36,34 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         setupInput()
         configureButton()
         setupSendCodeButton()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setupTimer), userInfo: nil, repeats: false)
+        setupTimer()
 //        firstTextField.delegate = self
 //        firstTextField.tag = 0
     }
     
+    private func setupTimer() {
+        timer = Timer(timeInterval: 1.0, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+    }
     
-    @objc private func setupTimer() {
-        count -= 1
-        
+    @objc private func timerCounter() {
         if (count == 0) {
             timer.invalidate()
-            timerLabel = "send code again"
-            button.isEnabled = true
+            button.configuration = getConfig()
+        } else {
+            count -= 1
+            button.configuration = getConfig()
         }
+    }
+    
+    private func makeTimerLabelString(seconds: Int) -> String {
+        var timerStr = "send code again"
+        if (seconds >= 10) {
+            timerStr += " 0:\(seconds)"
+        } else if (seconds > 0) {
+            timerStr += " 0:0\(seconds)"
+        }
+        
+        return timerStr
     }
     
     private func setupView() {
@@ -151,11 +160,15 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private func getConfig() -> UIButton.Configuration {
         var config = UIButton.Configuration.plain()
         // Use timer here
-        config.title = "send code again"
+        config.title = makeTimerLabelString(seconds: count)
         config.contentInsets = .zero
-        config.baseForegroundColor = UIColor(named: "hintColor")
-        // NУТ НУЖНО УЧЕСТЬ ЧТО ПРИ ИСТЕЧЕНИИ ТАЙМЕРА ЦВЕТ БУДЕТ МЕНЯТЬСЯ
-        config.image = UIImage(named: "arrow_right")?.withTintColor(UIColor.dl.hintCol()!)
+        if (count == 0) {
+            config.baseForegroundColor = UIColor(named: "black")
+            config.image = UIImage(named: "arrow_right")?.withTintColor(.black)
+        } else {
+            config.baseForegroundColor = UIColor(named: "hintColor")
+            config.image = UIImage(named: "arrow_right")?.withTintColor(UIColor.dl.hintCol()!)
+        }
         config.imagePlacement = .trailing
         config.imagePadding = Constants.imagePadding
         
