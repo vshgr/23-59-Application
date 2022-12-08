@@ -115,6 +115,7 @@ class TaskPageController: UIViewController {
         scrollGroups.clipsToBounds = false
         scrollGroups.showsHorizontalScrollIndicator = false
         scrollGroups.showsVerticalScrollIndicator = false
+        
         groupsSV.pin(to: scrollGroups)
     }
     
