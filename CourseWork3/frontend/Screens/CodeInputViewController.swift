@@ -8,7 +8,6 @@
 import UIKit
  
 // TODO: Add smart switching to the next cell when tapping return
-// TODO: Add disabled button send code again and timer
  
 class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private enum Constants {
