@@ -38,7 +38,7 @@ class DateBubbleComponent: UIView {
     
     private func configureLabel() {
         dateLabel.text = "4 Dec, 2022"
-        dateLabel.font = UIFont.dl.ralewayMedium(12)
+        dateLabel.font = dateLabel.font.withSize(12)
         dateLabel.textColor = .black
     }
     

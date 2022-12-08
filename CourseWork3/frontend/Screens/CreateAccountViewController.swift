@@ -25,7 +25,7 @@ class CreateAccountViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setNavBarColorAndTitle(title: "Create account")
+        setNavBarColorAndTitle(color: UIColor.dl.mainCol()!, title: "Create account")
     }
     
     // MARK: - Setups
