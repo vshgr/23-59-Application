@@ -8,6 +8,7 @@ class EmailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        addBackNavbarButtonToNextController()
     }
 
     // MARK: - Setups
