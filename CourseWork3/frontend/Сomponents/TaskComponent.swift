@@ -26,7 +26,7 @@ class TaskComponent: UIView {
     private let taskName = UILabel()
     private let groups = UILabel()
     private let bottomLineSV = UIStackView()
-    private let dateView = DateBubbleComponent()
+    private let dateView = BubbleComponent(text: "3 Dec, 2022")
     private let friend = FriendAccountSVConponent()
     private let doneBtn = UIButton()
     private let addBtn = UIButton()

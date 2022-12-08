@@ -11,7 +11,7 @@
 		3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */; };
 		3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */; };
 		3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC07A5C293E538E0061337F /* CodeInputViewController.swift */; };
-		4814C0CD29420B8F00939BA5 /* DateBubbleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814C0CC29420B8F00939BA5 /* DateBubbleComponent.swift */; };
+		4814C0CD29420B8F00939BA5 /* BubbleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814C0CC29420B8F00939BA5 /* BubbleComponent.swift */; };
 		4815507529424602008EF3A1 /* UIView+TapAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815507429424602008EF3A1 /* UIView+TapAnimation.swift */; };
 		4815507729425134008EF3A1 /* TaskPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815507629425134008EF3A1 /* TaskPageController.swift */; };
 		4815507929425E57008EF3A1 /* UIButton+Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815507829425E57008EF3A1 /* UIButton+Select.swift */; };
@@ -46,7 +46,7 @@
 		3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Borders.swift"; sourceTree = "<group>"; };
 		3CC07A5C293E538E0061337F /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
-		4814C0CC29420B8F00939BA5 /* DateBubbleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateBubbleComponent.swift; sourceTree = "<group>"; };
+		4814C0CC29420B8F00939BA5 /* BubbleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleComponent.swift; sourceTree = "<group>"; };
 		4815507429424602008EF3A1 /* UIView+TapAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TapAnimation.swift"; sourceTree = "<group>"; };
 		4815507629425134008EF3A1 /* TaskPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPageController.swift; sourceTree = "<group>"; };
 		4815507829425E57008EF3A1 /* UIButton+Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Select.swift"; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 				4886AC45293FDAB700640A4B /* FieldComponent.swift */,
 				4886AC4B2940EF0B00640A4B /* ProfileView.swift */,
 				4892320629420595002DCBEF /* TaskComponent.swift */,
-				4814C0CC29420B8F00939BA5 /* DateBubbleComponent.swift */,
+				4814C0CC29420B8F00939BA5 /* BubbleComponent.swift */,
 				488B8C65294216D000ED8B0C /* FriendAccountSVConponent.swift */,
 			);
 			path = "Сomponents";
@@ -315,7 +315,7 @@
 				4894B3A2293E5B5B008CE633 /* User.swift in Sources */,
 				3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */,
 				48A6C1B7294221070001B962 /* UIViewController+Navbar.swift in Sources */,
-				4814C0CD29420B8F00939BA5 /* DateBubbleComponent.swift in Sources */,
+				4814C0CD29420B8F00939BA5 /* BubbleComponent.swift in Sources */,
 				485B199B2941FF6B00042F89 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

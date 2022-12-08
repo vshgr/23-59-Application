@@ -45,14 +45,14 @@ class WelcomeViewController: UIViewController {
     private func signInButtonPressed() {
 //        let emailViewController = EmailViewController()
 //        navigationController?.pushViewController(emailViewController, animated: true)
-//        btn.showAnimation {
-//            let tasks = MainTasksPageController()
-//            self.navigationController?.pushViewController(tasks, animated: true)
-//        }
         btn.showAnimation {
-            let tasks = CreateAccountViewController()
+            let tasks = MainTasksPageController()
             self.navigationController?.pushViewController(tasks, animated: true)
         }
+//        btn.showAnimation {
+//            let tasks = CreateAccountViewController()
+//            self.navigationController?.pushViewController(tasks, animated: true)
+//        }
     }
     
 }
