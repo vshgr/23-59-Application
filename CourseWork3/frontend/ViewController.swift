@@ -8,28 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let onloardingIconView = UIImageView(image: UIImage(named: "onboarding_logo"))  
+    // MARK: - Fields
+    let onboardingIconView = UIImageView(image: UIImage(named: "onboarding_logo"))  
     
+    // MARK: - Load
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
+    // MARK: - Setups
     private func setupView() {
-        self.view.backgroundColor = UIColor(named: "mainColor")
+        view.backgroundColor = UIColor(named: "mainColor")
         pinLogo()
         configureButton()
     }
     
-    private func pinLogo() {
-        self.view.addSubview(onloardingIconView)
-        onloardingIconView.center = CGPoint(x: view.frame.size.width / 2,
-                                            y: view.frame.size.height / 2 - view.frame.size.height / 12 )
-    }
-    
     private func configureButton() {
         let btn = CustomButton(title: "Sign in", height: view.frame.size.height)
-        self.view.addSubview(btn)
+        view.addSubview(btn)
 
         btn.pinHorizontal(to: view, Grid.stripe * 2)
         btn.pinBottom(to: view, Grid.stripe * 2)
@@ -37,6 +34,13 @@ class ViewController: UIViewController {
         btn.addTarget(self, action: #selector(signInButtonPressed), for: .touchUpInside)
     }
     
+    private func pinLogo() {
+        view.addSubview(onboardingIconView)
+        onboardingIconView.pinCenterX(to: view.centerXAnchor)
+        onboardingIconView.pinCenterY(to: view.centerYAnchor, -70)
+    }
+    
+    // MARK: - Actions
     @objc
     private func signInButtonPressed() {
         let emailViewController = EmailViewController()
