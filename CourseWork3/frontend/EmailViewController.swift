@@ -40,15 +40,15 @@ class EmailViewController: UIViewController {
     // MARK: - Actions
     @objc
     private func sendCodeButtonPressed() {
-//        let mailer = Mailer()
-//        if (mailer.checkIfEmailFilled(email: emailField.getText())) {
-//            let codeInputController = CodeInputViewController()
+        let mailer = Mailer()
+        if (mailer.checkIfEmailFilled(email: emailField.getText())) {
+            let codeInputController = CodeInputViewController()
+            navigationController?.pushViewController(codeInputController, animated: true)
+//            let codeInputController = CreateAccountViewController()
 //            navigationController?.pushViewController(codeInputController, animated: true)
-//        } else {
-//            emailField.setErrorState()
-//        }
-        let codeInputController = CreateAccountViewController()
-        navigationController?.pushViewController(codeInputController, animated: true)
+        } else {
+            emailField.setErrorState()
+        }
     }
 }
 

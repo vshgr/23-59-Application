@@ -4,16 +4,35 @@
 //
 //  Created by Барбашина Яна on 05.12.2022.
 //
-
+ 
 import UIKit
-
+ 
 // TODO: Add smart switching to the next cell when tapping return
 // TODO: Add disabled button send code again and timer
-
+ 
 class CodeInputViewController: UIViewController, UITextFieldDelegate {
+    private enum Constants {
+        static let logo: UIImage? = UIImage(named: "logo")
+        static let contentSpacing: Double = 15
+        static let imagePadding: Double = 10
+        static let buttonFont: UIFont? = UIFont.dl.ralewayMedium(14)
+        static let backImageViewColor: UIColor? = UIColor(named: "mainColor")
+        static let error: String = "init(coder:) has not been implemented"
+    }
+    
     private let checkEmailLabel = UILabel()
     private let codeLabel = UILabel()
-    let button = UIButton(type: .custom)
+    private let button = UIButton(type: .custom)
+    private let sendCodeButton = UIButton(type: .system)
+    private var codeInputCells: UIStackView = UIStackView()
+    private var count = 59 {
+        didSet {
+            timerLabel = "send code again 0:\(count)"
+        }
+    }
+    
+    private var timer = Timer()
+    private var timerLabel = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +40,21 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         setupTextLabels()
         setupInput()
         configureButton()
+        setupSendCodeButton()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setupTimer), userInfo: nil, repeats: false)
 //        firstTextField.delegate = self
 //        firstTextField.tag = 0
+    }
+    
+    
+    @objc private func setupTimer() {
+        count -= 1
+        
+        if (count == 0) {
+            timer.invalidate()
+            timerLabel = "send code again"
+            button.isEnabled = true
+        }
     }
     
     private func setupView() {
@@ -90,30 +122,52 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupInput() {
-        let stack = UIStackView()
-        stack.spacing = 12
+        let firstTextField = setupTextFields()
+        let secondTextField = setupTextFields()
+        let thirdTextField = setupTextFields()
+        let fourthTextField = setupTextFields()
         
-        stack.pinBottom(to: view.centerYAnchor, 22)
-        stack.pinLeft(to: view, Grid.stripe)
-        for textField in [setupTextFields(), setupTextFields(), setupTextFields(), setupTextFields()] {
-            stack.addArrangedSubview(textField)
-        }
+        codeInputCells = UIStackView(arrangedSubviews: [firstTextField, secondTextField, thirdTextField, fourthTextField])
+        codeInputCells.spacing = 12
+        codeInputCells.axis = .horizontal
+        codeInputCells.distribution = .fillEqually
+        self.view.addSubview(codeInputCells)
+        
+        codeInputCells.pinLeft(to: view, Grid.stripe)
+        codeInputCells.pinBottom(to: view, 444)
+    }
+    
+    private func setupSendCodeButton() {
+        view.addSubview(button)
+        
+        button.pinTop(to: codeInputCells.bottomAnchor, Constants.contentSpacing)
+        button.pinLeft(to: view, Grid.stripe)
+        
+        button.configuration = getConfig()
+        button.titleLabel?.font = Constants.buttonFont
+        button.isEnabled = false
+    }
+    
+    private func getConfig() -> UIButton.Configuration {
+        var config = UIButton.Configuration.plain()
+        // Use timer here
+        config.title = "send code again"
+        config.baseForegroundColor = UIColor(named: "hintColor")
+        config.image = UIImage(named: "arrow_right")
+        config.imagePlacement = .trailing
+        config.imagePadding = Constants.imagePadding
+        
+        return config
     }
     
     private func configureButton() {
-        button.setTitle("Continue", for: .normal)
-        button.setTitleColor(UIColor(named: "white"), for: .normal)
-        button.titleLabel?.font = UIFont(name: "FONTSPRINGDEMO-PontiacBoldRegular", size: 18)
-        button.backgroundColor = UIColor(named: "black")
-        self.view.addSubview(button)
-        
-        button.setHeight(view.frame.size.height * 0.08)
-        button.layer.cornerRadius = view.frame.size.height * 0.08 / 2
+        let btn = CustomButton(title: "Continue", height: view.frame.size.height)
+        self.view.addSubview(btn)
 
-        button.pinHorizontal(to: view, Grid.stripe * 2)
-        button.pinBottom(to: view, Grid.stripe * 2)
+        btn.pinHorizontal(to: view, Grid.stripe * 2)
+        btn.pinBottom(to: view, Grid.stripe * 2)
         
-        button.addTarget(self, action: #selector(continueButtonPressed), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(continueButtonPressed), for: .touchUpInside)
     }
     
     @objc
@@ -122,5 +176,3 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         navigationController?.pushViewController(createAccountViewController, animated: true)
     }
 }
-
-
