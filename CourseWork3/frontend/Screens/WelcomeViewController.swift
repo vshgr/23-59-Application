@@ -9,7 +9,8 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     // MARK: - Fields
-    let onboardingIconView = UIImageView(image: UIImage(named: "onboarding_logo"))  
+    let onboardingIconView = UIImageView(image: UIImage(named: "onboarding_logo"))
+    let btn = CustomButton(title: "Sign in", height: 70)
     
     // MARK: - Load
     override func viewDidLoad() {
@@ -25,7 +26,6 @@ class WelcomeViewController: UIViewController {
     }
     
     private func configureButton() {
-        let btn = CustomButton(title: "Sign in", height: view.frame.size.height)
         view.addSubview(btn)
 
         btn.pinHorizontal(to: view, Grid.stripe * 2)
@@ -43,10 +43,13 @@ class WelcomeViewController: UIViewController {
     // MARK: - Actions
     @objc
     private func signInButtonPressed() {
-        let emailViewController = EmailViewController()
-        navigationController?.pushViewController(emailViewController, animated: true)
-//        let tasks = MainTasksPageController()
-//        navigationController?.pushViewController(tasks, animated: true)
+//        let emailViewController = EmailViewController()
+//        navigationController?.pushViewController(emailViewController, animated: true)
+        btn.showAnimation {
+            let tasks = MainTasksPageController()
+            self.navigationController?.pushViewController(tasks, animated: true)
+        }
+        
     }
     
 }

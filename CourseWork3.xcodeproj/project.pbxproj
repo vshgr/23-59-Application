@@ -12,6 +12,7 @@
 		3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */; };
 		3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC07A5C293E538E0061337F /* CodeInputViewController.swift */; };
 		4814C0CD29420B8F00939BA5 /* DateBubbleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814C0CC29420B8F00939BA5 /* DateBubbleComponent.swift */; };
+		4815507529424602008EF3A1 /* UIView+TapAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815507429424602008EF3A1 /* UIView+TapAnimation.swift */; };
 		481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D44F2293FCAB1006764A4 /* ButtonComponent.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Borders.swift"; sourceTree = "<group>"; };
 		3CC07A5C293E538E0061337F /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		4814C0CC29420B8F00939BA5 /* DateBubbleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateBubbleComponent.swift; sourceTree = "<group>"; };
+		4815507429424602008EF3A1 /* UIView+TapAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TapAnimation.swift"; sourceTree = "<group>"; };
 		481D44F2293FCAB1006764A4 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				485B198E29411F4F00042F89 /* UIFont+.swift */,
 				485B19982941FEEC00042F89 /* UIView+Pin.swift */,
 				48A6C1B6294221070001B962 /* UIViewController+Navbar.swift */,
+				4815507429424602008EF3A1 /* UIView+TapAnimation.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				485B198F29411F4F00042F89 /* UIFont+.swift in Sources */,
 				481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */,
 				4892320929420702002DCBEF /* MainTasksPageController.swift in Sources */,
+				4815507529424602008EF3A1 /* UIView+TapAnimation.swift in Sources */,
 				488B8C66294216D000ED8B0C /* FriendAccountSVConponent.swift in Sources */,
 				4860886A2937E57B008B76ED /* WelcomeViewController.swift in Sources */,
 				4886AC46293FDAB700640A4B /* FieldComponent.swift in Sources */,

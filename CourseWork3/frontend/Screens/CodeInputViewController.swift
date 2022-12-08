@@ -24,6 +24,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private let sendCodeButton = UIButton(type: .system)
     private var codeInputCells: UIStackView = UIStackView()
     private var config = UIButton.Configuration.plain()
+    private let btn = CustomButton(title: "Continue", height: 70)
     
     private var count: Int = 5
     private var timerString: String = String()
@@ -180,7 +181,6 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     
     
     private func configureButton() {
-        let btn = CustomButton(title: "Continue", height: view.frame.size.height)
         self.view.addSubview(btn)
         
         btn.pinHorizontal(to: view, Grid.stripe * 2)
@@ -191,7 +191,9 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     
     @objc
     private func continueButtonPressed() {
-        let createAccountViewController = CreateAccountViewController()
-        navigationController?.pushViewController(createAccountViewController, animated: true)
+        btn.showAnimation {
+            let createAccountViewController = CreateAccountViewController()
+            self.navigationController?.pushViewController(createAccountViewController, animated: true)
+        }
     }
 }

@@ -30,7 +30,7 @@ class CustomButton: UIButton {
         titleLabel?.font = UIFont.dl.mainFont(18)
         backgroundColor = .black
         
-        setHeight(height * 0.08)
-        layer.cornerRadius = height * 0.08 / 2
+        setHeight(height)
+        layer.cornerRadius = height / 2
     }
 }

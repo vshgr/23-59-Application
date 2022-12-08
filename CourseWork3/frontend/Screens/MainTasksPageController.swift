@@ -19,7 +19,7 @@ class MainTasksPageController: UIViewController {
     private func setupView() {
         view.backgroundColor = .white
         view.addSubview(taskView)
+        taskView.pinTop(to: view.topAnchor, 100)
         taskView.pinHorizontal(to: view, Grid.stripe)
-        taskView.pinTop(to: view, 100)
     }
 }
