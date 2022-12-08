@@ -8,6 +8,7 @@
 import UIKit
 
 class MainTasksPageController: UIViewController {
+    private let taskView = TaskComponent(selfT: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,5 +17,8 @@ class MainTasksPageController: UIViewController {
     
     private func setupView() {
         view.backgroundColor = .white
+        view.addSubview(taskView)
+        taskView.pinHorizontal(to: view, Grid.stripe)
+        taskView.pinTop(to: view, 100)
     }
 }
