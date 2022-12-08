@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WelcomeViewController: UIViewController {
     // MARK: - Fields
     let onboardingIconView = UIImageView(image: UIImage(named: "onboarding_logo"))  
     
@@ -43,8 +43,10 @@ class ViewController: UIViewController {
     // MARK: - Actions
     @objc
     private func signInButtonPressed() {
-        let emailViewController = EmailViewController()
-        navigationController?.pushViewController(emailViewController, animated: true)
+//        let emailViewController = EmailViewController()
+//        navigationController?.pushViewController(emailViewController, animated: true)
+        let tasks = MainTasksPageController()
+        navigationController?.pushViewController(tasks, animated: true)
     }
     
 }

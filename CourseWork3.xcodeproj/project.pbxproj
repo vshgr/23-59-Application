@@ -11,6 +11,7 @@
 		3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */; };
 		3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */; };
 		3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC07A5C293E538E0061337F /* CodeInputViewController.swift */; };
+		4814C0CD29420B8F00939BA5 /* DateBubbleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814C0CC29420B8F00939BA5 /* DateBubbleComponent.swift */; };
 		481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D44F2293FCAB1006764A4 /* ButtonComponent.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
@@ -20,11 +21,12 @@
 		485B199B2941FF6B00042F89 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B199A2941FF6B00042F89 /* UIColor+.swift */; };
 		486088662937E57B008B76ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088652937E57B008B76ED /* AppDelegate.swift */; };
 		486088682937E57B008B76ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088672937E57B008B76ED /* SceneDelegate.swift */; };
-		4860886A2937E57B008B76ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088692937E57B008B76ED /* ViewController.swift */; };
+		4860886A2937E57B008B76ED /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088692937E57B008B76ED /* WelcomeViewController.swift */; };
 		486088722937E57B008B76ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486088702937E57B008B76ED /* LaunchScreen.storyboard */; };
 		4886AC46293FDAB700640A4B /* FieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC45293FDAB700640A4B /* FieldComponent.swift */; };
 		4886AC4A2940E39A00640A4B /* PhotoPickerPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */; };
 		4886AC4C2940EF0B00640A4B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC4B2940EF0B00640A4B /* ProfileView.swift */; };
+		488B8C66294216D000ED8B0C /* FriendAccountSVConponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488B8C65294216D000ED8B0C /* FriendAccountSVConponent.swift */; };
 		4892320729420595002DCBEF /* TaskComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892320629420595002DCBEF /* TaskComponent.swift */; };
 		4892320929420702002DCBEF /* MainTasksPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892320829420702002DCBEF /* MainTasksPageController.swift */; };
 		4894B3A2293E5B5B008CE633 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B3A1293E5B5B008CE633 /* User.swift */; };
@@ -40,6 +42,7 @@
 		3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Borders.swift"; sourceTree = "<group>"; };
 		3CC07A5C293E538E0061337F /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
+		4814C0CC29420B8F00939BA5 /* DateBubbleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateBubbleComponent.swift; sourceTree = "<group>"; };
 		481D44F2293FCAB1006764A4 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,12 +53,13 @@
 		486088622937E57B008B76ED /* 23:59.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "23:59.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		486088652937E57B008B76ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		486088672937E57B008B76ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		486088692937E57B008B76ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		486088692937E57B008B76ED /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		486088712937E57B008B76ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		486088732937E57B008B76ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4886AC45293FDAB700640A4B /* FieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldComponent.swift; sourceTree = "<group>"; };
 		4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerPopup.swift; sourceTree = "<group>"; };
 		4886AC4B2940EF0B00640A4B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		488B8C65294216D000ED8B0C /* FriendAccountSVConponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendAccountSVConponent.swift; sourceTree = "<group>"; };
 		4892320629420595002DCBEF /* TaskComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskComponent.swift; sourceTree = "<group>"; };
 		4892320829420702002DCBEF /* MainTasksPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTasksPageController.swift; sourceTree = "<group>"; };
 		4894B3A1293E5B5B008CE633 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -80,10 +84,13 @@
 		481D44F1293FCA36006764A4 /* Сomponents */ = {
 			isa = PBXGroup;
 			children = (
+				4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */,
 				481D44F2293FCAB1006764A4 /* ButtonComponent.swift */,
 				4886AC45293FDAB700640A4B /* FieldComponent.swift */,
 				4886AC4B2940EF0B00640A4B /* ProfileView.swift */,
 				4892320629420595002DCBEF /* TaskComponent.swift */,
+				4814C0CC29420B8F00939BA5 /* DateBubbleComponent.swift */,
+				488B8C65294216D000ED8B0C /* FriendAccountSVConponent.swift */,
 			);
 			path = "Сomponents";
 			sourceTree = "<group>";
@@ -91,6 +98,8 @@
 		485B19882941175800042F89 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */,
+				3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */,
 				485B199A2941FF6B00042F89 /* UIColor+.swift */,
 				485B198E29411F4F00042F89 /* UIFont+.swift */,
 				485B19982941FEEC00042F89 /* UIView+Pin.swift */,
@@ -156,17 +165,10 @@
 		48A48017293E0C90006540DC /* frontend */ = {
 			isa = PBXGroup;
 			children = (
+				48A6C1B529421B090001B962 /* Screens */,
 				485B19882941175800042F89 /* Extentions */,
 				485B198B29411AC300042F89 /* Common */,
 				481D44F1293FCA36006764A4 /* Сomponents */,
-				486088692937E57B008B76ED /* ViewController.swift */,
-				3C04E878293E15FD00DF73B3 /* EmailViewController.swift */,
-				3CC07A5C293E538E0061337F /* CodeInputViewController.swift */,
-				3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */,
-				483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */,
-				3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */,
-				4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */,
-				4892320829420702002DCBEF /* MainTasksPageController.swift */,
 			);
 			path = frontend;
 			sourceTree = "<group>";
@@ -189,6 +191,18 @@
 				48A48033293E49DC006540DC /* Raleway-Medium.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		48A6C1B529421B090001B962 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */,
+				4892320829420702002DCBEF /* MainTasksPageController.swift */,
+				3CC07A5C293E538E0061337F /* CodeInputViewController.swift */,
+				3C04E878293E15FD00DF73B3 /* EmailViewController.swift */,
+				486088692937E57B008B76ED /* WelcomeViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +284,8 @@
 				485B198F29411F4F00042F89 /* UIFont+.swift in Sources */,
 				481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */,
 				4892320929420702002DCBEF /* MainTasksPageController.swift in Sources */,
-				4860886A2937E57B008B76ED /* ViewController.swift in Sources */,
+				488B8C66294216D000ED8B0C /* FriendAccountSVConponent.swift in Sources */,
+				4860886A2937E57B008B76ED /* WelcomeViewController.swift in Sources */,
 				4886AC46293FDAB700640A4B /* FieldComponent.swift in Sources */,
 				48A4801A293E0FDD006540DC /* Mailer.swift in Sources */,
 				3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */,
@@ -284,6 +299,7 @@
 				485B19992941FEEC00042F89 /* UIView+Pin.swift in Sources */,
 				4894B3A2293E5B5B008CE633 /* User.swift in Sources */,
 				3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */,
+				4814C0CD29420B8F00939BA5 /* DateBubbleComponent.swift in Sources */,
 				485B199B2941FF6B00042F89 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

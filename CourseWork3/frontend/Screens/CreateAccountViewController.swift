@@ -29,7 +29,7 @@ class CreateAccountViewController : UIViewController {
     
     // MARK: - Setups
     private func setupView() {
-        view.backgroundColor = UIColor(named: "white")
+        view.backgroundColor = .white
         emailField.isUserInteractionEnabled = false
         hideKeyboardWhenTappedAround()
         setupPhotoArea()
