@@ -8,7 +8,7 @@
 import UIKit
 
 class MainTasksPageController: UIViewController {
-    private let taskView = TaskComponent(selfT: false)
+    private let taskView = TaskComponent(isSelfTask: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()

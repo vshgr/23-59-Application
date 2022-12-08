@@ -21,8 +21,8 @@ class TaskComponent: UIView {
     private let friend = FriendAccountSVConponent()
     
     // MARK: - Init
-    init(frame: CGRect = .zero, selfT: Bool = true) {
-        selfTask = selfT
+    init(frame: CGRect = .zero, isSelfTask: Bool = true) {
+        selfTask = isSelfTask
         super.init(frame: frame)
         configureUI()
     }

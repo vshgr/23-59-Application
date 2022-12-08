@@ -37,4 +37,5 @@ extension UIViewController {
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
 }
