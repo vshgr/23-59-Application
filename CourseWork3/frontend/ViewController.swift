@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     // MARK: - Setups
     private func setupView() {
-        view.backgroundColor = UIColor(named: "mainColor")
+        view.backgroundColor = UIColor.dl.mainCol()
         pinLogo()
         configureButton()
     }

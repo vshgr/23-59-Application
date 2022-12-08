@@ -26,9 +26,9 @@ class CustomButton: UIButton {
     // MARK: - Configure
     private func configure(title: String, height: CGFloat) {
         setTitle(title, for: .normal)
-        setTitleColor(UIColor(named: "white"), for: .normal)
+        setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.dl.mainFont(18)
-        backgroundColor = UIColor(named: "black")
+        backgroundColor = .black
         
         setHeight(height * 0.08)
         layer.cornerRadius = height * 0.08 / 2

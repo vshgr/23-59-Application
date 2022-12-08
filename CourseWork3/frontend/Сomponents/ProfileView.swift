@@ -16,7 +16,9 @@ final class ProfileView: UIView {
         static let imagePadding: Double = 10
         static let buttonTitle: String = "add photo"
         static let buttonFont: UIFont? = UIFont.dl.ralewayMedium(14)
-        static let backImageViewColor: UIColor? = UIColor(named: "mainColor")
+        static let backImageViewColor: UIColor? = UIColor.dl.mainCol()
+        static let addButtonColor: UIColor? = UIColor.dl.violetCol()
+        static let buttonImage: UIImage? = UIImage(named: "photo")
         static let error: String = "init(coder:) has not been implemented"
     }
     
@@ -65,8 +67,8 @@ final class ProfileView: UIView {
     private func getConfig() -> UIButton.Configuration {
         var config = UIButton.Configuration.plain()
         config.title = Constants.buttonTitle
-        config.baseForegroundColor = UIColor(named: "violet")
-        config.image = UIImage(named: "photo")
+        config.baseForegroundColor = Constants.addButtonColor
+        config.image = Constants.buttonImage
         config.imagePlacement = .trailing
         config.imagePadding = Constants.imagePadding
         

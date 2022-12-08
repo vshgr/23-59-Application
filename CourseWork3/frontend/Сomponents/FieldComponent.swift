@@ -46,11 +46,11 @@ class InputFieldView: UIView, UITextFieldDelegate {
     
     private func configureUnderline() {
         underline.setHeight(1)
-        underline.backgroundColor = UIColor(named: "black")
+        underline.backgroundColor = .black
     }
     
     private func configureErrorMessage() {
-        errorMessage.textColor = UIColor(named: "attentionColor")
+        errorMessage.textColor = UIColor.dl.attentionCol()
         errorMessage.font = UIFont.dl.ralewayMedium(15)
     }
     
@@ -91,16 +91,16 @@ class InputFieldView: UIView, UITextFieldDelegate {
         
     public func setErrorState() {
         errorMessage.isHidden = false
-        input.textColor = UIColor(named: "attentionColor")
-        label.textColor = UIColor(named: "attentionColor")
-        underline.backgroundColor = UIColor(named: "attentionColor")
+        input.textColor = UIColor.dl.attentionCol()
+        label.textColor = UIColor.dl.attentionCol()
+        underline.backgroundColor = UIColor.dl.attentionCol()
     }
 
     public func setDefaultState() {
         errorMessage.isHidden = true
-        input.textColor = UIColor(named: "black")
-        label.textColor = UIColor(named: "black")
-        underline.backgroundColor = UIColor(named: "black")
+        input.textColor = .black
+        label.textColor = .black
+        underline.backgroundColor = .black
     }
     
 }
