@@ -13,6 +13,7 @@ class MainTasksPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        dismissNavBar()
     }
     
     private func setupView() {

@@ -35,6 +35,7 @@
 		48A48034293E49DC006540DC /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48032293E49DC006540DC /* Raleway-Bold.ttf */; };
 		48A48035293E49DC006540DC /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48033293E49DC006540DC /* Raleway-Medium.ttf */; };
 		48A48039293E4BD7006540DC /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48036293E4B78006540DC /* Raleway-Regular.ttf */; };
+		48A6C1B7294221070001B962 /* UIViewController+Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6C1B6294221070001B962 /* UIViewController+Navbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		48A48032293E49DC006540DC /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "CourseWork3/fonts/Raleway-Bold.ttf"; sourceTree = SOURCE_ROOT; };
 		48A48033293E49DC006540DC /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.ttf"; path = "CourseWork3/fonts/Raleway-Medium.ttf"; sourceTree = SOURCE_ROOT; };
 		48A48036293E4B78006540DC /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "CourseWork3/fonts/Raleway-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		48A6C1B6294221070001B962 /* UIViewController+Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navbar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				485B199A2941FF6B00042F89 /* UIColor+.swift */,
 				485B198E29411F4F00042F89 /* UIFont+.swift */,
 				485B19982941FEEC00042F89 /* UIView+Pin.swift */,
+				48A6C1B6294221070001B962 /* UIViewController+Navbar.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				485B19992941FEEC00042F89 /* UIView+Pin.swift in Sources */,
 				4894B3A2293E5B5B008CE633 /* User.swift in Sources */,
 				3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */,
+				48A6C1B7294221070001B962 /* UIViewController+Navbar.swift in Sources */,
 				4814C0CD29420B8F00939BA5 /* DateBubbleComponent.swift in Sources */,
 				485B199B2941FF6B00042F89 /* UIColor+.swift in Sources */,
 			);
