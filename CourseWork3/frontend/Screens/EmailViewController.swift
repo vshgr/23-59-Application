@@ -49,7 +49,7 @@ class EmailViewController: UIViewController {
                 self.navigationController?.pushViewController(codeInputController, animated: true)
             } else {
                 self.emailField.setErrorState()
-                Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
                     self.emailField.setDefaultState()
                 }
             }

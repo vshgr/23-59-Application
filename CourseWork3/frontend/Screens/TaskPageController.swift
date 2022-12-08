@@ -38,7 +38,7 @@ class TaskPageController: UIViewController {
     // MARK: - Configuration
     private func configureUI() {
         view.backgroundColor = .white
-        
+                
         for view in [buttonsSV, friend, dateTime, scrollGroups, taskName, taskDesc] {
             self.view.addSubview(view)
         }
@@ -64,10 +64,11 @@ class TaskPageController: UIViewController {
         scrollGroups.setHeight(Constants.scrollHeight)
         dateTime.pinCenterY(to: friend.centerYAnchor)
         dateTime.pinRight(to: view, Grid.stripe)
-        friend.pinLeft(to: view, Grid.stripe)
-        friend.pinTop(to: buttonsSV.bottomAnchor, Constants.spacing)
         buttonsSV.pinRight(to: view, Grid.stripe)
         buttonsSV.pinTop(to: view, Constants.spacing)
+        friend.pinLeft(to: view, Grid.stripe)
+        friend.pinRight(to: buttonsSV)
+        friend.pinTop(to: buttonsSV.bottomAnchor, Constants.spacing)
     }
     
     private func configureNotifyBtn() {
