@@ -25,6 +25,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private var codeInputCells: UIStackView = UIStackView()
     private var config = UIButton.Configuration.plain()
     private let btn = CustomButton(title: "Continue", height: 70)
+    private var warningLabel: UILabel = UILabel()
     
     private var count: Int = 59
     private var timerString: String = String()
@@ -37,6 +38,8 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         configureButton()
         setupSendCodeButton()
         setupTimer()
+        setupLabelWarning()
+        warningLabel.layer.opacity = 0
     }
     
     private func setupTimer() {
@@ -162,7 +165,6 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func getConfig() -> UIButton.Configuration {
-        // Use timer here
         config.title = makeTimerLabelString(seconds: count)
         config.contentInsets = .zero
         if (count == 0) {
@@ -188,15 +190,39 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         btn.addTarget(self, action: #selector(continueButtonPressed), for: .touchUpInside)
     }
     
-    // I fucking hate my life
+    private func setDefaultStateCell() {
+        codeInputCells.arrangedSubviews.forEach({$0.layer.borderColor = UIColor(named: "hintColor")?.cgColor})
+    }
+    
+    private func setupLabelWarning() {
+        self.view.addSubview(warningLabel)
+        warningLabel.setHeight(20)
+        warningLabel.pinLeft(to: view, Grid.stripe)
+        warningLabel.pinTop(to: sendCodeButton.bottomAnchor, Constants.contentSpacing)
+        warningLabel.text = "please fill all the cells"
+        warningLabel.textColor = UIColor.dl.attentionCol()
+        warningLabel.font = Constants.buttonFont
+    }
+    
     @objc
     private func continueButtonPressed() {
-//        let codeChecker = Code()
-//        var filled = codeInputCells.arrangedSubviews.forEach( {codeChecker.checkCodeDigitsFilled(cell: $0 as! UITextField) })
-//        if (filled == false) {
-//            codeInputCells.arrangedSubviews.forEach({ $0.layer.borderColor = UIColor.red.cgColor })
-//        }
-        let createAccountViewController = CreateAccountViewController()
-        navigationController?.pushViewController(createAccountViewController, animated: true)
+        setDefaultStateCell()
+        warningLabel.layer.opacity = 0
+        
+        let codeChecker = Code()
+        var filled: Bool = true
+        var _: () = codeInputCells.arrangedSubviews.forEach( {
+            if (!codeChecker.checkCodeDigitsFilled(cell: $0 as! UITextField)) {
+                $0.layer.borderColor = UIColor.red.cgColor
+                filled = false
+            }
+        })
+        
+        if (filled) {
+            let createAccountViewController = CreateAccountViewController()
+            navigationController?.pushViewController(createAccountViewController, animated: true)
+        } else {
+            warningLabel.layer.opacity = 100
+        }
     }
 }
