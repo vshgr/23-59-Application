@@ -16,7 +16,6 @@ class CreateAccountViewController : UIViewController {
     // MARK: - Fields
     let profileView = ProfileView()
     let stack = UIStackView()
-    
     var nameField = InputFieldView(title: "Name", hint: "enter name", message: "required")
     let usernameField = InputFieldView(title: "Username", hint: "enter username", message: "required")
     let emailField = InputFieldView(title: "Email", hint: "example@email.com", message: "")
@@ -26,7 +25,8 @@ class CreateAccountViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setNavBarColorAndTitle(title: "Create account")
+        title = "Create account"
+        navigationItem.setHidesBackButton(true, animated: true)
     }
     
     // MARK: - Setups
@@ -69,7 +69,7 @@ class CreateAccountViewController : UIViewController {
     
     private func setupCreateButton() {
         view.addSubview(btn)
-
+        
         btn.pinHorizontal(to: view, Grid.stripe * 2)
         btn.pinBottom(to: view, Grid.stripe * 2)
         

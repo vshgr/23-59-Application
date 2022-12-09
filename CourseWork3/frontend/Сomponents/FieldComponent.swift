@@ -78,7 +78,9 @@ class InputFieldView: UIView, UITextFieldDelegate {
     }
     
     private func setPlaceholder(hint: String){
-        input.placeholder = hint
+        input.attributedPlaceholder = NSAttributedString(
+            string: hint,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.dl.hintCol() ?? .systemGray])
     }
     
     private func setErrorMessage(message: String){
@@ -88,13 +90,13 @@ class InputFieldView: UIView, UITextFieldDelegate {
     public func pinToParent(parent: UIView){
         underline.setWidth(parent.frame.width - 2 * Grid.stripe)
     }
-        
+    
     public func setErrorState() {
         errorMessage.isHidden = false
         label.textColor = UIColor.dl.attentionCol()
         underline.backgroundColor = UIColor.dl.attentionCol()
     }
-
+    
     public func setDefaultState() {
         errorMessage.isHidden = true
         label.textColor = .black

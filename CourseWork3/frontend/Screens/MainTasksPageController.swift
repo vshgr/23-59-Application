@@ -31,7 +31,7 @@ class MainTasksPageController: UIViewController {
     private func taskTapped() {
         taskView.showAnimation {
             let taskPageController = TaskPageController()
-            self.present(taskPageController, animated: true)
+            self.navigationController?.pushViewController(taskPageController, animated: true)
         }
     }
 }

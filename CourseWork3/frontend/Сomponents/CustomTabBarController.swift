@@ -16,6 +16,7 @@ class CustomTabBarController: UITabBarController {
         super.viewDidLoad()
         configureTapBar()
         configureAppearance()
+        navigationItem.setHidesBackButton(true, animated: true)
     }
     
     private func configureTapBar() {
