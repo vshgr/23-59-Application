@@ -149,16 +149,12 @@ class TaskComponent: UIView {
     private func setDone(sender: UIButton){
         isDone.toggle()
         UIView.animate(withDuration: 0.5, delay: 0, animations: {
-            self.doneBtn.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        }) {_ in
-            UIView.animate(withDuration: 0.5, delay: 0, animations: {
-                if (self.isDone == false) {
-                    self.doneBtn.alpha = 1
-                } else {
-                    self.doneBtn.alpha = 0.3
-                }
-                self.doneBtn.transform = .identity
-            })
-        }
+            if (self.isDone == false) {
+                self.doneBtn.alpha = 1
+            } else {
+                self.doneBtn.alpha = 0.3
+            }
+            self.doneBtn.transform = .identity
+        })
     }
 }

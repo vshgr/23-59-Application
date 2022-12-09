@@ -26,8 +26,7 @@ class CreateAccountViewController : UIViewController, EmailDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        title = "Create account"
-        navigationItem.setHidesBackButton(true, animated: true)
+        setupNavBar(title: "Create account", hideBack: true)
     }
     
     // MARK: - Setups

@@ -33,8 +33,7 @@ class TaskPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        title = "Task"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: buttonsSV)
+        setupNavBar(title: "Task", rightComponents: buttonsSV, color: UIColor.dl.mainCol() ?? .white)
     }
     
     // MARK: - Configuration
@@ -85,23 +84,15 @@ class TaskPageController: UIViewController {
     }
     
     private func configureTaskDesc() {
-//        taskDesc.text = Constants.descText
         taskDesc.numberOfLines = 0
         taskDesc.font = UIFont.dl.ralewayMedium(16)
         taskDesc.textColor = .black
         
         let attributedString = NSMutableAttributedString(string: Constants.descText)
-
-        // *** Create instance of `NSMutableParagraphStyle`
         let paragraphStyle = NSMutableParagraphStyle()
-
-        // *** set LineSpacing property in points ***
-        paragraphStyle.lineSpacing = 6 // Whatever line spacing you want in points
-
-        // *** Apply attribute to string ***
+        paragraphStyle.lineSpacing = 6
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
 
-        // *** Set Attributed String to your label ***
         taskDesc.attributedText = attributedString
         
     }

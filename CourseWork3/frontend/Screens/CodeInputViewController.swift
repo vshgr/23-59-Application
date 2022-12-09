@@ -32,6 +32,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBar()
         setupView()
         setupTextLabels()
         setupInput()
