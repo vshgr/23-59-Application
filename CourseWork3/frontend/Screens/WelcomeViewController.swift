@@ -18,6 +18,10 @@ class WelcomeViewController: UIViewController {
         setupView()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - Setups
     private func setupView() {
         view.backgroundColor = UIColor.dl.mainCol()
@@ -43,14 +47,14 @@ class WelcomeViewController: UIViewController {
     // MARK: - Actions
     @objc
     private func signInButtonPressed() {
-        btn.showAnimation {
-            let emailViewController = EmailViewController()
-            self.navigationController?.pushViewController(emailViewController, animated: true)
-        }
 //        btn.showAnimation {
-//            let tasks = MainTasksPageController()
-//            self.navigationController?.pushViewController(tasks, animated: true)
+//            let emailViewController = EmailViewController()
+//            self.navigationController?.pushViewController(emailViewController, animated: true)
 //        }
+        btn.showAnimation {
+            let tasks = MainTasksPageController()
+            self.navigationController?.pushViewController(tasks, animated: true)
+        }
 //        btn.showAnimation {
 //            let tasks = CreateAccountViewController()
 //            self.navigationController?.pushViewController(tasks, animated: true)

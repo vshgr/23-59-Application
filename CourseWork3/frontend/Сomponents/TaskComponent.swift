@@ -148,14 +148,16 @@ class TaskComponent: UIView {
     @objc
     private func setDone(sender: UIButton){
         isDone.toggle()
-        UIView.animate(withDuration: 1, delay: 0, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, animations: {
             self.doneBtn.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         }) {_ in
-            UIView.animate(withDuration: 1, delay: 0, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0, animations: {
                 if (self.isDone == false) {
                     self.doneBtn.alpha = 1
                 } else {
                     self.doneBtn.alpha = 0.3
+                    self.doneBtn.setBorder(width: 2, color: UIColor.dl.violetCol() ?? .purple)
+                    self.doneBtn.layer.cornerRadius = 13
                 }
                 self.doneBtn.transform = .identity
             })
