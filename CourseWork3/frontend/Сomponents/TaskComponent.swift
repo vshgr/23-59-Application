@@ -8,6 +8,15 @@
 import UIKit
 
 class TaskComponent: UIView {
+    // MARK: - Constants
+    enum Constants {
+        static let done: UIImage? = UIImage(named: "done")
+        static let add: UIImage? = UIImage(named: "addToGroup")
+        static let mainSpacing: Double = 15
+        static let cornerRadius: Double = 10
+        static let taskColor: UIColor = UIColor(rgb: 0xF8F8F8)
+    }
+    
     // MARK: - Fields
     private let selfTask: Bool
     private let taskView = UIView()
@@ -17,12 +26,16 @@ class TaskComponent: UIView {
     private let taskName = UILabel()
     private let groups = UILabel()
     private let bottomLineSV = UIStackView()
-    private let dateView = DateBubbleComponent()
+    private let dateView = BubbleComponent(text: "3 Dec, 2022")
     private let friend = FriendAccountSVConponent()
+    private let doneBtn = UIButton()
+    private let addBtn = UIButton()
+    private let width: Double
     
     // MARK: - Init
-    init(frame: CGRect = .zero, selfT: Bool = true) {
-        selfTask = selfT
+    init(frame: CGRect = .zero, isSelfTask: Bool = true) {
+        selfTask = isSelfTask
+        width = (Constants.add?.size.width ?? 26) / 2
         super.init(frame: frame)
         configureUI()
     }
@@ -35,21 +48,31 @@ class TaskComponent: UIView {
     // MARK: - Configuration
     private func configureUI() {
         addSubview(taskView)
-        
-        taskView.layer.cornerRadius = 10
-        taskView.backgroundColor = UIColor(rgb: 0xF8F8F8)
+        addSubview(buttonsSV)
+        taskView.addSubview(contentSV)
         
         configurePermissionLabel()
         configureTaskNameLabel()
         configureGroupsLabel()
         configureBottomLineSV()
         configureContentSV()
+        configureButtonsSV()
+        configureButtons()
+        configureConstraints()
         
-        taskView.addSubview(contentSV)
-        contentSV.pinVertical(to: taskView, 15)
-        contentSV.pinHorizontal(to: taskView, 15)
+        taskView.layer.cornerRadius = Constants.cornerRadius
+        taskView.backgroundColor = Constants.taskColor
+    }
+    
+    private func configureConstraints() {
+        contentSV.pinVertical(to: taskView, Constants.mainSpacing)
+        contentSV.pinHorizontal(to: taskView, Constants.mainSpacing)
         
-        taskView.pin(to: self)
+        taskView.pinVertical(to: self)
+        taskView.pinLeft(to: self)
+        taskView.pinRight(to: self, width)
+        buttonsSV.pinRight(to: self)
+        buttonsSV.pinCenterY(to: taskView.centerYAnchor)
     }
     
     private func configurePermissionLabel() {
@@ -74,7 +97,7 @@ class TaskComponent: UIView {
     
     private func configureContentSV() {
         contentSV.axis = .vertical
-        contentSV.spacing = 15
+        contentSV.spacing = Constants.mainSpacing
         
         for view in [friend, permission, taskName, bottomLineSV] {
             contentSV.addArrangedSubview(view)
@@ -89,12 +112,51 @@ class TaskComponent: UIView {
     
     private func configureBottomLineSV() {
         bottomLineSV.axis = .horizontal
-        bottomLineSV.spacing = 15
+        bottomLineSV.spacing = Constants.mainSpacing
         
         for view in [dateView, groups] {
             bottomLineSV.addArrangedSubview(view)
         }
-        
     }
     
+    private func configureButtons(){
+        doneBtn.setImage(Constants.done, for: .normal)
+        addBtn.setImage(Constants.add, for: .normal)
+        
+        doneBtn.configuration = .plain()
+        doneBtn.configurationUpdateHandler = { button in
+            var config = button.configuration
+            config?.image = button.isHighlighted ? Constants.done : Constants.done
+            config?.contentInsets = .zero
+            button.configuration = config
+        }
+        
+        doneBtn.addTarget(self, action: #selector(setDone(sender:)), for: .touchUpInside)
+    }
+    
+    private func configureButtonsSV() {
+        for view in [doneBtn, addBtn] {
+            buttonsSV.addArrangedSubview(view)
+        }
+        
+        buttonsSV.axis = .vertical
+        buttonsSV.spacing = Constants.mainSpacing
+    }
+    
+    // MARK: - Actions
+    @objc
+    private func setDone(sender: UIButton){
+        UIView.animate(withDuration: 1, delay: 0, animations: {
+            self.doneBtn.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        }) {_ in
+            UIView.animate(withDuration: 1, delay: 0, animations: {
+                if(self.doneBtn.alpha == 0.3) {
+                    self.doneBtn.alpha = 1
+                } else {
+                    self.doneBtn.alpha = 0.3
+                }
+                self.doneBtn.transform = .identity
+            })
+        }
+    }
 }

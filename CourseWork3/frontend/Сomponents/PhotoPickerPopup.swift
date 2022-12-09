@@ -24,15 +24,16 @@ class PhotoPicker : UIView{
     }
     
     // MARK: - Fields
+    let selectedPic = UIImage(named: "rabbit")
     let popup = UIView()
     let title = UILabel()
     let saveButton = UIButton()
     let stackFirstLine = UIStackView()
     let stackSecondLine = UIStackView()
-    let bear = UIImageView(image: Constants.bearImg)
-    let rabbit = UIImageView(image: Constants.rabbitImg)
-    let cat = UIImageView(image: Constants.catImg)
-    let dog = UIImageView(image: Constants.dogImg)
+    let bearButton = UIButton()
+    let catButton = UIButton()
+    let dogButton = UIButton()
+    let rabbitButton = UIButton()
     
     // MARK: - Init
     @available (*, unavailable)
@@ -54,6 +55,23 @@ class PhotoPicker : UIView{
         setupTitle()
         setupButton()
         setupConstraints()
+        configureButtons()
+    }
+    
+    private func configureButtons() {
+        let cr = (Constants.bearImg?.size.height ?? 94) / 2
+        bearButton.setImage(Constants.bearImg, for: .normal)
+        catButton.setImage(Constants.catImg, for: .normal)
+        dogButton.setImage(Constants.dogImg, for: .normal)
+        rabbitButton.setImage(Constants.rabbitImg, for: .normal)
+        
+        for btn in [bearButton, catButton, dogButton, rabbitButton] {
+            btn.layer.cornerRadius = cr
+        }
+        
+        for btn in [bearButton, catButton, dogButton, rabbitButton] {
+            btn.addTarget(self, action: #selector(selectPic), for: .touchUpInside)
+        }
     }
     
     private func setupSubviews() {
@@ -66,10 +84,10 @@ class PhotoPicker : UIView{
         
         addSubview(popup)
         
-        stackFirstLine.addArrangedSubview(bear)
-        stackFirstLine.addArrangedSubview(rabbit)
-        stackSecondLine.addArrangedSubview(cat)
-        stackSecondLine.addArrangedSubview(dog)
+        stackFirstLine.addArrangedSubview(bearButton)
+        stackFirstLine.addArrangedSubview(rabbitButton)
+        stackSecondLine.addArrangedSubview(catButton)
+        stackSecondLine.addArrangedSubview(dogButton)
     }
     
     private func setupStacks() {
@@ -108,6 +126,18 @@ class PhotoPicker : UIView{
         saveButton.pinBottom(to: popup.bottomAnchor, Constants.upDownSpacing)
     }
     
+    private func resetAllBoarders() {
+        for btn in [bearButton, catButton, dogButton, rabbitButton] {
+            btn.setBorder(width: 0, color: .white)
+        }
+    }
+    
+    @objc
+    private func selectPic(_ sender: UIButton) {
+        resetAllBoarders()
+        sender.setBorder(width: 3, color: UIColor.dl.violetCol() ?? .systemRed)
+    }
+    
 }
 
 class PhotoPickerController: UIViewController {
@@ -129,7 +159,8 @@ class PhotoPickerController: UIViewController {
     }
     
     // MARK: - Actions
-    @objc func dismissView(){
+    @objc
+    private func dismissView() {
         self.dismiss(animated: true, completion: nil)
     }
     

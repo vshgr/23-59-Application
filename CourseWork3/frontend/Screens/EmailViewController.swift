@@ -3,11 +3,13 @@ import UIKit
 class EmailViewController: UIViewController {
     // MARK: - Fields
     private let emailField: InputFieldView = InputFieldView(title: "Email", hint: "enter email", message: "invalid email")
+    let btn = CustomButton(title: "Send code", height: 70)
 
     // MARK: - Load
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setNavBarColorAndTitle()
         addBackNavbarButtonToNextController()
     }
 
@@ -29,7 +31,6 @@ class EmailViewController: UIViewController {
     }
 
     private func setupSendCodeButton() {
-        let btn = CustomButton(title: "Send code", height: view.frame.size.height)
         self.view.addSubview(btn)
 
         btn.pinHorizontal(to: view, Grid.stripe * 2)
@@ -41,14 +42,16 @@ class EmailViewController: UIViewController {
     // MARK: - Actions
     @objc
     private func sendCodeButtonPressed() {
-        let mailer = Mailer()
-        if (mailer.checkIfEmailFilled(email: emailField.getText())) {
-            let codeInputController = CodeInputViewController()
-            navigationController?.pushViewController(codeInputController, animated: true)
-        } else {
-            emailField.setErrorState()
-            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
-                self.emailField.setDefaultState()
+        btn.showAnimation {
+            let mailer = Mailer()
+            if (mailer.checkIfEmailFilled(email: self.emailField.getText())) {
+                let codeInputController = CodeInputViewController()
+                self.navigationController?.pushViewController(codeInputController, animated: true)
+            } else {
+                self.emailField.setErrorState()
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
+                    self.emailField.setDefaultState()
+                }
             }
         }
     }

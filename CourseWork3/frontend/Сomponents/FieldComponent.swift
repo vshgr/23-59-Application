@@ -91,14 +91,12 @@ class InputFieldView: UIView, UITextFieldDelegate {
         
     public func setErrorState() {
         errorMessage.isHidden = false
-        input.textColor = UIColor.dl.attentionCol()
         label.textColor = UIColor.dl.attentionCol()
         underline.backgroundColor = UIColor.dl.attentionCol()
     }
 
     public func setDefaultState() {
         errorMessage.isHidden = true
-        input.textColor = .black
         label.textColor = .black
         underline.backgroundColor = .black
     }

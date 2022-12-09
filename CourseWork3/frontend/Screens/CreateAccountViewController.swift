@@ -16,10 +16,11 @@ class CreateAccountViewController : UIViewController {
     // MARK: - Fields
     let profileView = ProfileView()
     let stack = UIStackView()
-        
-    let nameField = InputFieldView(title: "Name", hint: "enter name", message: "")
-    let usernameField = InputFieldView(title: "Username", hint: "enter username", message: "")
+    
+    var nameField = InputFieldView(title: "Name", hint: "enter name", message: "required")
+    let usernameField = InputFieldView(title: "Username", hint: "enter username", message: "required")
     let emailField = InputFieldView(title: "Email", hint: "example@email.com", message: "")
+    let btn = CustomButton(title: "Create account", height: 70)
     
     // MARK: - Load
     override func viewDidLoad() {
@@ -67,7 +68,6 @@ class CreateAccountViewController : UIViewController {
     }
     
     private func setupCreateButton() {
-        let btn = CustomButton(title: "Create account", height: view.frame.size.height)
         view.addSubview(btn)
 
         btn.pinHorizontal(to: view, Grid.stripe * 2)
@@ -85,26 +85,28 @@ class CreateAccountViewController : UIViewController {
     
     @objc
     private func createButtonPressed() {
-        var flag = true
-        
-        if (nameField.getText().trimmingCharacters(in: .whitespaces) == ""){
-            flag = false
-            nameField.setErrorState()
-        }
-        
-        if (usernameField.getText().trimmingCharacters(in: .whitespaces) == ""){
-            flag = false
-            usernameField.setErrorState()
-        }
-        
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
-            self.nameField.setDefaultState()
-            self.usernameField.setDefaultState()
-        }
-        
-        if(flag){
-            let mainTasksController = MainTasksPageController()
-            navigationController?.pushViewController(mainTasksController, animated: true)
+        btn.showAnimation {
+            var flag = true
+            
+            if (self.nameField.getText().trimmingCharacters(in: .whitespaces) == ""){
+                flag = false
+                self.nameField.setErrorState()
+            }
+            
+            if (self.usernameField.getText().trimmingCharacters(in: .whitespaces) == ""){
+                flag = false
+                self.usernameField.setErrorState()
+            }
+            
+            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+                self.nameField.setDefaultState()
+                self.usernameField.setDefaultState()
+            }
+            
+            if(flag){
+                let pages = CustomTabBarController()
+                self.navigationController?.pushViewController(pages, animated: true)
+            }
         }
     }
     

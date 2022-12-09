@@ -7,11 +7,14 @@
 
 import UIKit
 
-class DateBubbleComponent: UIView {
+class BubbleComponent: UIButton {
     private let dateLabel = UILabel()
+    private let bubbleText: String
+    private var config = UIButton.Configuration.plain()
     
     // MARK: - Init
-    override init(frame: CGRect) {
+    init(frame: CGRect = .zero, text: String) {
+        bubbleText = text
         super.init(frame: frame)
         configureUI()
     }
@@ -32,14 +35,17 @@ class DateBubbleComponent: UIView {
         addSubview(dateLabel)
         configureLabel()
         setBorder(width: 1, color: .black)
-        dateLabel.pinVertical(to: self, 6)
-        dateLabel.pinHorizontal(to: self, 17)
     }
     
     private func configureLabel() {
-        dateLabel.text = "4 Dec, 2022"
-        dateLabel.font = UIFont.dl.ralewayMedium(12)
-        dateLabel.textColor = .black
+        setTitle(bubbleText, for: .normal)
+        setTitleColor(.black, for: .normal)
+        // ИСПОЛЬЗОВАТЬ КОНФИГ
+        contentEdgeInsets = UIEdgeInsets(top: 10, left: 17, bottom: 10, right: 17)
+        titleLabel?.font = dateLabel.font.withSize(12)
+        titleLabel?.textAlignment = .center
+        titleLabel?.numberOfLines = 1
+
     }
     
 }

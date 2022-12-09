@@ -4,11 +4,11 @@
 //
 //  Created by Барбашина Яна on 05.12.2022.
 //
- 
+
 import UIKit
- 
+
 // TODO: Add smart switching to the next cell when tapping return
- 
+
 class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private enum Constants {
         static let logo: UIImage? = UIImage(named: "logo")
@@ -23,6 +23,8 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private let button = UIButton(type: .system)
     private let sendCodeButton = UIButton(type: .system)
     private var codeInputCells: UIStackView = UIStackView()
+    private var config = UIButton.Configuration.plain()
+    private let btn = CustomButton(title: "Continue", height: 70)
     
     private var count: Int = 59
     private var timerString: String = String()
@@ -35,8 +37,6 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         configureButton()
         setupSendCodeButton()
         setupTimer()
-//        firstTextField.delegate = self
-//        firstTextField.tag = 0
     }
     
     private func setupTimer() {
@@ -118,15 +118,15 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     
     // Not used yet
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-          // Try to find next responder
-          if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
-             nextField.becomeFirstResponder()
-          } else {
-             // Not found, so remove keyboard.
-             textField.resignFirstResponder()
-          }
-          // Do not add a line break
-          return false
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
     }
     
     private func setupInput() {
@@ -162,7 +162,6 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func getConfig() -> UIButton.Configuration {
-        var config = UIButton.Configuration.plain()
         // Use timer here
         config.title = makeTimerLabelString(seconds: count)
         config.contentInsets = .zero
@@ -179,10 +178,10 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         return config
     }
     
+    
     private func configureButton() {
-        let btn = CustomButton(title: "Continue", height: view.frame.size.height)
         self.view.addSubview(btn)
-
+        
         btn.pinHorizontal(to: view, Grid.stripe * 2)
         btn.pinBottom(to: view, Grid.stripe * 2)
         
