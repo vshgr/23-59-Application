@@ -206,7 +206,6 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         warningLabel.font = Constants.buttonFont
         warningLabel.setHeight(20)
         warningLabel.pinLeft(to: view, Grid.stripe)
-//        warningLabel.pinTop(to: codeInputCells.bottomAnchor, Constants.contentSpacing * 3)
         warningLabel.pinTop(to: button.bottomAnchor, Constants.contentSpacing)
     }
     
