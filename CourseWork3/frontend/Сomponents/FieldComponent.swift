@@ -17,7 +17,7 @@ class InputFieldView: UIView, UITextFieldDelegate {
         configure()
     }
     
-    init(frame: CGRect = .zero, title: String, hint: String, message: String){
+    init(frame: CGRect = .zero, title: String = "", hint: String = "", message: String = ""){
         super.init(frame: frame)
         setTitle(title: title)
         setPlaceholder(hint: hint)

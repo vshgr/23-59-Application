@@ -58,7 +58,7 @@ class TaskPageController: UIViewController {
     
     private func configureConstraints() {
         taskDesc.pinHorizontal(to: view, Grid.stripe)
-        taskDesc.pinTop(to: taskName.bottomAnchor, Constants.spacing)
+        taskDesc.pinTop(to: taskName.bottomAnchor, Constants.spacing * 2)
         taskName.pinTop(to: scrollGroups.bottomAnchor, Constants.spacing)
         taskName.pinHorizontal(to: view, Grid.stripe)
         scrollGroups.pinHorizontal(to: view, Grid.stripe)
@@ -85,17 +85,32 @@ class TaskPageController: UIViewController {
     }
     
     private func configureTaskDesc() {
-        taskDesc.text = Constants.descText
+//        taskDesc.text = Constants.descText
         taskDesc.numberOfLines = 0
-        taskDesc.font = UIFont.dl.ralewayMedium(14)
+        taskDesc.font = UIFont.dl.ralewayMedium(16)
         taskDesc.textColor = .black
+        
+        let attributedString = NSMutableAttributedString(string: Constants.descText)
+
+        // *** Create instance of `NSMutableParagraphStyle`
+        let paragraphStyle = NSMutableParagraphStyle()
+
+        // *** set LineSpacing property in points ***
+        paragraphStyle.lineSpacing = 6 // Whatever line spacing you want in points
+
+        // *** Apply attribute to string ***
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+
+        // *** Set Attributed String to your label ***
+        taskDesc.attributedText = attributedString
+        
     }
     
     private func configureTaskName() {
         taskName.text = Constants.taskTitle
         taskName.textColor = .black
         taskName.numberOfLines = 0
-        taskName.font = UIFont.dl.ralewayBold(20)
+        taskName.font = UIFont.dl.ralewayBold(23)
     }
     
     private func configureDateTime() {
