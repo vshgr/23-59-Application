@@ -21,7 +21,6 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private let checkEmailLabel = UILabel()
     private let codeLabel = UILabel()
     private let button = UIButton(type: .system)
-    private let sendCodeButton = UIButton(type: .system)
     private var codeInputCells: UIStackView = UIStackView()
     private var config = UIButton.Configuration.plain()
     private let btn = CustomButton(title: "Continue", height: 70)
