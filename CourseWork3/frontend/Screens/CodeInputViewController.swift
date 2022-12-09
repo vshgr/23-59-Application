@@ -44,15 +44,15 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     
     private func setupTimer() {
         count = 59
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
-            [weak self] timer in
-            if (self?.count == 0) {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
+            guard let self = self else { return }
+            if (self.count == 0) {
                 timer.invalidate()
-                self?.button.isEnabled = true
-                self?.button.configuration = self?.getConfig()
+                self.button.isEnabled = true
+                self.button.configuration = self.getConfig()
             } else {
-                self?.count -= 1
-                self?.button.configuration = self?.getConfig()
+                self.count -= 1
+                self.button.configuration = self.getConfig()
             }
         }
     }
@@ -69,6 +69,9 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupView() {
+        for element in [checkEmailLabel, codeLabel, button, sendCodeButton, codeInputCells, btn, warningLabel] {
+            view.addSubview(element)
+        }
         self.view.backgroundColor = .white
         self.hideKeyboardWhenTappedAround()
     }
@@ -153,6 +156,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         
         button.pinTop(to: codeInputCells.bottomAnchor, Constants.contentSpacing)
         button.pinLeft(to: view, Grid.stripe)
+        button.setHeight(20)
         
         button.configuration = getConfig()
         button.titleLabel?.font = Constants.buttonFont
@@ -180,7 +184,6 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         return config
     }
     
-    
     private func configureButton() {
         self.view.addSubview(btn)
         
@@ -191,17 +194,19 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setDefaultStateCell() {
-        codeInputCells.arrangedSubviews.forEach({$0.layer.borderColor = UIColor(named: "hintColor")?.cgColor})
+        codeInputCells.arrangedSubviews.forEach {
+            $0.layer.borderColor = UIColor(named: "hintColor")?.cgColor
+        }
     }
     
     private func setupLabelWarning() {
-        self.view.addSubview(warningLabel)
-        warningLabel.setHeight(20)
-        warningLabel.pinLeft(to: view, Grid.stripe)
-        warningLabel.pinTop(to: sendCodeButton.bottomAnchor, Constants.contentSpacing)
+        view.addSubview(warningLabel)
         warningLabel.text = "please fill all the cells"
         warningLabel.textColor = UIColor.dl.attentionCol()
         warningLabel.font = Constants.buttonFont
+        warningLabel.setHeight(20)
+        warningLabel.pinLeft(to: view, Grid.stripe)
+        warningLabel.pinTop(to: button.bottomAnchor, Constants.contentSpacing)
     }
     
     @objc
@@ -222,7 +227,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
             let createAccountViewController = CreateAccountViewController()
             navigationController?.pushViewController(createAccountViewController, animated: true)
         } else {
-            warningLabel.layer.opacity = 100
+            warningLabel.layer.opacity = 1
         }
     }
 }
