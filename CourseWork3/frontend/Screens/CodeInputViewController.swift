@@ -68,7 +68,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupView() {
-        for element in [checkEmailLabel, codeLabel, button, sendCodeButton, codeInputCells, btn, warningLabel] {
+        for element in [checkEmailLabel, codeLabel, button, codeInputCells, btn, warningLabel] {
             view.addSubview(element)
         }
         self.view.backgroundColor = .white
