@@ -52,10 +52,6 @@ class CreateAccountViewController : UIViewController, EmailDelegate {
     }
     
     private func setupFields() {
-        nameField.pinToParent(parent: view)
-        usernameField.pinToParent(parent: view)
-        emailField.pinToParent(parent: view)
-        
         view.addSubview(stack)
         
         stack.axis = .vertical

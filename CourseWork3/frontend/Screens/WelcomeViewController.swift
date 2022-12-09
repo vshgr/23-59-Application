@@ -17,6 +17,10 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupNavBar()
+        UIFont.familyNames.forEach({ familyName in
+                    let fontNames = UIFont.fontNames(forFamilyName: familyName)
+                    print(familyName, fontNames)
+                })
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -48,18 +52,18 @@ class WelcomeViewController: UIViewController {
     // MARK: - Actions
     @objc
     private func signInButtonPressed() {
-//        btn.showAnimation {
-//            let emailViewController = EmailViewController()
-//            self.navigationController?.pushViewController(emailViewController, animated: true)
-//        }
+        btn.showAnimation {
+            let emailViewController = EmailViewController()
+            self.navigationController?.pushViewController(emailViewController, animated: true)
+        }
 //        btn.showAnimation {
 //            let tasks = MainTasksPageController()
 //            self.navigationController?.pushViewController(tasks, animated: true)
 //        }
-        btn.showAnimation {
-            let tasks = CreateAccountViewController()
-            self.navigationController?.pushViewController(tasks, animated: true)
-        }
+//        btn.showAnimation {
+//            let tasks = CreateAccountViewController()
+//            self.navigationController?.pushViewController(tasks, animated: true)
+//        }
 //        let emailViewController = CodeInputViewController()
 //        navigationController?.pushViewController(emailViewController, animated: true)
     }

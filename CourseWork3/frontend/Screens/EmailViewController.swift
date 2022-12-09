@@ -26,7 +26,6 @@ class EmailViewController: UIViewController {
     
     private func setupField(){
         view.addSubview(emailField)
-        emailField.pinToParent(parent: self.view)
         emailField.pinHorizontal(to: view, Grid.stripe)
         emailField.pinCenterY(to: view.centerYAnchor)
     }
