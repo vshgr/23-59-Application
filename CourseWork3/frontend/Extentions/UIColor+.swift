@@ -9,25 +9,20 @@ import UIKit
 
 extension UIColor {
     enum dl {
-        private static let main: String = "mainColor"
-        private static let attention: String = "attentionColor"
-        private static let hint: String = "hintColor"
-        private static let violet: String = "violet"
-        
         static func mainCol() -> UIColor? {
-            UIColor(named: main)
+            UIColor(rgb: 0xCEFF44)
         }
         
         static func attentionCol() -> UIColor? {
-            UIColor(named: attention)
+            UIColor(rgb: 0xE93535)
         }
         
         static func hintCol() -> UIColor? {
-            UIColor(named: hint)
+            UIColor(rgb: 0xB8B8B8)
         }
         
         static func violetCol() -> UIColor? {
-            UIColor(named: violet)
+            UIColor(rgb: 0x7000FF)
         }
     }
 }
