@@ -24,7 +24,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private let sendCodeButton = UIButton(type: .system)
     private var codeInputCells: UIStackView = UIStackView()
     
-    private var count: Int = 5
+    private var count: Int = 59
     private var timerString: String = String()
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupTimer() {
-        count = 5
+        count = 59
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {
             [weak self] timer in
             if (self?.count == 0) {
@@ -189,8 +189,14 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         btn.addTarget(self, action: #selector(continueButtonPressed), for: .touchUpInside)
     }
     
+    // I fucking hate my life
     @objc
     private func continueButtonPressed() {
+//        let codeChecker = Code()
+//        var filled = codeInputCells.arrangedSubviews.forEach( {codeChecker.checkCodeDigitsFilled(cell: $0 as! UITextField) })
+//        if (filled == false) {
+//            codeInputCells.arrangedSubviews.forEach({ $0.layer.borderColor = UIColor.red.cgColor })
+//        }
         let createAccountViewController = CreateAccountViewController()
         navigationController?.pushViewController(createAccountViewController, animated: true)
     }
