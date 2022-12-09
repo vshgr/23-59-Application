@@ -7,7 +7,7 @@
 
 import UIKit
 
-// TODO: Add smart switching to the next cell when tapping return
+// TODO: Add smart switching to the next cell
 
 class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private enum Constants {
@@ -25,6 +25,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private var config = UIButton.Configuration.plain()
     private let btn = CustomButton(title: "Continue", height: 70)
     private var warningLabel: UILabel = UILabel()
+    private let securityCodeTextField = UITextField()
     
     private var count: Int = 59
     private var timerString: String = String()
@@ -38,7 +39,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         setupSendCodeButton()
         setupTimer()
         setupLabelWarning()
-        warningLabel.layer.opacity = 0
+        warningLabel.isHidden = true
     }
     
     private func setupTimer() {
@@ -73,6 +74,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         }
         self.view.backgroundColor = .white
         self.hideKeyboardWhenTappedAround()
+        securityCodeTextField.textContentType = .oneTimeCode
     }
     
     private func setupTextLabels() {
@@ -123,6 +125,8 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     
     // Not used yet
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        
         // Try to find next responder
         if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             nextField.becomeFirstResponder()
@@ -211,22 +215,22 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     @objc
     private func continueButtonPressed() {
         setDefaultStateCell()
-        warningLabel.layer.opacity = 0
+        warningLabel.isHidden = true
         
         let codeChecker = Code()
         var filled: Bool = true
-        var _: () = codeInputCells.arrangedSubviews.forEach( {
+        var _: () = codeInputCells.arrangedSubviews.forEach {
             if (!codeChecker.checkCodeDigitsFilled(cell: $0 as! UITextField)) {
                 $0.layer.borderColor = UIColor.red.cgColor
                 filled = false
             }
-        })
+        }
         
         if (filled) {
             let createAccountViewController = CreateAccountViewController()
             navigationController?.pushViewController(createAccountViewController, animated: true)
         } else {
-            warningLabel.layer.opacity = 1
+            warningLabel.isHidden = false
         }
     }
 }

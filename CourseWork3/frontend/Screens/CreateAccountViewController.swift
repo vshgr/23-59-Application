@@ -7,7 +7,8 @@
 
 import UIKit
 
-class CreateAccountViewController : UIViewController {
+class CreateAccountViewController : UIViewController, EmailDelegate {
+    
     // MARK: - Constants
     private enum Constants {
         static let spacing: Double = 25
@@ -18,7 +19,7 @@ class CreateAccountViewController : UIViewController {
     let stack = UIStackView()
     var nameField = InputFieldView(title: "Name", hint: "enter name", message: "required")
     let usernameField = InputFieldView(title: "Username", hint: "enter username", message: "required")
-    let emailField = InputFieldView(title: "Email", hint: "example@email.com", message: "")
+    var emailField: InputFieldView = InputFieldView()
     let btn = CustomButton(title: "Create account", height: 70)
     
     // MARK: - Load
@@ -37,6 +38,10 @@ class CreateAccountViewController : UIViewController {
         setupPhotoArea()
         setupCreateButton()
         setupFields()
+    }
+    
+    func emailInserted(_ email: String) {
+        emailField = InputFieldView(title: "Email", hint: email, message: "")
     }
     
     private func setupPhotoArea() {
