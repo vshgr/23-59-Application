@@ -156,8 +156,6 @@ class TaskComponent: UIView {
                     self.doneBtn.alpha = 1
                 } else {
                     self.doneBtn.alpha = 0.3
-                    self.doneBtn.setBorder(width: 2, color: UIColor.dl.violetCol() ?? .purple)
-                    self.doneBtn.layer.cornerRadius = 13
                 }
                 self.doneBtn.transform = .identity
             })
