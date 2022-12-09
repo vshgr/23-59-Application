@@ -37,7 +37,6 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         configureButton()
         setupSendCodeButton()
         setupTimer()
-        addBackNavbarButtonToNextController()
     }
     
     private func setupTimer() {

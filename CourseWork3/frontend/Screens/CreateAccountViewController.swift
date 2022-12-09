@@ -104,8 +104,8 @@ class CreateAccountViewController : UIViewController {
             }
             
             if(flag){
-                let mainTasksController = MainTasksPageController()
-                self.navigationController?.pushViewController(mainTasksController, animated: true)
+                let pages = CustomTabBarController()
+                self.navigationController?.pushViewController(pages, animated: true)
             }
         }
     }
