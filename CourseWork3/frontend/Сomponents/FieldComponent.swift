@@ -66,9 +66,13 @@ class InputFieldView: UIView, UITextFieldDelegate {
         configureErrorMessage()
         
         label.pinTop(to: self)
+        label.pinHorizontal(to: self)
         input.pinTop(to: label.bottomAnchor, 14)
+        input.pinHorizontal(to: self)
         underline.pinTop(to: input.bottomAnchor, 11)
+        underline.pinHorizontal(to: self)
         errorMessage.pinTop(to: underline.bottomAnchor, 8)
+        errorMessage.pinHorizontal(to: self)
         errorMessage.pinBottom(to: self)
     }
     
@@ -85,10 +89,6 @@ class InputFieldView: UIView, UITextFieldDelegate {
     
     private func setErrorMessage(message: String){
         errorMessage.text = message
-    }
-    
-    public func pinToParent(parent: UIView){
-        underline.setWidth(parent.frame.width - 2 * Grid.stripe)
     }
     
     public func setErrorState() {

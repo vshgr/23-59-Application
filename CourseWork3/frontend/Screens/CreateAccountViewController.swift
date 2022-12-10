@@ -26,8 +26,7 @@ class CreateAccountViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        title = "Create account"
-        navigationItem.setHidesBackButton(true, animated: true)
+        setupNavBar(title: "Create account", hideBack: true)
     }
     
     // MARK: - Setups
@@ -49,10 +48,6 @@ class CreateAccountViewController : UIViewController {
     }
     
     private func setupFields() {
-        nameField.pinToParent(parent: view)
-        usernameField.pinToParent(parent: view)
-        emailField.pinToParent(parent: view)
-        
         view.addSubview(stack)
         
         stack.axis = .vertical

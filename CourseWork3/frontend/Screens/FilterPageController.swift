@@ -1,5 +1,5 @@
 //
-//  FriendsController.swift
+//  FeedController.swift
 //  CourseWork3
 //
 //  Created by Алиса Вышегородцева on 09.12.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FriendsController: UIViewController {
+class FilterPageController: UIViewController {
     let developmentComponent = DevelopmentComponent()
     
     override func viewDidLoad() {

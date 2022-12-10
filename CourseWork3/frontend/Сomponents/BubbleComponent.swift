@@ -42,7 +42,8 @@ class BubbleComponent: UIButton {
         setTitleColor(.black, for: .normal)
         // ИСПОЛЬЗОВАТЬ КОНФИГ
         contentEdgeInsets = UIEdgeInsets(top: 10, left: 17, bottom: 10, right: 17)
-        titleLabel?.font = dateLabel.font.withSize(12)
+        titleLabel?.font = UIFont(name: "PingFangTC-Medium", size: 12)
+//        titleLabel?.font = dateLabel.font.withSize(12)
         titleLabel?.textAlignment = .center
         titleLabel?.numberOfLines = 1
 
