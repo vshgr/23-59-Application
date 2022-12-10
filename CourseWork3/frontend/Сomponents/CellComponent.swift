@@ -45,8 +45,10 @@ class CellComponent: UIStackView {
         cell.textColor = .black
         cell.font = UIFont.dl.ralewayBold(20)
         cell.textAlignment = .center
-        cell.placeholder = "1"
         cell.keyboardType = .asciiCapableNumberPad
+        cell.attributedPlaceholder = NSAttributedString(
+            string: "1",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.dl.hintCol() ?? .systemGray])
     }
     
     private func configureCells() {
