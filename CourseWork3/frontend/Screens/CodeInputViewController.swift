@@ -118,8 +118,8 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
         field.textAlignment = .center
         field.placeholder = "1"
         field.keyboardType = .asciiCapableNumberPad
-        field.setWidth(38)
-        field.setHeight(38)
+        field.setWidth(45)
+        field.setHeight(45)
         return field
     }
     

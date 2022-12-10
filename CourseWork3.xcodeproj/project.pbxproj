@@ -11,7 +11,8 @@
 		3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */; };
 		3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */; };
 		3C2626B8294231CA00A0D1F1 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B7294231CA00A0D1F1 /* Code.swift */; };
-		3C2626BC2943A6BA00A0D1F1 /* EmailDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626BB2943A6BA00A0D1F1 /* EmailDelegate.swift */; };
+		3C2626BE2943AF2C00A0D1F1 /* NewCodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626BD2943AF2C00A0D1F1 /* NewCodeInputController.swift */; };
+		3C2626C02943B23500A0D1F1 /* CellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626BF2943B23500A0D1F1 /* CellComponent.swift */; };
 		3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC07A5C293E538E0061337F /* CodeInputViewController.swift */; };
 		4814C0CD29420B8F00939BA5 /* BubbleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814C0CC29420B8F00939BA5 /* BubbleComponent.swift */; };
 		4815507529424602008EF3A1 /* UIView+TapAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815507429424602008EF3A1 /* UIView+TapAnimation.swift */; };
@@ -53,7 +54,8 @@
 		3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Borders.swift"; sourceTree = "<group>"; };
 		3C2626B7294231CA00A0D1F1 /* Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
-		3C2626BB2943A6BA00A0D1F1 /* EmailDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDelegate.swift; sourceTree = "<group>"; };
+		3C2626BD2943AF2C00A0D1F1 /* NewCodeInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCodeInputController.swift; sourceTree = "<group>"; };
+		3C2626BF2943B23500A0D1F1 /* CellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellComponent.swift; sourceTree = "<group>"; };
 		3CC07A5C293E538E0061337F /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		4814C0CC29420B8F00939BA5 /* BubbleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleComponent.swift; sourceTree = "<group>"; };
 		4815507429424602008EF3A1 /* UIView+TapAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TapAnimation.swift"; sourceTree = "<group>"; };
@@ -115,7 +117,6 @@
 		3C2626BA2943A66000A0D1F1 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				3C2626BB2943A6BA00A0D1F1 /* EmailDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -133,6 +134,7 @@
 				488B8C65294216D000ED8B0C /* FriendAccountSVConponent.swift */,
 				4815507A2942ACBB008EF3A1 /* CustomTabBarController.swift */,
 				481550802942B7D8008EF3A1 /* DevelopmentComponent.swift */,
+				3C2626BF2943B23500A0D1F1 /* CellComponent.swift */,
 			);
 			path = "Сomponents";
 			sourceTree = "<group>";
@@ -250,6 +252,7 @@
 				4815507629425134008EF3A1 /* TaskPageController.swift */,
 				4815507C2942B6A2008EF3A1 /* FeedController.swift */,
 				4815507E2942B6B1008EF3A1 /* FriendsController.swift */,
+				3C2626BD2943AF2C00A0D1F1 /* NewCodeInputController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */,
 				4892320929420702002DCBEF /* MainTasksPageController.swift in Sources */,
 				4815507529424602008EF3A1 /* UIView+TapAnimation.swift in Sources */,
+				3C2626C02943B23500A0D1F1 /* CellComponent.swift in Sources */,
 				488B8C66294216D000ED8B0C /* FriendAccountSVConponent.swift in Sources */,
 				4815507F2942B6B1008EF3A1 /* FriendsController.swift in Sources */,
 				4860886A2937E57B008B76ED /* WelcomeViewController.swift in Sources */,
@@ -348,8 +352,8 @@
 				4815507729425134008EF3A1 /* TaskPageController.swift in Sources */,
 				3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */,
 				486088662937E57B008B76ED /* AppDelegate.swift in Sources */,
-				3C2626BC2943A6BA00A0D1F1 /* EmailDelegate.swift in Sources */,
 				485B198D29411AE000042F89 /* Grid.swift in Sources */,
+				3C2626BE2943AF2C00A0D1F1 /* NewCodeInputController.swift in Sources */,
 				486088682937E57B008B76ED /* SceneDelegate.swift in Sources */,
 				3C2626B8294231CA00A0D1F1 /* Code.swift in Sources */,
 				3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */,

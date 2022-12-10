@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateAccountViewController : UIViewController, EmailDelegate {
+class CreateAccountViewController : UIViewController {
     
     // MARK: - Constants
     private enum Constants {
@@ -38,10 +38,6 @@ class CreateAccountViewController : UIViewController, EmailDelegate {
         setupPhotoArea()
         setupCreateButton()
         setupFields()
-    }
-    
-    func emailInserted(_ email: String) {
-        emailField = InputFieldView(title: "Email", hint: email, message: "")
     }
     
     private func setupPhotoArea() {

@@ -5,7 +5,6 @@ class EmailViewController: UIViewController {
     // MARK: - Fields
     private let emailField: InputFieldView = InputFieldView(title: "Email", hint: "enter email", message: "invalid email")
     let btn = CustomButton(title: "Send code", height: 70)
-    weak var delegate: EmailDelegate?
 
     // MARK: - Load
     override func viewDidLoad() {
@@ -45,8 +44,7 @@ class EmailViewController: UIViewController {
         btn.showAnimation {
             let mailer = Mailer()
             if (mailer.checkIfEmailFilled(email: self.emailField.getText())) {
-                self.delegate?.emailInserted(self.emailField.getText())
-                let codeInputController = CodeInputViewController()
+                let codeInputController = NewCodeInputController()
                 self.navigationController?.pushViewController(codeInputController, animated: true)
             } else {
                 self.emailField.setErrorState()
