@@ -27,7 +27,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     private var warningLabel: UILabel = UILabel()
     private let securityCodeTextField = UITextField()
     
-    private var count: Int = 59
+    private var count: Int = 5
     private var timerString: String = String()
     
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ class CodeInputViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func setupTimer() {
-        count = 59
+        count = 5
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
             guard let self = self else { return }
             if (self.count == 0) {

@@ -43,7 +43,7 @@ class CellComponent: UIStackView {
         cell.setBorder(width: 1, color: UIColor.dl.hintCol() ?? .gray)
         cell.layer.cornerRadius = 10
         cell.textColor = .black
-        cell.font = UIFont.dl.ralewayBold(20)
+        cell.font = UIFont.dl.ralewayBold(24)
         cell.textAlignment = .center
         cell.keyboardType = .asciiCapableNumberPad
         cell.attributedPlaceholder = NSAttributedString(

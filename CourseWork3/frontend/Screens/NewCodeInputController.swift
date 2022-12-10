@@ -26,7 +26,7 @@ class NewCodeInputController: UIViewController {
     private let checkEmailLabel = UILabel()
     private let sendCodeButton = UIButton(type: .system)
     private var sendCodeButtonConfig = UIButton.Configuration.plain()
-    private var count: Int = 59
+    private var count: Int = 5
     
     // MARK: - Load
     override func viewDidLoad() {
@@ -47,6 +47,7 @@ class NewCodeInputController: UIViewController {
         setupSendCodeAgainButton()
         setupContinueButton()
         setupStackTitle()
+        setupTimer()
         setupStackView()
     }
     
@@ -69,6 +70,7 @@ class NewCodeInputController: UIViewController {
         
         content.axis = .vertical
         content.spacing = Constants.contentSpacing
+        content.alignment = .leading
         
         content.pinCenterY(to: view)
         content.pinLeft(to: view, Grid.stripe)
@@ -81,11 +83,10 @@ class NewCodeInputController: UIViewController {
     }
     
     private func setupSendCodeAgainButton() {
-        sendCodeButton.configuration = getConfig()
+        sendCodeButton.configuration = getConfig(color: UIColor.dl.hintCol() ?? UIColor.gray)
         sendCodeButton.titleLabel?.font = Constants.buttonFont
         sendCodeButton.isEnabled = false
         sendCodeButton.addTarget(self, action: #selector(restartTimer), for: .touchUpInside)
-        
     }
     
     private func setupContinueButton() {
@@ -95,18 +96,13 @@ class NewCodeInputController: UIViewController {
         continueButton.pinBottom(to: view, Grid.stripe * 2)
     }
     
-    private func getConfig() -> UIButton.Configuration {
+    private func getConfig(color: UIColor) -> UIButton.Configuration {
         sendCodeButtonConfig.title = makeTimerLabelString(seconds: count)
         sendCodeButtonConfig.contentInsets = .zero
         
-        // TODO: redo this shit
-        if (count == 0) {
-            sendCodeButtonConfig.baseForegroundColor = .black
-            sendCodeButtonConfig.image = UIImage(named: "arrow_right")?.withTintColor(.black)
-        } else {
-            sendCodeButtonConfig.baseForegroundColor = UIColor(named: "hintColor")
-            sendCodeButtonConfig.image = UIImage(named: "arrow_right")?.withTintColor(UIColor.dl.hintCol()!)
-        }
+        sendCodeButtonConfig.baseForegroundColor = color
+        sendCodeButtonConfig.image = UIImage(named: "arrow_right")?.withTintColor(color)
+        
         sendCodeButtonConfig.imagePlacement = .trailing
         sendCodeButtonConfig.imagePadding = Constants.imagePadding
         
@@ -116,16 +112,16 @@ class NewCodeInputController: UIViewController {
     // MARK: - Timer
     
     private func setupTimer() {
-        count = 59
+        count = 5
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
             guard let self = self else { return }
             if (self.count == 0) {
                 timer.invalidate()
                 self.sendCodeButton.isEnabled = true
-                self.sendCodeButton.configuration = self.getConfig()
+                self.sendCodeButton.configuration = self.getConfig(color: .black)
             } else {
                 self.count -= 1
-                self.sendCodeButton.configuration = self.getConfig()
+                self.sendCodeButton.configuration = self.getConfig(color: UIColor.dl.hintCol() ?? UIColor.gray)
             }
         }
     }
