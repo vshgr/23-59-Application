@@ -3,7 +3,6 @@ import UIKit
 class CellComponent: UIStackView {
     
     // MARK: - Fields
-    private var content: UIStackView = UIStackView()
     //private var title: UILabel = UILabel()
     private var firstCell: UITextField = UITextField()
     private var secondCell: UITextField = UITextField()
@@ -32,18 +31,12 @@ class CellComponent: UIStackView {
     // MARK: - Configuration
     
     private func configure() {
-        for element in [firstCell, secondCell, thirdCell, fourthCell, content] {
-            addSubview(element)
+        for element in [firstCell, secondCell, thirdCell, fourthCell] {
+            addArrangedSubview(element)
         }
         
         configureCells()
         configureStackView()
-        addSubview(content)
-//        configureTitle()
-//
-//        content.pinCenterY(to: self)
-//        content.pinTop(to: title.bottomAnchor, 15)
-        //title.pinBottom(to: content.topAnchor, 15)
     }
     
     private func configureCell(cell: UITextField) {
@@ -64,22 +57,12 @@ class CellComponent: UIStackView {
     }
     
     private func configureStackView() {
-        content = UIStackView(arrangedSubviews: [firstCell, secondCell, thirdCell, fourthCell])
-        content.spacing = 12
-        content.axis = .horizontal
-        content.distribution = .fillEqually
+        spacing = 12
+        axis = .horizontal
+        distribution = .fillEqually
     }
     
-//    private func configureTitle() {
-//        title.textColor = .black
-//        title.font = UIFont.dl.ralewayMedium(14)
-//    }
-    
     // MARK: - Setters
-//    private func setTitle(name: String) {
-//        title.text = name
-//    }
-    
     private func setSize(cell: UITextField, size: Double) {
         cell.setWidth(size)
         cell.setHeight(size)

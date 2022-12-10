@@ -10,7 +10,7 @@ class EmailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupNavBar()
+        setupNavBar(hideBack: true)
     }
 
     // MARK: - Setups

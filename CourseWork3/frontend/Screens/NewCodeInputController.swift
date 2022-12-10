@@ -18,6 +18,7 @@ class NewCodeInputController: UIViewController {
     
     // MARK: - Fields
     private var content: UIStackView = UIStackView()
+    
     private let cells: CellComponent = CellComponent(size: 45)
     private let cellsTitleLabel: UILabel = UILabel()
     private let continueButton: CustomButton = CustomButton(title: "Continue", height: 70)
@@ -31,16 +32,18 @@ class NewCodeInputController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupNavBar()
     }
     
     // MARK: - Configuration
     private func setupView() {
-        for element in [content, cells, cellsTitleLabel, continueButton, checkEmailLabel, sendCodeButton] {
+        for element in [content, continueButton] {
             view.addSubview(element)
         }
         
         setupMainView()
         setupMainTitle()
+        setupStackTitle()
         setupSendCodeAgainButton()
         setupContinueButton()
         setupStackTitle()
@@ -56,20 +59,17 @@ class NewCodeInputController: UIViewController {
     private func setupStackTitle() {
         cellsTitleLabel.textColor = .black
         cellsTitleLabel.font = UIFont.dl.ralewayMedium(14)
-        
-        view.addSubview(cellsTitleLabel)
+        cellsTitleLabel.text = "Code"
     }
     
     private func setupStackView() {
-//        content = UIStackView(arrangedSubviews: [checkEmailLabel, cellsTitleLabel, cells, sendCodeButton])
         for element in [checkEmailLabel, cellsTitleLabel, cells, sendCodeButton] {
             content.addArrangedSubview(element)
         }
         
-        content.axis = .horizontal
+        content.axis = .vertical
         content.spacing = Constants.contentSpacing
         
-        view.addSubview(content)
         content.pinCenterY(to: view)
         content.pinLeft(to: view, Grid.stripe)
     }
@@ -78,8 +78,6 @@ class NewCodeInputController: UIViewController {
         checkEmailLabel.textColor = .black
         checkEmailLabel.font = UIFont.dl.mainFont(16)
         checkEmailLabel.text = "check your email"
-        
-        view.addSubview(checkEmailLabel)
     }
     
     private func setupSendCodeAgainButton() {
@@ -88,12 +86,10 @@ class NewCodeInputController: UIViewController {
         sendCodeButton.isEnabled = false
         sendCodeButton.addTarget(self, action: #selector(restartTimer), for: .touchUpInside)
         
-        view.addSubview(sendCodeButton)
     }
     
     private func setupContinueButton() {
         continueButton.addTarget(self, action: #selector(continueButtonPressed), for: .touchUpInside)
-        view.addSubview(continueButton)
         
         continueButton.pinHorizontal(to: view, Grid.stripe * 2)
         continueButton.pinBottom(to: view, Grid.stripe * 2)
@@ -153,24 +149,24 @@ class NewCodeInputController: UIViewController {
     
     @objc
     private func continueButtonPressed() {
-//        setDefaultStateCell()
-//        warningLabel.isHidden = true
-//
-//        let codeChecker = Code()
-//        var filled: Bool = true
-//        var _: () = codeInputCells.arrangedSubviews.forEach {
-//            if (!codeChecker.checkCodeDigitsFilled(cell: $0 as! UITextField)) {
-//                $0.layer.borderColor = UIColor.red.cgColor
-//                filled = false
-//            }
-//        }
-//
-//        if (filled) {
-//            let createAccountViewController = CreateAccountViewController()
-//            navigationController?.pushViewController(createAccountViewController, animated: true)
-//        } else {
-//            warningLabel.isHidden = false
-//        }
+        //        setDefaultStateCell()
+        //        warningLabel.isHidden = true
+        //
+        //        let codeChecker = Code()
+        //        var filled: Bool = true
+        //        var _: () = codeInputCells.arrangedSubviews.forEach {
+        //            if (!codeChecker.checkCodeDigitsFilled(cell: $0 as! UITextField)) {
+        //                $0.layer.borderColor = UIColor.red.cgColor
+        //                filled = false
+        //            }
+        //        }
+        //
+        //        if (filled) {
+        //            let createAccountViewController = CreateAccountViewController()
+        //            navigationController?.pushViewController(createAccountViewController, animated: true)
+        //        } else {
+        //            warningLabel.isHidden = false
+        //        }
     }
     
     

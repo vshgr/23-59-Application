@@ -23,7 +23,6 @@
 		4815507F2942B6B1008EF3A1 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815507E2942B6B1008EF3A1 /* FriendsController.swift */; };
 		481550812942B7D8008EF3A1 /* DevelopmentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481550802942B7D8008EF3A1 /* DevelopmentComponent.swift */; };
 		481550832942BF8E008EF3A1 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481550822942BF8E008EF3A1 /* CALayer.swift */; };
-		481550852943B48E008EF3A1 /* FilterPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481550842943B48E008EF3A1 /* FilterPageController.swift */; };
 		481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D44F2293FCAB1006764A4 /* ButtonComponent.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
@@ -36,6 +35,7 @@
 		4860886A2937E57B008B76ED /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486088692937E57B008B76ED /* WelcomeViewController.swift */; };
 		486088722937E57B008B76ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486088702937E57B008B76ED /* LaunchScreen.storyboard */; };
 		486D4DC62943E8E700A23868 /* UIViewController+NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D4DC52943E8E700A23868 /* UIViewController+NavBar.swift */; };
+		486D4DCA2944E33000A23868 /* FilterPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D4DC92944E33000A23868 /* FilterPageController.swift */; };
 		4886AC46293FDAB700640A4B /* FieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC45293FDAB700640A4B /* FieldComponent.swift */; };
 		4886AC4A2940E39A00640A4B /* PhotoPickerPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */; };
 		4886AC4C2940EF0B00640A4B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC4B2940EF0B00640A4B /* ProfileView.swift */; };
@@ -68,7 +68,6 @@
 		4815507E2942B6B1008EF3A1 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 		481550802942B7D8008EF3A1 /* DevelopmentComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentComponent.swift; sourceTree = "<group>"; };
 		481550822942BF8E008EF3A1 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
-		481550842943B48E008EF3A1 /* FilterPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPageController.swift; sourceTree = "<group>"; };
 		481D44F2293FCAB1006764A4 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +82,7 @@
 		486088712937E57B008B76ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		486088732937E57B008B76ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		486D4DC52943E8E700A23868 /* UIViewController+NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavBar.swift"; sourceTree = "<group>"; };
+		486D4DC92944E33000A23868 /* FilterPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPageController.swift; sourceTree = "<group>"; };
 		4886AC45293FDAB700640A4B /* FieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldComponent.swift; sourceTree = "<group>"; };
 		4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerPopup.swift; sourceTree = "<group>"; };
 		4886AC4B2940EF0B00640A4B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -258,6 +258,7 @@
 				4815507C2942B6A2008EF3A1 /* FeedController.swift */,
 				4815507E2942B6B1008EF3A1 /* FriendsController.swift */,
 				3C2626BD2943AF2C00A0D1F1 /* NewCodeInputController.swift */,
+				486D4DC92944E33000A23868 /* FilterPageController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -336,11 +337,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486D4DCA2944E33000A23868 /* FilterPageController.swift in Sources */,
 				4815507B2942ACBB008EF3A1 /* CustomTabBarController.swift in Sources */,
 				481550812942B7D8008EF3A1 /* DevelopmentComponent.swift in Sources */,
 				483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */,
 				4892320729420595002DCBEF /* TaskComponent.swift in Sources */,
-				481550852943B48E008EF3A1 /* FilterPageController.swift in Sources */,
 				485B198F29411F4F00042F89 /* UIFont+.swift in Sources */,
 				4815507929425E57008EF3A1 /* UIButton+Select.swift in Sources */,
 				481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */,
