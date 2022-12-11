@@ -1,6 +1,6 @@
 import UIKit
 
-class CellComponent: UIStackView {
+class CellComponent: UIStackView, UITextFieldDelegate {
     
     // MARK: - Fields
     //private var title: UILabel = UILabel()
@@ -33,10 +33,21 @@ class CellComponent: UIStackView {
     private func configure() {
         for element in [firstCell, secondCell, thirdCell, fourthCell] {
             addArrangedSubview(element)
+            element.delegate = self
         }
         
         configureCells()
+        configureTags()
         configureStackView()
+    }
+    
+    private func configureTags() {
+        firstCell.tag = 1
+        secondCell.tag = 2
+        thirdCell.tag = 3
+        fourthCell.tag = 4
+        
+        viewWithTag(1)?.becomeFirstResponder()
     }
     
     private func configureCell(cell: UITextField) {
@@ -68,5 +79,31 @@ class CellComponent: UIStackView {
     private func setSize(cell: UITextField, size: Double) {
         cell.setWidth(size)
         cell.setHeight(size)
+    }
+    
+    // MARK: - Utilities
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.darkGray.cgColor
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        if currentText.count == 1 {
+            let nextTag = textField.tag + 1
+            if let nextRespondent = textField.superview?.viewWithTag(nextTag) {
+                nextRespondent.becomeFirstResponder()
+            } else {
+                textField.resignFirstResponder()
+            }
+        }
+        return updatedText.count <= 1
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.lightGray.cgColor
     }
 }

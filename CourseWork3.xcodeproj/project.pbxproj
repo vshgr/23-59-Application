@@ -11,9 +11,8 @@
 		3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */; };
 		3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */; };
 		3C2626B8294231CA00A0D1F1 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B7294231CA00A0D1F1 /* Code.swift */; };
-		3C2626BE2943AF2C00A0D1F1 /* NewCodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626BD2943AF2C00A0D1F1 /* NewCodeInputController.swift */; };
+		3C2626BE2943AF2C00A0D1F1 /* CodeInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626BD2943AF2C00A0D1F1 /* CodeInputController.swift */; };
 		3C2626C02943B23500A0D1F1 /* CellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626BF2943B23500A0D1F1 /* CellComponent.swift */; };
-		3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC07A5C293E538E0061337F /* CodeInputViewController.swift */; };
 		4814C0CD29420B8F00939BA5 /* BubbleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814C0CC29420B8F00939BA5 /* BubbleComponent.swift */; };
 		4815507529424602008EF3A1 /* UIView+TapAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815507429424602008EF3A1 /* UIView+TapAnimation.swift */; };
 		4815507729425134008EF3A1 /* TaskPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4815507629425134008EF3A1 /* TaskPageController.swift */; };
@@ -56,9 +55,8 @@
 		3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Borders.swift"; sourceTree = "<group>"; };
 		3C2626B7294231CA00A0D1F1 /* Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
-		3C2626BD2943AF2C00A0D1F1 /* NewCodeInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCodeInputController.swift; sourceTree = "<group>"; };
+		3C2626BD2943AF2C00A0D1F1 /* CodeInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputController.swift; sourceTree = "<group>"; };
 		3C2626BF2943B23500A0D1F1 /* CellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellComponent.swift; sourceTree = "<group>"; };
-		3CC07A5C293E538E0061337F /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		4814C0CC29420B8F00939BA5 /* BubbleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleComponent.swift; sourceTree = "<group>"; };
 		4815507429424602008EF3A1 /* UIView+TapAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TapAnimation.swift"; sourceTree = "<group>"; };
 		4815507629425134008EF3A1 /* TaskPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPageController.swift; sourceTree = "<group>"; };
@@ -167,19 +165,11 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		485B19922941FB9D00042F89 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		486088592937E57B008B76ED = {
 			isa = PBXGroup;
 			children = (
 				486088642937E57B008B76ED /* CourseWork3 */,
 				486088632937E57B008B76ED /* Products */,
-				485B19922941FB9D00042F89 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,13 +241,12 @@
 			children = (
 				483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */,
 				4892320829420702002DCBEF /* MainTasksPageController.swift */,
-				3CC07A5C293E538E0061337F /* CodeInputViewController.swift */,
 				3C04E878293E15FD00DF73B3 /* EmailViewController.swift */,
 				486088692937E57B008B76ED /* WelcomeViewController.swift */,
 				4815507629425134008EF3A1 /* TaskPageController.swift */,
 				4815507C2942B6A2008EF3A1 /* FeedController.swift */,
 				4815507E2942B6B1008EF3A1 /* FriendsController.swift */,
-				3C2626BD2943AF2C00A0D1F1 /* NewCodeInputController.swift */,
+				3C2626BD2943AF2C00A0D1F1 /* CodeInputController.swift */,
 				486D4DC92944E33000A23868 /* FilterPageController.swift */,
 			);
 			path = Screens;
@@ -353,14 +342,13 @@
 				4860886A2937E57B008B76ED /* WelcomeViewController.swift in Sources */,
 				4886AC46293FDAB700640A4B /* FieldComponent.swift in Sources */,
 				48A4801A293E0FDD006540DC /* Mailer.swift in Sources */,
-				3CC07A5D293E538E0061337F /* CodeInputViewController.swift in Sources */,
 				4886AC4A2940E39A00640A4B /* PhotoPickerPopup.swift in Sources */,
 				4886AC4C2940EF0B00640A4B /* ProfileView.swift in Sources */,
 				4815507729425134008EF3A1 /* TaskPageController.swift in Sources */,
 				3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */,
 				486088662937E57B008B76ED /* AppDelegate.swift in Sources */,
 				485B198D29411AE000042F89 /* Grid.swift in Sources */,
-				3C2626BE2943AF2C00A0D1F1 /* NewCodeInputController.swift in Sources */,
+				3C2626BE2943AF2C00A0D1F1 /* CodeInputController.swift in Sources */,
 				486088682937E57B008B76ED /* SceneDelegate.swift in Sources */,
 				486D4DC62943E8E700A23868 /* UIViewController+NavBar.swift in Sources */,
 				3C2626B8294231CA00A0D1F1 /* Code.swift in Sources */,

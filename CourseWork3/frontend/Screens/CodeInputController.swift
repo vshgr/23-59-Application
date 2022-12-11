@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewCodeInputController: UIViewController {
+class CodeInputController: UIViewController {
     
     // MARK: - Constants
     private enum Constants {
@@ -26,7 +26,8 @@ class NewCodeInputController: UIViewController {
     private let checkEmailLabel = UILabel()
     private let sendCodeButton = UIButton(type: .system)
     private var sendCodeButtonConfig = UIButton.Configuration.plain()
-    private var count: Int = 5
+    private let warningLabel: UILabel = UILabel()
+    private var count: Int = 59
     
     // MARK: - Load
     override func viewDidLoad() {
@@ -48,6 +49,7 @@ class NewCodeInputController: UIViewController {
         setupContinueButton()
         setupStackTitle()
         setupTimer()
+        setupWarningLabel()
         setupStackView()
     }
     
@@ -55,6 +57,7 @@ class NewCodeInputController: UIViewController {
         self.view.backgroundColor = .white
         self.hideKeyboardWhenTappedAround()
         securityCodeTextField.textContentType = .oneTimeCode
+        overrideUserInterfaceStyle = .light
     }
     
     private func setupStackTitle() {
@@ -64,9 +67,11 @@ class NewCodeInputController: UIViewController {
     }
     
     private func setupStackView() {
-        for element in [checkEmailLabel, cellsTitleLabel, cells, sendCodeButton] {
+        for element in [checkEmailLabel, cellsTitleLabel, cells, warningLabel, sendCodeButton] {
             content.addArrangedSubview(element)
         }
+        
+        warningLabel.isHidden = true
         
         content.axis = .vertical
         content.spacing = Constants.contentSpacing
@@ -86,7 +91,16 @@ class NewCodeInputController: UIViewController {
         sendCodeButton.configuration = getConfig(color: UIColor.dl.hintCol() ?? UIColor.gray)
         sendCodeButton.titleLabel?.font = Constants.buttonFont
         sendCodeButton.isEnabled = false
+        
+        sendCodeButton.titleLabel?.textAlignment = .left
+        
         sendCodeButton.addTarget(self, action: #selector(restartTimer), for: .touchUpInside)
+    }
+    
+    private func setupWarningLabel() {
+        warningLabel.text = "please fill all the cells"
+        warningLabel.textColor = UIColor.dl.attentionCol()
+        warningLabel.font = Constants.buttonFont
     }
     
     private func setupContinueButton() {
@@ -109,13 +123,19 @@ class NewCodeInputController: UIViewController {
         return sendCodeButtonConfig
     }
     
+    private func setupDefaultStateCell() {
+        cells.arrangedSubviews.forEach {
+            $0.layer.borderColor = UIColor.lightGray.cgColor
+        }
+    }
+    
     // MARK: - Timer
     
     private func setupTimer() {
-        count = 5
+        count = 59
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
             guard let self = self else { return }
-            if (self.count == 0) {
+            if self.count == 0 {
                 timer.invalidate()
                 self.sendCodeButton.isEnabled = true
                 self.sendCodeButton.configuration = self.getConfig(color: .black)
@@ -128,7 +148,7 @@ class NewCodeInputController: UIViewController {
     
     private func makeTimerLabelString(seconds: Int) -> String {
         var timerStr = "send code again"
-        if (seconds >= 10) {
+        if seconds >= 10 {
             timerStr += " 0:\(seconds)"
         } else if (seconds > 0) {
             timerStr += " 0:0\(seconds)"
@@ -137,33 +157,32 @@ class NewCodeInputController: UIViewController {
         return timerStr
     }
     
-    @objc private func restartTimer() {
-        setupTimer()
-    }
-    
     // MARK: - Target
     
     @objc
-    private func continueButtonPressed() {
-        //        setDefaultStateCell()
-        //        warningLabel.isHidden = true
-        //
-        //        let codeChecker = Code()
-        //        var filled: Bool = true
-        //        var _: () = codeInputCells.arrangedSubviews.forEach {
-        //            if (!codeChecker.checkCodeDigitsFilled(cell: $0 as! UITextField)) {
-        //                $0.layer.borderColor = UIColor.red.cgColor
-        //                filled = false
-        //            }
-        //        }
-        //
-        //        if (filled) {
-        //            let createAccountViewController = CreateAccountViewController()
-        //            navigationController?.pushViewController(createAccountViewController, animated: true)
-        //        } else {
-        //            warningLabel.isHidden = false
-        //        }
+    private func restartTimer() {
+        setupTimer()
     }
     
-    
+    @objc
+    private func continueButtonPressed() {
+        setupDefaultStateCell()
+        warningLabel.isHidden = true
+
+        let codeChecker = Code()
+        var filled: Bool = true
+        var _: () = cells.arrangedSubviews.forEach {
+            if (!codeChecker.checkCodeDigitsFilled(cell: $0 as! UITextField)) {
+                $0.layer.borderColor = UIColor.dl.attentionCol()?.cgColor
+                    filled = false
+            }
+        }
+
+        if filled {
+            let createAccountViewController = CreateAccountViewController()
+            navigationController?.pushViewController(createAccountViewController, animated: true)
+        } else {
+            warningLabel.isHidden = false
+        }
+    }
 }
