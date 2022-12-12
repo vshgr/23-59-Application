@@ -77,30 +77,31 @@ class InputFieldView: UIView, UITextFieldDelegate {
     }
     
     // MARK: - Setters
-    private func setTitle(title: String) {
+    func setTitle(title: String) {
         label.text = title
     }
     
-    private func setPlaceholder(hint: String){
+    func setPlaceholder(hint: String){
         input.attributedPlaceholder = NSAttributedString(
             string: hint,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.dl.hintCol() ?? .systemGray])
     }
     
-    private func setErrorMessage(message: String){
+    func setErrorMessage(message: String){
         errorMessage.text = message
     }
     
-    public func setErrorState() {
+    func setErrorState() {
         errorMessage.isHidden = false
         label.textColor = UIColor.dl.attentionCol()
         underline.backgroundColor = UIColor.dl.attentionCol()
     }
     
-    public func setDefaultState() {
+    func setDefaultState() {
         errorMessage.isHidden = true
         label.textColor = .black
         underline.backgroundColor = .black
     }
+    
     
 }

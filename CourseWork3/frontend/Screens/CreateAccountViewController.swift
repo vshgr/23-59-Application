@@ -20,7 +20,7 @@ class CreateAccountViewController : UIViewController {
     let stack = UIStackView()
     var nameField = InputFieldView(title: "Name", hint: "enter name", message: "required")
     let usernameField = InputFieldView(title: "Username", hint: "enter username", message: "required")
-    var emailField: InputFieldView = InputFieldView()
+    var emailField = InputFieldView(title: "Email", hint: "example@hse.ru")
     let btn = CustomButton(title: "Create account", height: 70)
     
     // MARK: - Load
@@ -90,8 +90,9 @@ class CreateAccountViewController : UIViewController {
                 self.nameField.setErrorState()
             }
             
-            if (self.usernameField.getText().trimmingCharacters(in: .whitespaces) == ""){
+            if (!CheckInput.checkUsernameIsCorrect(username: self.usernameField.getText())){
                 flag = false
+                self.usernameField.setErrorMessage(message: "from 5 to 18 simbols without special")
                 self.usernameField.setErrorState()
             }
             

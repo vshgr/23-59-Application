@@ -42,8 +42,7 @@ class EmailViewController: UIViewController {
     @objc
     private func sendCodeButtonPressed() {
         btn.showAnimation {
-            let mailer = Mailer()
-            if (mailer.checkIfEmailFilled(email: self.emailField.getText())) {
+            if (CheckInput.checkEmailisCorrect(email: self.emailField.getText())) {
                 let codeInputController = CodeInputController()
                 self.navigationController?.pushViewController(codeInputController, animated: true)
             } else {
