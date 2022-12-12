@@ -17,6 +17,8 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         static let offset: Double = 0
         static let picWH: Double = 75
         static let multiline: Int = 0
+        static let filter: UIImage? = UIImage(named: "filter")
+        static let title: String = "tasks"
     }
     
     // MARK: - Fields
@@ -91,10 +93,10 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     }
     
     private func setupTaskLabel() {
-        taskTitle.text = "tasks"
+        taskTitle.text = Constants.title
         taskTitle.textColor = .black
         taskTitle.font = UIFont.dl.ralewayBold(20)
-        filter.setImage(UIImage(named: "filter"), for: .normal)
+        filter.setImage(Constants.filter, for: .normal)
         filter.addTarget(self, action: #selector(filterTapped), for: .touchUpInside)
     }
     

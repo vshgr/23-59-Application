@@ -14,6 +14,7 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - Load
     override func viewDidLoad() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
         super.viewDidLoad()
         setupView()
         setupNavBar()

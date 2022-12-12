@@ -16,6 +16,7 @@ class CustomTabBarController: UITabBarController {
         super.viewDidLoad()
         configureTapBar()
         configureAppearance()
+        self.selectedIndex = 1
         setupNavBar()
     }
     

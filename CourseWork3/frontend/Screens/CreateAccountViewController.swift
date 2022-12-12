@@ -12,6 +12,7 @@ class CreateAccountViewController : UIViewController {
     // MARK: - Constants
     private enum Constants {
         static let spacing: Double = 25
+        static let topSpacing: Double = 131
     }
     
     // MARK: - Fields
@@ -26,7 +27,7 @@ class CreateAccountViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupNavBar()
+        setupNavBar(title: "Create account")
     }
     
     // MARK: - Setups
@@ -43,7 +44,7 @@ class CreateAccountViewController : UIViewController {
         view.addSubview(profileView)
         
         profileView.pinCenterX(to: view.centerXAnchor)
-        profileView.pinTop(to: view.topAnchor, 131)
+        profileView.pinTop(to: view.topAnchor, Constants.topSpacing)
         profileView.tapChangePic = addPhotoButtonPressed
     }
     

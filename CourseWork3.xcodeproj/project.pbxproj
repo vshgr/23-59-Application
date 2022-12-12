@@ -126,6 +126,7 @@
 		481D44F1293FCA36006764A4 /* Сomponents */ = {
 			isa = PBXGroup;
 			children = (
+				4815507A2942ACBB008EF3A1 /* CustomTabBarController.swift */,
 				48A6C1B6294221070001B962 /* CustomNavbar.swift */,
 				4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */,
 				481D44F2293FCAB1006764A4 /* ButtonComponent.swift */,
@@ -134,7 +135,6 @@
 				4892320629420595002DCBEF /* TaskComponent.swift */,
 				4814C0CC29420B8F00939BA5 /* BubbleComponent.swift */,
 				488B8C65294216D000ED8B0C /* FriendAccountSVConponent.swift */,
-				4815507A2942ACBB008EF3A1 /* CustomTabBarController.swift */,
 				481550802942B7D8008EF3A1 /* DevelopmentComponent.swift */,
 				3C2626BF2943B23500A0D1F1 /* CellComponent.swift */,
 			);

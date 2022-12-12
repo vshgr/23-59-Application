@@ -135,54 +135,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E49EB63B-2EE3-4F3A-AF6D-19DA55024D0B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CourseWork3/frontend/Extentions/UIViewController+NavBar.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "setupNavBar(title:right:color:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E49EB63B-2EE3-4F3A-AF6D-19DA55024D0B - 6fdcf4dc745c79e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__C.UIViewController.setupNavBar(title: Swift.String, rightComponents: __C.UIView, isHidden: Swift.Bool, color: __C.UIColor, hideBack: Swift.Bool) -&gt; ()"
-                  moduleName = "23:59"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/CourseWork3/CourseWork3/frontend/Extentions/UIViewController+NavBar.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "168">
-               </Location>
-               <Location
-                  uuid = "E49EB63B-2EE3-4F3A-AF6D-19DA55024D0B - 6fdcf4dc745c79e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__C.UIViewController.setupNavBar(title: Swift.String, rightComponents: __C.UIView, isHidden: Swift.Bool, color: __C.UIColor, hideBack: Swift.Bool) -&gt; ()"
-                  moduleName = "23:59"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/CourseWork3/CourseWork3/frontend/Extentions/UIViewController+NavBar.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "220">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3C9A6B2C-F008-4E8A-B005-CF1599991DCD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
