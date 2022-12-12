@@ -15,7 +15,7 @@ class TaskPageController: UIViewController {
         static let scrollHeight: Double = 40
         static let descText: String = "Подготовить макеты в фигме для индивидуального/командного мини-проекта по созданию мобильного приложения по курсу. Необходимо сформулировать перечень функциональных требований к программе, построить use-case-диаграмму с покрытием прецедентами всех этих требований. Продумать все возможные сценарии использования и отразить их в виде вайрфреймов с проработанными макетами экранов приложения."
         static let deadline: String = "3 Dec, 23:59"
-        static let taskTitle: String = "Какое-то название задачи оно большое и при этом остается мультилайн круто да"
+        static let taskTitle: String = "Разработать дизайн курсового проекта для приложения - тасктрекера"
         static let multiline: Int = 0
         static let linesSpacing: Double = 6
     }
@@ -149,5 +149,12 @@ class TaskPageController: UIViewController {
         
         groupsSV.axis = .horizontal
         groupsSV.spacing = Constants.spacing - 5
+    }
+    
+    // MARK: - Setters
+    public func setTask(title: String, desc: String, date: String) {
+        taskName.text = title
+        taskDesc.text = desc
+        dateTime.text = date
     }
 }

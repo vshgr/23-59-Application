@@ -110,7 +110,7 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     }
     
     private func getTask() -> TaskComponent {
-        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(taskTapped))
+        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(taskTapped(sender:)))
         gesture.numberOfTapsRequired = Constants.tapsNum
         
         let selfTask = Bool.random()
@@ -150,6 +150,7 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     @objc
     private func taskTapped(sender: TaskComponent) {
         let taskPageController = TaskPageController()
+//        taskPageController.setTask(title: sender.getTitle(), desc: sender.getDesc(), date: sender.getDate())
         self.navigationController?.pushViewController(taskPageController, animated: true)
     }
 }

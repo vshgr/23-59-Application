@@ -49,4 +49,9 @@ class BubbleComponent: UIButton {
 
     }
     
+    // MARK: - Getters
+    public func getText() -> String {
+        return bubbleText
+    }
+    
 }

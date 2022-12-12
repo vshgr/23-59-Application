@@ -136,7 +136,6 @@ class CodeInputController: UIViewController {
     }
     
     // MARK: - Timer
-    
     private func setupTimer() {
         count = 59
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
@@ -163,8 +162,7 @@ class CodeInputController: UIViewController {
         return timerStr
     }
     
-    // MARK: - Target
-    
+    // MARK: - Actions
     @objc
     private func restartTimer() {
         setupTimer()
