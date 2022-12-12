@@ -31,9 +31,15 @@ class CodeInputController: UIViewController {
     
     // MARK: - Load
     override func viewDidLoad() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
         super.viewDidLoad()
         setupView()
         setupNavBar()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+
     }
     
     // MARK: - Configuration
