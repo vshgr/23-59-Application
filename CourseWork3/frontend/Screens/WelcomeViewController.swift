@@ -17,10 +17,6 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupNavBar()
-        UIFont.familyNames.forEach({ familyName in
-                    let fontNames = UIFont.fontNames(forFamilyName: familyName)
-                    print(familyName, fontNames)
-                })
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

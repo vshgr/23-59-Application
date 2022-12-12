@@ -26,7 +26,7 @@ class CreateAccountViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupNavBar(title: "Create account", hideBack: true)
+        setupNavBar()
     }
     
     // MARK: - Setups

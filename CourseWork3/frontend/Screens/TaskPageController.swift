@@ -33,8 +33,12 @@ class TaskPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        setupNavBar(title: "Task", rightComponents: buttonsSV, color: UIColor.dl.mainCol() ?? .white)
+        setupNavBar(title: "Task", right: buttonsSV)
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        setupNavBar(isHidden: true ,color: .clear)
+//    }
     
     // MARK: - Configuration
     private func configureUI() {

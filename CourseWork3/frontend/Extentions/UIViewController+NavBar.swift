@@ -8,14 +8,23 @@
 import UIKit
 
 extension UIViewController {
-    func setupNavBar (title: String = "", rightComponents: UIView = UIView(), hideBack: Bool = false, color: UIColor = .clear) {
+    func setupNavBar (title: String = "", right: UIView = UIView(), color: UIColor = .clear) {
+        
         self.title = title
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightComponents)
-        navigationController?.navigationBar.tintColor = .black
-        navigationItem.backButtonTitle = ""
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back_svg")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back_svg")
-        navigationItem.setHidesBackButton(hideBack, animated: true)
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = color
+        appearance.setBackIndicatorImage(UIImage(named: "back_svg"), transitionMaskImage: UIImage(named: "back_svg"))
+        
+        let rightButtons = UIBarButtonItem(customView: right)
+        
+        navigationItem.rightBarButtonItem = rightButtons
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+
+
+        
     }
 }

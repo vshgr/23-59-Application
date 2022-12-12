@@ -13,7 +13,7 @@ class FeedController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupNavBar(hideBack: true)
+        setupNavBar()
     }
     
     private func setupView() {
