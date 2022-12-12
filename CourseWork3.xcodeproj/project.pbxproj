@@ -239,14 +239,14 @@
 		48A6C1B529421B090001B962 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				486088692937E57B008B76ED /* WelcomeViewController.swift */,
+				3C04E878293E15FD00DF73B3 /* EmailViewController.swift */,
+				3C2626BD2943AF2C00A0D1F1 /* CodeInputController.swift */,
 				483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */,
 				4892320829420702002DCBEF /* MainTasksPageController.swift */,
-				3C04E878293E15FD00DF73B3 /* EmailViewController.swift */,
-				486088692937E57B008B76ED /* WelcomeViewController.swift */,
 				4815507629425134008EF3A1 /* TaskPageController.swift */,
 				4815507C2942B6A2008EF3A1 /* FeedController.swift */,
 				4815507E2942B6B1008EF3A1 /* FriendsController.swift */,
-				3C2626BD2943AF2C00A0D1F1 /* CodeInputController.swift */,
 				486D4DC92944E33000A23868 /* FilterPageController.swift */,
 			);
 			path = Screens;
