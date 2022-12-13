@@ -10,5 +10,6 @@ struct User {
     var name: String
     var username: String
     var email: String
+    var profilePicUrl: String
 }
 

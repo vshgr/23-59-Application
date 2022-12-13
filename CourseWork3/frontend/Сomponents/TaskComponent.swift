@@ -19,6 +19,10 @@ class TaskComponent: UIView {
     }
     
     // MARK: - Fields
+    private let task: Task = Task(name: "Разработать дизайн курсового проекта для приложения - тасктрекера",
+                                  description: "",
+                                  deadline: "3 Dec, 2022",
+                                  groups: ["Курсовая работа", "Диплом", "Организация вечеринки"])
     private let selfTask: Bool
     private let taskView = UIView()
     private let buttonsSV = UIStackView()
@@ -28,7 +32,7 @@ class TaskComponent: UIView {
     private let taskDesc = UILabel()
     private let groups = UILabel()
     private let bottomLineSV = UIStackView()
-    private let dateView = BubbleComponent(text: "3 Dec, 2022")
+    private var dateView = BubbleComponent()
     private let friend = FriendAccountSVConponent()
     private let doneBtn = UIButton()
     private let addBtn = UIButton()
@@ -50,6 +54,7 @@ class TaskComponent: UIView {
     
     // MARK: - Configuration
     private func configureUI() {
+        dateView = BubbleComponent(text: task.deadline)
         addSubview(taskView)
         addSubview(buttonsSV)
         taskView.addSubview(contentSV)
@@ -85,14 +90,14 @@ class TaskComponent: UIView {
     }
     
     private func configureTaskNameLabel() {
-        taskName.text = "Разработать дизайн курсового проекта для приложения - тасктрекера"
+        taskName.text = task.name
         taskName.numberOfLines = 0
         taskName.textColor = .black
         taskName.font = UIFont.dl.ralewayBold(14)
     }
     
     private func configureGroupsLabel() {
-        groups.text = "Курсовая работа, Диплом, Организация вечеринки"
+        groups.text = task.groups.joined(separator: ", ")
         groups.numberOfLines = 0
         groups.textColor = UIColor.dl.hintCol()
         groups.font = UIFont.dl.ralewayMedium(14)

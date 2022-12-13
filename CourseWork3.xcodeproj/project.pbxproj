@@ -24,6 +24,8 @@
 		481550812942B7D8008EF3A1 /* DevelopmentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481550802942B7D8008EF3A1 /* DevelopmentComponent.swift */; };
 		481550832942BF8E008EF3A1 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481550822942BF8E008EF3A1 /* CALayer.swift */; };
 		481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D44F2293FCAB1006764A4 /* ButtonComponent.swift */; };
+		48331F172948FCE300C65197 /* UINavigationBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F162948FCE300C65197 /* UINavigationBar+.swift */; };
+		48331F192948FD1600C65197 /* NewTaskSecondPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F182948FD1600C65197 /* NewTaskSecondPageController.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
 		485B198D29411AE000042F89 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B198C29411AE000042F89 /* Grid.swift */; };
@@ -71,6 +73,8 @@
 		481550802942B7D8008EF3A1 /* DevelopmentComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentComponent.swift; sourceTree = "<group>"; };
 		481550822942BF8E008EF3A1 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		481D44F2293FCAB1006764A4 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
+		48331F162948FCE300C65197 /* UINavigationBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+.swift"; sourceTree = "<group>"; };
+		48331F182948FD1600C65197 /* NewTaskSecondPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskSecondPageController.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		485B198C29411AE000042F89 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				4815507429424602008EF3A1 /* UIView+TapAnimation.swift */,
 				481550822942BF8E008EF3A1 /* CALayer.swift */,
 				486D4DC52943E8E700A23868 /* UIViewController+NavBar.swift */,
+				48331F162948FCE300C65197 /* UINavigationBar+.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				4815507E2942B6B1008EF3A1 /* FriendsController.swift */,
 				486D4DC92944E33000A23868 /* FilterPageController.swift */,
 				48FFAD072948BDC700E5820B /* NewTaskFirstPageController.swift */,
+				48331F182948FD1600C65197 /* NewTaskSecondPageController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 				48FFAD082948BDC700E5820B /* NewTaskFirstPageController.swift in Sources */,
 				486D4DCA2944E33000A23868 /* FilterPageController.swift in Sources */,
 				4815507B2942ACBB008EF3A1 /* CustomTabBarController.swift in Sources */,
+				48331F172948FCE300C65197 /* UINavigationBar+.swift in Sources */,
 				481550812942B7D8008EF3A1 /* DevelopmentComponent.swift in Sources */,
 				483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */,
 				4892320729420595002DCBEF /* TaskComponent.swift in Sources */,
@@ -352,6 +359,7 @@
 				486088662937E57B008B76ED /* AppDelegate.swift in Sources */,
 				485B198D29411AE000042F89 /* Grid.swift in Sources */,
 				3C2626BE2943AF2C00A0D1F1 /* CodeInputController.swift in Sources */,
+				48331F192948FD1600C65197 /* NewTaskSecondPageController.swift in Sources */,
 				486088682937E57B008B76ED /* SceneDelegate.swift in Sources */,
 				486D4DC62943E8E700A23868 /* UIViewController+NavBar.swift in Sources */,
 				3C2626B8294231CA00A0D1F1 /* Code.swift in Sources */,

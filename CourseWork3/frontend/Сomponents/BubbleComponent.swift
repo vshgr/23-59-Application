@@ -12,7 +12,7 @@ class BubbleComponent: UIButton {
     private let bubbleText: String
     
     // MARK: - Init
-    init(frame: CGRect = .zero, text: String) {
+    init(frame: CGRect = .zero, text: String = "") {
         bubbleText = text
         super.init(frame: frame)
         configureUI()

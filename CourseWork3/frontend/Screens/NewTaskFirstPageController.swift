@@ -20,10 +20,13 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
     
     private let contentStack = UIStackView()
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-        navigationController?.setNavigationBarHidden(false, animated: true)
         configureUI()
         setupNavBar(title: "New task", color: UIColor.dl.mainCol() ?? .white)
     }
@@ -123,9 +126,12 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
         continueButon.showAnimation {
             if self.taskTitle.getText() == "" {
                 self.taskTitle.setErrorState()
-            }
-            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
-                self.taskTitle.setDefaultState()
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
+                    self.taskTitle.setDefaultState()
+                }
+            } else {
+                let secondPage = NewTaskSecondPageController()
+                self.navigationController?.pushViewController(secondPage, animated: true)
             }
         }
     }

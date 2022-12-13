@@ -10,6 +10,6 @@ import Foundation
 struct Task {
     var name: String
     var description: String
-    var deadline: Date
+    var deadline: String
     var groups: [String]
 }
