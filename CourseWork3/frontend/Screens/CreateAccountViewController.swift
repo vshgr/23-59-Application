@@ -28,7 +28,13 @@ class CreateAccountViewController : UIViewController {
         super.viewDidLoad()
         setupView()
         setupNavBar(title: "Create account")
+        navigationItem.hidesBackButton = true
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     
     // MARK: - Setups
     private func setupView() {

@@ -37,11 +37,6 @@ class CodeInputController: UIViewController {
         setupNavBar()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: true)
-
-    }
-    
     // MARK: - Configuration
     private func setupView() {
         for element in [content, continueButton] {
