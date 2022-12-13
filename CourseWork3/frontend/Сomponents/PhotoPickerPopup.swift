@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhotoPicker : UIView{
+class PhotoPicker : UIView {
     // MARK: - Constants
     private enum Constants {
         static let bearImg: UIImage? = UIImage(named: "bear")
