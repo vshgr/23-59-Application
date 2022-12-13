@@ -10,7 +10,6 @@ import UIKit
 class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     // MARK: - Constants
     enum Constants {
-        static let profilePic : UIImage? = UIImage(named: "dog")
         static let bigSpacing: Double = 25
         static let spacing: Double = 15
         static let tapsNum: Int = 1
@@ -19,16 +18,17 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         static let multiline: Int = 0
         static let filter: UIImage? = UIImage(named: "filter")
         static let title: String = "tasks"
-        static let usernameText: String = "@yana_wishnya"
-        static let nameText: String = "Yana Barbashina"
-        static let imagePadding: Double = 8.33
     }
     
     // MARK: - Fields
+    private let user = User(name: "Yana Barbashina",
+                            username: "yana_wishnya",
+                            email: "yana_wishnya@hse.ru",
+                            profilePicUrl: "dog")
     private let name = UILabel()
     private let username = UILabel()
     private let nameStack = UIStackView()
-    private let profilePic = UIImageView(image: Constants.profilePic)
+    private var profilePic = UIImageView()
     private let taskTitle = UILabel()
     private let filter = UIButton()
     private let scroll = UIScrollView()
@@ -124,20 +124,21 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     }
     
     private func setupName() {
-        name.text = Constants.nameText
+        name.text = user.name
         name.font = UIFont.dl.ralewayBold(20)
         name.numberOfLines = Constants.multiline
         name.textColor = .black
     }
     
     private func setupImage() {
+        profilePic = UIImageView(image: UIImage(named: user.profilePicUrl))
         profilePic.setWidth(Constants.picWH)
         profilePic.pinHeight(to: profilePic.widthAnchor)
     }
     
     private func setupUsername() {
         username.textColor = .black
-        username.text = Constants.usernameText
+        username.text = "@" + user.username
         username.font = username.font.withSize(14)
     }
     
