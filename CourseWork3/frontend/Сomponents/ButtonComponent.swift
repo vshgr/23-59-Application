@@ -13,7 +13,7 @@ class CustomButton: UIButton {
         super.init(frame: frame)
     }
     
-    init(frame: CGRect = .zero, title: String, height: CGFloat){
+    init(frame: CGRect = .zero, title: String, height: CGFloat = 70){
         super.init(frame: frame)
         configure(title: title, height: height)
         

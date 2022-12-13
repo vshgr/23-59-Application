@@ -50,6 +50,7 @@
 		48A48035293E49DC006540DC /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48033293E49DC006540DC /* Raleway-Medium.ttf */; };
 		48A48039293E4BD7006540DC /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48036293E4B78006540DC /* Raleway-Regular.ttf */; };
 		48A6C1B7294221070001B962 /* CustomNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6C1B6294221070001B962 /* CustomNavbar.swift */; };
+		48FFAD082948BDC700E5820B /* NewTaskFirstPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFAD072948BDC700E5820B /* NewTaskFirstPageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		48A48033293E49DC006540DC /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.ttf"; path = "CourseWork3/fonts/Raleway-Medium.ttf"; sourceTree = SOURCE_ROOT; };
 		48A48036293E4B78006540DC /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "CourseWork3/fonts/Raleway-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		48A6C1B6294221070001B962 /* CustomNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavbar.swift; sourceTree = "<group>"; };
+		48FFAD072948BDC700E5820B /* NewTaskFirstPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewTaskFirstPageController.swift; path = CourseWork3/Frontend/Screens/NewTaskFirstPageController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 				4815507C2942B6A2008EF3A1 /* FeedController.swift */,
 				4815507E2942B6B1008EF3A1 /* FriendsController.swift */,
 				486D4DC92944E33000A23868 /* FilterPageController.swift */,
+				48FFAD072948BDC700E5820B /* NewTaskFirstPageController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48FFAD082948BDC700E5820B /* NewTaskFirstPageController.swift in Sources */,
 				486D4DCA2944E33000A23868 /* FilterPageController.swift in Sources */,
 				4815507B2942ACBB008EF3A1 /* CustomTabBarController.swift in Sources */,
 				481550812942B7D8008EF3A1 /* DevelopmentComponent.swift in Sources */,

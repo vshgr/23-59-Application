@@ -11,7 +11,7 @@ class TaskPageController: UIViewController {
     // MARK: - Constants
     enum Constants {
         static let nfyImg: UIImage? = UIImage(named: "notification")
-        static let spacing: Double = 15
+        static let spacing: Double = 17
         static let scrollHeight: Double = 40
         static let descText: String = "Подготовить макеты в фигме для индивидуального/командного мини-проекта по созданию мобильного приложения по курсу. Необходимо сформулировать перечень функциональных требований к программе, построить use-case-диаграмму с покрытием прецедентами всех этих требований. Продумать все возможные сценарии использования и отразить их в виде вайрфреймов с проработанными макетами экранов приложения."
         static let deadline: String = "3 Dec, 23:59"
