@@ -118,7 +118,7 @@ class TaskPageController: UIViewController {
     private func configureDateTime() {
         dateTime.text = Constants.deadline
         dateTime.textColor = .black
-        dateTime.font = UIFont(name: "PingFangTC-Medium", size: 12)
+        dateTime.font = UIFont(name: "PingFangTC-Medium", size: 14)
     }
     
     private func getGroup(title: String) -> UIView {

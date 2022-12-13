@@ -41,7 +41,7 @@ class InputFieldView: UIView, UITextFieldDelegate {
     
     private func configureTextField() {
         input.textColor = .black
-        input.font = UIFont.dl.ralewayMedium(15)
+        input.font = input.font?.withSize(15)
         input.delegate = self
         input.keyboardType = keyboardType
     }
