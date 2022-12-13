@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04E878293E15FD00DF73B3 /* EmailViewController.swift */; };
+		3C1B79A42948BACF00636D0D /* AddTaskPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */; };
 		3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */; };
 		3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */; };
 		3C2626B8294231CA00A0D1F1 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B7294231CA00A0D1F1 /* Code.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		3C04E878293E15FD00DF73B3 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPopup.swift; sourceTree = "<group>"; };
 		3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Borders.swift"; sourceTree = "<group>"; };
 		3C2626B7294231CA00A0D1F1 /* Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				4815507A2942ACBB008EF3A1 /* CustomTabBarController.swift */,
 				481550802942B7D8008EF3A1 /* DevelopmentComponent.swift */,
 				3C2626BF2943B23500A0D1F1 /* CellComponent.swift */,
+				3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */,
 			);
 			path = "Сomponents";
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */,
 				485B19992941FEEC00042F89 /* UIView+Pin.swift in Sources */,
 				4894B3A2293E5B5B008CE633 /* User.swift in Sources */,
+				3C1B79A42948BACF00636D0D /* AddTaskPopup.swift in Sources */,
 				3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */,
 				48A6C1B7294221070001B962 /* CustomNavbar.swift in Sources */,
 				4814C0CD29420B8F00939BA5 /* BubbleComponent.swift in Sources */,

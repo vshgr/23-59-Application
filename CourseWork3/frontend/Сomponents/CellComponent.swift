@@ -54,7 +54,7 @@ class CellComponent: UIStackView, UITextFieldDelegate {
         cell.setBorder(width: 1, color: UIColor.dl.hintCol() ?? .gray)
         cell.layer.cornerRadius = 10
         cell.textColor = .black
-        cell.font = UIFont.dl.ralewayBold(24)
+        cell.font = cell.font?.withSize(24)
         cell.textAlignment = .center
         cell.keyboardType = .asciiCapableNumberPad
         cell.attributedPlaceholder = NSAttributedString(
