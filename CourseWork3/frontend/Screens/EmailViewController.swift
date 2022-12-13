@@ -3,7 +3,7 @@ import UIKit
 class EmailViewController: UIViewController {
     
     // MARK: - Fields
-    private let emailField: InputFieldView = InputFieldView(title: "Email", hint: "enter email", message: "invalid email")
+    private let emailField: InputFieldView = InputFieldView(title: "Email", hint: "enter email", message: "invalid email", keyboard: UIKeyboardType.emailAddress)
     let btn = CustomButton(title: "Send code", height: 70)
 
     // MARK: - Load

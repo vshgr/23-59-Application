@@ -6,7 +6,7 @@ class InputFieldView: UIView, UITextFieldDelegate {
     private let input = UITextField()
     private let underline = UIView()
     private let errorMessage = UILabel()
-    
+    private var keyboardType = UIKeyboardType.default
     public func getText() -> String {
         return input.text ?? ""
     }
@@ -17,7 +17,8 @@ class InputFieldView: UIView, UITextFieldDelegate {
         configure()
     }
     
-    init(frame: CGRect = .zero, title: String = "", hint: String = "", message: String = ""){
+    init(frame: CGRect = .zero, title: String = "", hint: String = "", message: String = "", keyboard: UIKeyboardType = UIKeyboardType.default) {
+        self.keyboardType = keyboard
         super.init(frame: frame)
         setTitle(title: title)
         setPlaceholder(hint: hint)
@@ -42,6 +43,7 @@ class InputFieldView: UIView, UITextFieldDelegate {
         input.textColor = .black
         input.font = UIFont.dl.ralewayMedium(15)
         input.delegate = self
+        input.keyboardType = keyboardType
     }
     
     private func configureUnderline() {
