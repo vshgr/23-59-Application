@@ -107,7 +107,7 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     private func getConfig(color: UIColor, imageName: String) -> UIButton.Configuration {
         addTaskGroupButtonConfig.contentInsets = .zero
         addTaskGroupButtonConfig.image = UIImage(named: imageName)?.withTintColor(color)
-        addTaskGroupButtonConfig.imagePadding = Constants.imagePadding
+        addTaskGroupButtonConfig.imagePadding = 8.33
         return addTaskGroupButtonConfig
     }
     
