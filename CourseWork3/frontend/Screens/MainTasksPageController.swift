@@ -71,8 +71,6 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         setupProfileSV()
         setupTaskLabel()
         setupFloatingButton()
-        setupAddGroupButton()
-        setupAddTaskButton()
         setupTaskSV()
         setupTasksSV()
         setupScroll()
@@ -80,30 +78,30 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     }
     
     private func setupFloatingButton() {
-        setupOpenCloseButtons(button: addTaskGroupButton, imageName: "add")
+        addTaskGroupButton = setupOpenCloseButtons(button: addTaskGroupButton, imageName: "add")
         addTaskGroupButton.addTarget(self, action: #selector(openPopup), for: .touchUpInside)
         
-        setupOpenCloseButtons(button: closeTaskGroupButton, imageName: "close")
+        closeTaskGroupButton = setupOpenCloseButtons(button: closeTaskGroupButton, imageName: "close")
+        closeTaskGroupButton.addTarget(self, action: #selector(closePopup), for: .touchUpInside)
+        
+        setupAddTaskButton()
+        setupAddGroupButton()
+        
+        addTaskButton.isHidden = true
+        addGroupButton.isHidden = true
+        closeTaskGroupButton.isHidden = true
     }
     
-    private func setupOpenCloseButtons(button: UIButton, imageName: String) {
-        addTaskGroupButton.configuration = getConfig(color: UIColor.white, imageName: imageName)
-        addTaskGroupButton.backgroundColor = .black
-        addTaskGroupButton.layer.cornerRadius = 20
-        addTaskGroupButton.layer.shadowOpacity = 0.3
-        addTaskGroupButton.layer.shadowRadius = 5
-        addTaskGroupButton.setHeight(40)
-        addTaskGroupButton.setWidth(40)
-    }
-    
-    private func setupAddTaskButton() {
-        addTaskButton.pinRight(to: view.trailingAnchor, Grid.stripe)
-        addTaskButton.pinBottom(to: addGroupButton.topAnchor, 12)
-    }
-    
-    private func setupAddGroupButton() {
-        addGroupButton.pinRight(to: view.trailingAnchor, Grid.stripe)
-        addGroupButton.pinBottom(to: addTaskGroupButton.topAnchor, 15)
+    private func setupOpenCloseButtons(button: UIButton, imageName: String) -> UIButton {
+        button.configuration = getConfig(color: UIColor.white, imageName: imageName)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 20
+        button.layer.shadowOpacity = 0.3
+        button.layer.shadowRadius = 5
+        button.setHeight(40)
+        button.setWidth(40)
+        
+        return button
     }
     
     private func getConfig(color: UIColor, imageName: String) -> UIButton.Configuration {
@@ -111,6 +109,18 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         addTaskGroupButtonConfig.image = UIImage(named: imageName)?.withTintColor(color)
         addTaskGroupButtonConfig.imagePadding = Constants.imagePadding
         return addTaskGroupButtonConfig
+    }
+    
+    private func setupAddTaskButton() {
+        addTaskButton.pinRight(to: view.trailingAnchor, Grid.stripe)
+        addTaskButton.pinBottom(to: addGroupButton.topAnchor, 12)
+        addTaskButton.setWidth(133)
+    }
+    
+    private func setupAddGroupButton() {
+        addGroupButton.pinRight(to: view.trailingAnchor, Grid.stripe)
+        addGroupButton.pinBottom(to: addTaskGroupButton.topAnchor, 15)
+        addGroupButton.setWidth(133)
     }
     
     private func setupName() {
@@ -157,8 +167,10 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         scroll.pinHorizontal(to: view, Grid.stripe)
         scroll.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
         
-        addTaskGroupButton.pinRight(to: view.trailingAnchor, 21)
-        addTaskGroupButton.pinBottom(to: view.bottomAnchor, 20)
+        for button in [addTaskGroupButton, closeTaskGroupButton] {
+            button.pinRight(to: view.trailingAnchor, 21)
+            button.pinBottom(to: view.bottomAnchor, 20)
+        }
     }
     
     private func setupTaskLabel() {
@@ -225,7 +237,17 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     
     @objc
     private func openPopup() {
+        addTaskGroupButton.isHidden = true
+        closeTaskGroupButton.isHidden = false
         addTaskButton.isHidden = false
         addGroupButton.isHidden = false
+    }
+    
+    @objc
+    private func closePopup() {
+        closeTaskGroupButton.isHidden = true
+        addTaskButton.isHidden = true
+        addGroupButton.isHidden = true
+        addTaskGroupButton.isHidden = false
     }
 }
