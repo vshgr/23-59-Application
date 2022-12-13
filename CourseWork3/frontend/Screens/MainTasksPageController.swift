@@ -35,8 +35,13 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     private let tasksSV = UIStackView()
     private let taskFilterSV = UIStackView()
     private let profileSV = UIStackView()
-    private var addTaskButton = UIButton()
-    private var addTaskButtonConfig = UIButton.Configuration.plain()
+    
+    // Right bottom popup okaaaay letsgoooo
+    private var addTaskGroupButton = UIButton()
+    private var closeTaskGroupButton = UIButton()
+    private var addTaskGroupButtonConfig = UIButton.Configuration.plain()
+    private let addTaskButton = CustomButton(title: "Add task", height: 40)
+    private let addGroupButton = CustomButton(title: "Add group", height: 40)
     
     // MARK: - Load
     override func viewDidLoad() {
@@ -53,7 +58,8 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     
     // MARK: - Setups
     private func setupView() {
-        for view in [profileSV, taskFilterSV, scroll, addTaskButton] {
+        for view in [profileSV, taskFilterSV, scroll, addTaskGroupButton,
+                     closeTaskGroupButton, addTaskButton, addGroupButton] {
             self.view.addSubview(view)
         }
         
@@ -64,6 +70,8 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         setupImage()
         setupProfileSV()
         setupTaskLabel()
+        setupFloatingButton()
+        setupAddGroupButton()
         setupAddTaskButton()
         setupTaskSV()
         setupTasksSV()
@@ -71,19 +79,38 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         setupConstaints()
     }
     
-    private func setupAddTaskButton() {
-        addTaskButton.configuration = getConfig(color: UIColor.white)
-        addTaskButton.backgroundColor = .black
-        addTaskButton.layer.cornerRadius = 20
-        addTaskButton.setHeight(40)
-        addTaskButton.setWidth(40)
+    private func setupFloatingButton() {
+        setupOpenCloseButtons(button: addTaskGroupButton, imageName: "add")
+        addTaskGroupButton.addTarget(self, action: #selector(openPopup), for: .touchUpInside)
+        
+        setupOpenCloseButtons(button: closeTaskGroupButton, imageName: "close")
     }
     
-    private func getConfig(color: UIColor) -> UIButton.Configuration {
-        addTaskButtonConfig.contentInsets = .zero
-        addTaskButtonConfig.image = UIImage(named: "add")?.withTintColor(color)
-        addTaskButtonConfig.imagePadding = Constants.imagePadding
-        return addTaskButtonConfig
+    private func setupOpenCloseButtons(button: UIButton, imageName: String) {
+        addTaskGroupButton.configuration = getConfig(color: UIColor.white, imageName: imageName)
+        addTaskGroupButton.backgroundColor = .black
+        addTaskGroupButton.layer.cornerRadius = 20
+        addTaskGroupButton.layer.shadowOpacity = 0.3
+        addTaskGroupButton.layer.shadowRadius = 5
+        addTaskGroupButton.setHeight(40)
+        addTaskGroupButton.setWidth(40)
+    }
+    
+    private func setupAddTaskButton() {
+        addTaskButton.pinRight(to: view.trailingAnchor, Grid.stripe)
+        addTaskButton.pinBottom(to: addGroupButton.topAnchor, 12)
+    }
+    
+    private func setupAddGroupButton() {
+        addGroupButton.pinRight(to: view.trailingAnchor, Grid.stripe)
+        addGroupButton.pinBottom(to: addTaskGroupButton.topAnchor, 15)
+    }
+    
+    private func getConfig(color: UIColor, imageName: String) -> UIButton.Configuration {
+        addTaskGroupButtonConfig.contentInsets = .zero
+        addTaskGroupButtonConfig.image = UIImage(named: imageName)?.withTintColor(color)
+        addTaskGroupButtonConfig.imagePadding = Constants.imagePadding
+        return addTaskGroupButtonConfig
     }
     
     private func setupName() {
@@ -130,8 +157,8 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         scroll.pinHorizontal(to: view, Grid.stripe)
         scroll.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
         
-        addTaskButton.pinRight(to: view.trailingAnchor, 21)
-        addTaskButton.pinBottom(to: view.bottomAnchor, 20)
+        addTaskGroupButton.pinRight(to: view.trailingAnchor, 21)
+        addTaskGroupButton.pinBottom(to: view.bottomAnchor, 20)
     }
     
     private func setupTaskLabel() {
@@ -194,5 +221,11 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         let taskPageController = TaskPageController()
 //        taskPageController.setTask(title: sender.getTitle(), desc: sender.getDesc(), date: sender.getDate())
         self.navigationController?.pushViewController(taskPageController, animated: true)
+    }
+    
+    @objc
+    private func openPopup() {
+        addTaskButton.isHidden = false
+        addGroupButton.isHidden = false
     }
 }

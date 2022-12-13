@@ -36,6 +36,8 @@ class CellComponent: UIStackView, UITextFieldDelegate {
             element.delegate = self
         }
         
+        firstCell.addTarget(self, action: #selector(textfieldChanged), for: .editingChanged)
+        
         configureCells()
         configureTags()
         configureStackView()
@@ -87,6 +89,7 @@ class CellComponent: UIStackView, UITextFieldDelegate {
         textField.layer.borderColor = UIColor.darkGray.cgColor
     }
     
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
@@ -105,5 +108,12 @@ class CellComponent: UIStackView, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
+    @objc
+    private func textfieldChanged() {
+        if (firstCell.text?.count == 0) {
+            
+        }
     }
 }

@@ -18,8 +18,6 @@ class AddTaskPopup : UIView {
     // MARK: - Fields
     private let addTaskButton = CustomButton(title: "Add task", height: 40)
     private let addGroupButton = CustomButton(title: "Add group", height: 40)
-    let closeButton = UIButton()
-    private var closeButtonConfig = UIButton.Configuration.plain()
     
     
     // MARK: - Init
@@ -35,33 +33,15 @@ class AddTaskPopup : UIView {
     
     // MARK: - Setup
     private func setupView() {
-        setupCloseButton()
         addSubview(addTaskButton)
         addSubview(addGroupButton)
-        addSubview(closeButton)
         
         setupConstraints()
-    }
-    
-    private func setupCloseButton() {
-        closeButton.configuration = getConfig(color: UIColor.black)
-    }
-    
-    private func getConfig(color: UIColor) -> UIButton.Configuration {
-        closeButtonConfig.contentInsets = .zero
-        
-        closeButtonConfig.baseForegroundColor = color
-        closeButtonConfig.image = UIImage(named: "add")?.withTintColor(color)
-        
-        closeButtonConfig.imagePadding = Constants.imagePadding
-        
-        return closeButtonConfig
     }
     
     private func setupConstraints() {
         addTaskButton.pinTop(to: self)
         addGroupButton.pinTop(to: addTaskButton.bottomAnchor, 12)
-        closeButton.pinBottom(to: self)
     }
 }
 
@@ -75,18 +55,10 @@ class AddTaskPopupController: UIViewController {
         modalTransitionStyle = .crossDissolve
         modalPresentationStyle = .overCurrentContext
         view = addTask
-        addTask.closeButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
     }
     
     @available (*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - Actions
-    @objc
-    private func dismissView() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
 }

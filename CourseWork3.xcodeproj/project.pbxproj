@@ -269,6 +269,8 @@
 			dependencies = (
 			);
 			name = CourseWork3;
+			packageProductDependencies = (
+			);
 			productName = CourseWork3;
 			productReference = 486088622937E57B008B76ED /* 23:59.app */;
 			productType = "com.apple.product-type.application";
@@ -297,6 +299,8 @@
 				Base,
 			);
 			mainGroup = 486088592937E57B008B76ED;
+			packageReferences = (
+			);
 			productRefGroup = 486088632937E57B008B76ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
