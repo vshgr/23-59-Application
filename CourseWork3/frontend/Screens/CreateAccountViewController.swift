@@ -12,6 +12,7 @@ class CreateAccountViewController : UIViewController {
     // MARK: - Constants
     private enum Constants {
         static let spacing: Double = 25
+        static let topSpacing: Double = 131
     }
     
     // MARK: - Fields
@@ -19,15 +20,21 @@ class CreateAccountViewController : UIViewController {
     let stack = UIStackView()
     var nameField = InputFieldView(title: "Name", hint: "enter name", message: "required")
     let usernameField = InputFieldView(title: "Username", hint: "enter username", message: "required")
-    var emailField: InputFieldView = InputFieldView()
+    var emailField = InputFieldView(title: "Email", hint: "example@hse.ru")
     let btn = CustomButton(title: "Create account", height: 70)
     
     // MARK: - Load
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupNavBar(title: "Create account", hideBack: true)
+        setupNavBar(title: "Create account")
+        navigationItem.hidesBackButton = true
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     
     // MARK: - Setups
     private func setupView() {
@@ -43,7 +50,7 @@ class CreateAccountViewController : UIViewController {
         view.addSubview(profileView)
         
         profileView.pinCenterX(to: view.centerXAnchor)
-        profileView.pinTop(to: view.topAnchor, 131)
+        profileView.pinTop(to: view.topAnchor, Constants.topSpacing)
         profileView.tapChangePic = addPhotoButtonPressed
     }
     
@@ -89,8 +96,9 @@ class CreateAccountViewController : UIViewController {
                 self.nameField.setErrorState()
             }
             
-            if (self.usernameField.getText().trimmingCharacters(in: .whitespaces) == ""){
+            if (!CheckInput.checkUsernameIsCorrect(username: self.usernameField.getText())){
                 flag = false
+                self.usernameField.setErrorMessage(message: "from 5 to 18 simbols without special")
                 self.usernameField.setErrorState()
             }
             

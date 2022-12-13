@@ -3,14 +3,14 @@ import UIKit
 class EmailViewController: UIViewController {
     
     // MARK: - Fields
-    private let emailField: InputFieldView = InputFieldView(title: "Email", hint: "enter email", message: "invalid email")
+    private let emailField: InputFieldView = InputFieldView(title: "Email", hint: "enter email", message: "invalid email", keyboard: UIKeyboardType.emailAddress)
     let btn = CustomButton(title: "Send code", height: 70)
 
     // MARK: - Load
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupNavBar(hideBack: true)
+        setupNavBar()
     }
 
     // MARK: - Setups
@@ -42,8 +42,7 @@ class EmailViewController: UIViewController {
     @objc
     private func sendCodeButtonPressed() {
         btn.showAnimation {
-            let mailer = Mailer()
-            if (mailer.checkIfEmailFilled(email: self.emailField.getText())) {
+            if (CheckInput.checkEmailisCorrect(email: self.emailField.getText())) {
                 let codeInputController = CodeInputController()
                 self.navigationController?.pushViewController(codeInputController, animated: true)
             } else {

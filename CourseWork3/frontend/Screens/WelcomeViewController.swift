@@ -14,13 +14,10 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - Load
     override func viewDidLoad() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
         super.viewDidLoad()
         setupView()
         setupNavBar()
-        UIFont.familyNames.forEach({ familyName in
-                    let fontNames = UIFont.fontNames(forFamilyName: familyName)
-                    print(familyName, fontNames)
-                })
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

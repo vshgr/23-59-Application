@@ -16,6 +16,7 @@ class CustomButton: UIButton {
     init(frame: CGRect = .zero, title: String, height: CGFloat){
         super.init(frame: frame)
         configure(title: title, height: height)
+        
     }
     
     @available(*, unavailable)

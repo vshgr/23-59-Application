@@ -6,7 +6,7 @@ class InputFieldView: UIView, UITextFieldDelegate {
     private let input = UITextField()
     private let underline = UIView()
     private let errorMessage = UILabel()
-    
+    private var keyboardType = UIKeyboardType.default
     public func getText() -> String {
         return input.text ?? ""
     }
@@ -17,7 +17,8 @@ class InputFieldView: UIView, UITextFieldDelegate {
         configure()
     }
     
-    init(frame: CGRect = .zero, title: String = "", hint: String = "", message: String = ""){
+    init(frame: CGRect = .zero, title: String = "", hint: String = "", message: String = "", keyboard: UIKeyboardType = UIKeyboardType.default) {
+        self.keyboardType = keyboard
         super.init(frame: frame)
         setTitle(title: title)
         setPlaceholder(hint: hint)
@@ -40,8 +41,9 @@ class InputFieldView: UIView, UITextFieldDelegate {
     
     private func configureTextField() {
         input.textColor = .black
-        input.font = UIFont.dl.ralewayMedium(15)
+        input.font = input.font?.withSize(15)
         input.delegate = self
+        input.keyboardType = keyboardType
     }
     
     private func configureUnderline() {
@@ -77,30 +79,31 @@ class InputFieldView: UIView, UITextFieldDelegate {
     }
     
     // MARK: - Setters
-    private func setTitle(title: String) {
+    func setTitle(title: String) {
         label.text = title
     }
     
-    private func setPlaceholder(hint: String){
+    func setPlaceholder(hint: String){
         input.attributedPlaceholder = NSAttributedString(
             string: hint,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.dl.hintCol() ?? .systemGray])
     }
     
-    private func setErrorMessage(message: String){
+    func setErrorMessage(message: String){
         errorMessage.text = message
     }
     
-    public func setErrorState() {
+    func setErrorState() {
         errorMessage.isHidden = false
         label.textColor = UIColor.dl.attentionCol()
         underline.backgroundColor = UIColor.dl.attentionCol()
     }
     
-    public func setDefaultState() {
+    func setDefaultState() {
         errorMessage.isHidden = true
         label.textColor = .black
         underline.backgroundColor = .black
     }
+    
     
 }

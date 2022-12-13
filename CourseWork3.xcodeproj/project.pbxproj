@@ -40,10 +40,11 @@
 		4886AC4A2940E39A00640A4B /* PhotoPickerPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */; };
 		4886AC4C2940EF0B00640A4B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4886AC4B2940EF0B00640A4B /* ProfileView.swift */; };
 		488B8C66294216D000ED8B0C /* FriendAccountSVConponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488B8C65294216D000ED8B0C /* FriendAccountSVConponent.swift */; };
+		488C94DA2948AB2200411481 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C94D92948AB2200411481 /* Task.swift */; };
+		488C94DC2948B00A00411481 /* CheckInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488C94DB2948B00A00411481 /* CheckInput.swift */; };
 		4892320729420595002DCBEF /* TaskComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892320629420595002DCBEF /* TaskComponent.swift */; };
 		4892320929420702002DCBEF /* MainTasksPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4892320829420702002DCBEF /* MainTasksPageController.swift */; };
 		4894B3A2293E5B5B008CE633 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4894B3A1293E5B5B008CE633 /* User.swift */; };
-		48A4801A293E0FDD006540DC /* Mailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A48019293E0FDD006540DC /* Mailer.swift */; };
 		48A48031293E45AE006540DC /* mainFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48030293E45AE006540DC /* mainFont.otf */; };
 		48A48034293E49DC006540DC /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48032293E49DC006540DC /* Raleway-Bold.ttf */; };
 		48A48035293E49DC006540DC /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48033293E49DC006540DC /* Raleway-Medium.ttf */; };
@@ -87,10 +88,11 @@
 		4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerPopup.swift; sourceTree = "<group>"; };
 		4886AC4B2940EF0B00640A4B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		488B8C65294216D000ED8B0C /* FriendAccountSVConponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendAccountSVConponent.swift; sourceTree = "<group>"; };
+		488C94D92948AB2200411481 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		488C94DB2948B00A00411481 /* CheckInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInput.swift; sourceTree = "<group>"; };
 		4892320629420595002DCBEF /* TaskComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskComponent.swift; sourceTree = "<group>"; };
 		4892320829420702002DCBEF /* MainTasksPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTasksPageController.swift; sourceTree = "<group>"; };
 		4894B3A1293E5B5B008CE633 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		48A48019293E0FDD006540DC /* Mailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mailer.swift; sourceTree = "<group>"; };
 		48A48030293E45AE006540DC /* mainFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = mainFont.otf; path = CourseWork3/fonts/mainFont.otf; sourceTree = SOURCE_ROOT; };
 		48A48032293E49DC006540DC /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "CourseWork3/fonts/Raleway-Bold.ttf"; sourceTree = SOURCE_ROOT; };
 		48A48033293E49DC006540DC /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.ttf"; path = "CourseWork3/fonts/Raleway-Medium.ttf"; sourceTree = SOURCE_ROOT; };
@@ -113,21 +115,15 @@
 			isa = PBXGroup;
 			children = (
 				3C2626B7294231CA00A0D1F1 /* Code.swift */,
-				48A48019293E0FDD006540DC /* Mailer.swift */,
+				488C94DB2948B00A00411481 /* CheckInput.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		3C2626BA2943A66000A0D1F1 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Delegates;
 			sourceTree = "<group>";
 		};
 		481D44F1293FCA36006764A4 /* Сomponents */ = {
 			isa = PBXGroup;
 			children = (
+				4815507A2942ACBB008EF3A1 /* CustomTabBarController.swift */,
 				48A6C1B6294221070001B962 /* CustomNavbar.swift */,
 				4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */,
 				481D44F2293FCAB1006764A4 /* ButtonComponent.swift */,
@@ -136,7 +132,6 @@
 				4892320629420595002DCBEF /* TaskComponent.swift */,
 				4814C0CC29420B8F00939BA5 /* BubbleComponent.swift */,
 				488B8C65294216D000ED8B0C /* FriendAccountSVConponent.swift */,
-				4815507A2942ACBB008EF3A1 /* CustomTabBarController.swift */,
 				481550802942B7D8008EF3A1 /* DevelopmentComponent.swift */,
 				3C2626BF2943B23500A0D1F1 /* CellComponent.swift */,
 				3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */,
@@ -203,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				4894B3A1293E5B5B008CE633 /* User.swift */,
+				488C94D92948AB2200411481 /* Task.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,7 +217,6 @@
 		48A48018293E0C9A006540DC /* backend */ = {
 			isa = PBXGroup;
 			children = (
-				3C2626BA2943A66000A0D1F1 /* Delegates */,
 				3C2626B92943373800A0D1F1 /* Utilities */,
 				4894B3A0293E5B4D008CE633 /* Models */,
 			);
@@ -242,14 +237,14 @@
 		48A6C1B529421B090001B962 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				486088692937E57B008B76ED /* WelcomeViewController.swift */,
+				3C04E878293E15FD00DF73B3 /* EmailViewController.swift */,
+				3C2626BD2943AF2C00A0D1F1 /* CodeInputController.swift */,
 				483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */,
 				4892320829420702002DCBEF /* MainTasksPageController.swift */,
-				3C04E878293E15FD00DF73B3 /* EmailViewController.swift */,
-				486088692937E57B008B76ED /* WelcomeViewController.swift */,
 				4815507629425134008EF3A1 /* TaskPageController.swift */,
 				4815507C2942B6A2008EF3A1 /* FeedController.swift */,
 				4815507E2942B6B1008EF3A1 /* FriendsController.swift */,
-				3C2626BD2943AF2C00A0D1F1 /* CodeInputController.swift */,
 				486D4DC92944E33000A23868 /* FilterPageController.swift */,
 			);
 			path = Screens;
@@ -334,6 +329,7 @@
 				481550812942B7D8008EF3A1 /* DevelopmentComponent.swift in Sources */,
 				483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */,
 				4892320729420595002DCBEF /* TaskComponent.swift in Sources */,
+				488C94DC2948B00A00411481 /* CheckInput.swift in Sources */,
 				485B198F29411F4F00042F89 /* UIFont+.swift in Sources */,
 				4815507929425E57008EF3A1 /* UIButton+Select.swift in Sources */,
 				481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */,
@@ -344,7 +340,7 @@
 				4815507F2942B6B1008EF3A1 /* FriendsController.swift in Sources */,
 				4860886A2937E57B008B76ED /* WelcomeViewController.swift in Sources */,
 				4886AC46293FDAB700640A4B /* FieldComponent.swift in Sources */,
-				48A4801A293E0FDD006540DC /* Mailer.swift in Sources */,
+				488C94DA2948AB2200411481 /* Task.swift in Sources */,
 				4886AC4A2940E39A00640A4B /* PhotoPickerPopup.swift in Sources */,
 				4886AC4C2940EF0B00640A4B /* ProfileView.swift in Sources */,
 				4815507729425134008EF3A1 /* TaskPageController.swift in Sources */,

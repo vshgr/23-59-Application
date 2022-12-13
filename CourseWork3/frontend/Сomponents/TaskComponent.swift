@@ -15,6 +15,7 @@ class TaskComponent: UIView {
         static let mainSpacing: Double = 15
         static let cornerRadius: Double = 10
         static let taskColor: UIColor = UIColor(rgb: 0xF8F8F8)
+        static let error: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
@@ -24,6 +25,7 @@ class TaskComponent: UIView {
     private let contentSV = UIStackView()
     private let permission = UILabel()
     private let taskName = UILabel()
+    private let taskDesc = UILabel()
     private let groups = UILabel()
     private let bottomLineSV = UIStackView()
     private let dateView = BubbleComponent(text: "3 Dec, 2022")
@@ -43,7 +45,7 @@ class TaskComponent: UIView {
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(Constants.error)
     }
     
     // MARK: - Configuration
@@ -83,7 +85,7 @@ class TaskComponent: UIView {
     }
     
     private func configureTaskNameLabel() {
-        taskName.text = "Какое-то название задачи оно большое и при этом остается мультилайн круто да"
+        taskName.text = "Разработать дизайн курсового проекта для приложения - тасктрекера"
         taskName.numberOfLines = 0
         taskName.textColor = .black
         taskName.font = UIFont.dl.ralewayBold(14)
@@ -156,5 +158,18 @@ class TaskComponent: UIView {
             }
             self.doneBtn.transform = .identity
         })
+    }
+    
+    // MARK: - Getters
+    public func getTitle() -> String {
+        return taskName.text ?? ""
+    }
+    
+    public func getDesc() -> String {
+        return taskDesc.text ?? ""
+    }
+    
+    public func getDate() -> String {
+        return dateView.getText()
     }
 }

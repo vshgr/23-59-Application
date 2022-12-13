@@ -10,17 +10,23 @@ import UIKit
 class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     // MARK: - Constants
     enum Constants {
-        static let profilePic : UIImage? = UIImage(named: "rabbit")
+        static let profilePic : UIImage? = UIImage(named: "dog")
         static let bigSpacing: Double = 25
         static let spacing: Double = 15
         static let tapsNum: Int = 1
         static let offset: Double = 0
         static let picWH: Double = 75
         static let multiline: Int = 0
+        static let filter: UIImage? = UIImage(named: "filter")
+        static let title: String = "tasks"
+        static let usernameText: String = "@yana_wishnya"
+        static let nameText: String = "Yana Barbashina"
     }
     
     // MARK: - Fields
     private let name = UILabel()
+    private let username = UILabel()
+    private let nameStack = UIStackView()
     private let profilePic = UIImageView(image: Constants.profilePic)
     private let taskTitle = UILabel()
     private let filter = UIButton()
@@ -50,6 +56,8 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         
         view.backgroundColor = .white
         setupName()
+        setupUsername()
+        setupNameStack()
         setupImage()
         setupProfileSV()
         setupTaskLabel()
@@ -60,7 +68,7 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     }
     
     private func setupName() {
-        name.text = "Yana Barbashina"
+        name.text = Constants.nameText
         name.font = UIFont.dl.ralewayBold(20)
         name.numberOfLines = Constants.multiline
         name.textColor = .black
@@ -71,10 +79,24 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         profilePic.pinHeight(to: profilePic.widthAnchor)
     }
     
+    private func setupUsername() {
+        username.textColor = .black
+        username.text = Constants.usernameText
+        username.font = username.font.withSize(14)
+    }
+    
+    private func setupNameStack() {
+        nameStack.axis = .vertical
+        nameStack.addArrangedSubview(name)
+        nameStack.addArrangedSubview(username)
+        nameStack.alignment = .leading
+    }
+    
     private func setupProfileSV(){
-        profileSV.addArrangedSubview(name)
+        profileSV.addArrangedSubview(nameStack)
         profileSV.addArrangedSubview(profilePic)
         profileSV.axis = .horizontal
+        profileSV.alignment = .center
         profileSV.spacing = Constants.bigSpacing
     }
     
@@ -91,10 +113,10 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     }
     
     private func setupTaskLabel() {
-        taskTitle.text = "tasks"
+        taskTitle.text = Constants.title
         taskTitle.textColor = .black
         taskTitle.font = UIFont.dl.ralewayBold(20)
-        filter.setImage(UIImage(named: "filter"), for: .normal)
+        filter.setImage(Constants.filter, for: .normal)
         filter.addTarget(self, action: #selector(filterTapped), for: .touchUpInside)
     }
     
@@ -108,7 +130,7 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     }
     
     private func getTask() -> TaskComponent {
-        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(taskTapped))
+        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(taskTapped(sender:)))
         gesture.numberOfTapsRequired = Constants.tapsNum
         
         let selfTask = Bool.random()
@@ -148,6 +170,7 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     @objc
     private func taskTapped(sender: TaskComponent) {
         let taskPageController = TaskPageController()
+//        taskPageController.setTask(title: sender.getTitle(), desc: sender.getDesc(), date: sender.getDate())
         self.navigationController?.pushViewController(taskPageController, animated: true)
     }
 }

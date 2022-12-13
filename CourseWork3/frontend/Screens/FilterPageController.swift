@@ -11,9 +11,14 @@ class FilterPageController: UIViewController {
     let developmentComponent = DevelopmentComponent()
     
     override func viewDidLoad() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
         super.viewDidLoad()
         setupView()
-        setupNavBar(hideBack: true)
+        setupNavBar(title: "Filters", color: UIColor.dl.mainCol()!)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     private func setupView() {

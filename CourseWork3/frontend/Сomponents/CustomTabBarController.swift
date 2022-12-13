@@ -16,7 +16,8 @@ class CustomTabBarController: UITabBarController {
         super.viewDidLoad()
         configureTapBar()
         configureAppearance()
-        setupNavBar(hideBack: true)
+        self.selectedIndex = 1
+        setupNavBar()
     }
     
     private func configureTapBar() {

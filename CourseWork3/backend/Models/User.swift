@@ -6,7 +6,9 @@
 //
 
 
-class User {
-    
-    
+struct User {
+    var name: String
+    var username: String
+    var email: String
 }
+

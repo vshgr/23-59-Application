@@ -31,6 +31,7 @@ class CodeInputController: UIViewController {
     
     // MARK: - Load
     override func viewDidLoad() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
         super.viewDidLoad()
         setupView()
         setupNavBar()
@@ -130,7 +131,6 @@ class CodeInputController: UIViewController {
     }
     
     // MARK: - Timer
-    
     private func setupTimer() {
         count = 59
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
@@ -157,8 +157,7 @@ class CodeInputController: UIViewController {
         return timerStr
     }
     
-    // MARK: - Target
-    
+    // MARK: - Actions
     @objc
     private func restartTimer() {
         setupTimer()

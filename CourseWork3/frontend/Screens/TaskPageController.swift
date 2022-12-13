@@ -15,7 +15,9 @@ class TaskPageController: UIViewController {
         static let scrollHeight: Double = 40
         static let descText: String = "Подготовить макеты в фигме для индивидуального/командного мини-проекта по созданию мобильного приложения по курсу. Необходимо сформулировать перечень функциональных требований к программе, построить use-case-диаграмму с покрытием прецедентами всех этих требований. Продумать все возможные сценарии использования и отразить их в виде вайрфреймов с проработанными макетами экранов приложения."
         static let deadline: String = "3 Dec, 23:59"
-        static let taskTitle: String = "Какое-то название задачи оно большое и при этом остается мультилайн круто да"
+        static let taskTitle: String = "Разработать дизайн курсового проекта для приложения - тасктрекера"
+        static let multiline: Int = 0
+        static let linesSpacing: Double = 6
     }
     
     // MARK: - Fields
@@ -31,9 +33,14 @@ class TaskPageController: UIViewController {
     
     // MARK: - Load
     override func viewDidLoad() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
         super.viewDidLoad()
         configureUI()
-        setupNavBar(title: "Task", rightComponents: buttonsSV, color: UIColor.dl.mainCol() ?? .white)
+        setupNavBar(title: "Task", right: buttonsSV, color: UIColor.dl.mainCol()!)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     // MARK: - Configuration
@@ -58,13 +65,17 @@ class TaskPageController: UIViewController {
     private func configureConstraints() {
         taskDesc.pinHorizontal(to: view, Grid.stripe)
         taskDesc.pinTop(to: taskName.bottomAnchor, Constants.spacing * 2)
+        
         taskName.pinTop(to: scrollGroups.bottomAnchor, Constants.spacing)
         taskName.pinHorizontal(to: view, Grid.stripe)
+        
         scrollGroups.pinHorizontal(to: view, Grid.stripe)
         scrollGroups.pinTop(to: friend.bottomAnchor, Constants.spacing)
         scrollGroups.setHeight(Constants.scrollHeight)
+        
         dateTime.pinCenterY(to: friend.centerYAnchor)
         dateTime.pinRight(to: view, Grid.stripe)
+        
         friend.pinLeft(to: view, Grid.stripe)
         friend.pinRight(to: dateTime)
         friend.pinTop(to: view.safeAreaLayoutGuide.topAnchor, Constants.spacing)
@@ -84,13 +95,13 @@ class TaskPageController: UIViewController {
     }
     
     private func configureTaskDesc() {
-        taskDesc.numberOfLines = 0
+        taskDesc.numberOfLines = Constants.multiline
         taskDesc.font = UIFont.dl.ralewayMedium(16)
         taskDesc.textColor = .black
         
         let attributedString = NSMutableAttributedString(string: Constants.descText)
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 6
+        paragraphStyle.lineSpacing = Constants.linesSpacing
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
 
         taskDesc.attributedText = attributedString
@@ -100,14 +111,14 @@ class TaskPageController: UIViewController {
     private func configureTaskName() {
         taskName.text = Constants.taskTitle
         taskName.textColor = .black
-        taskName.numberOfLines = 0
+        taskName.numberOfLines = Constants.multiline
         taskName.font = UIFont.dl.ralewayBold(23)
     }
     
     private func configureDateTime() {
         dateTime.text = Constants.deadline
         dateTime.textColor = .black
-        dateTime.font = UIFont(name: "PingFangTC-Medium", size: 12)
+        dateTime.font = UIFont(name: "PingFangTC-Medium", size: 14)
     }
     
     private func getGroup(title: String) -> UIView {
@@ -138,5 +149,12 @@ class TaskPageController: UIViewController {
         
         groupsSV.axis = .horizontal
         groupsSV.spacing = Constants.spacing - 5
+    }
+    
+    // MARK: - Setters
+    public func setTask(title: String, desc: String, date: String) {
+        taskName.text = title
+        taskDesc.text = desc
+        dateTime.text = date
     }
 }
