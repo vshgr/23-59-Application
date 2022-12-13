@@ -21,6 +21,7 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         static let title: String = "tasks"
         static let usernameText: String = "@yana_wishnya"
         static let nameText: String = "Yana Barbashina"
+        static let imagePadding: Double = 8.33
     }
     
     // MARK: - Fields
@@ -34,6 +35,8 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     private let tasksSV = UIStackView()
     private let taskFilterSV = UIStackView()
     private let profileSV = UIStackView()
+    private var addTaskButton = UIButton()
+    private var addTaskButtonConfig = UIButton.Configuration.plain()
     
     // MARK: - Load
     override func viewDidLoad() {
@@ -50,7 +53,7 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     
     // MARK: - Setups
     private func setupView() {
-        for view in [profileSV, taskFilterSV, scroll] {
+        for view in [profileSV, taskFilterSV, scroll, addTaskButton] {
             self.view.addSubview(view)
         }
         
@@ -61,10 +64,26 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         setupImage()
         setupProfileSV()
         setupTaskLabel()
+        setupAddTaskButton()
         setupTaskSV()
         setupTasksSV()
         setupScroll()
         setupConstaints()
+    }
+    
+    private func setupAddTaskButton() {
+        addTaskButton.configuration = getConfig(color: UIColor.white)
+        addTaskButton.backgroundColor = .black
+        addTaskButton.layer.cornerRadius = 20
+        addTaskButton.setHeight(40)
+        addTaskButton.setWidth(40)
+    }
+    
+    private func getConfig(color: UIColor) -> UIButton.Configuration {
+        addTaskButtonConfig.contentInsets = .zero
+        addTaskButtonConfig.image = UIImage(named: "add")?.withTintColor(color)
+        addTaskButtonConfig.imagePadding = Constants.imagePadding
+        return addTaskButtonConfig
     }
     
     private func setupName() {
@@ -110,6 +129,9 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         scroll.pinTop(to: taskFilterSV.bottomAnchor, Constants.bigSpacing)
         scroll.pinHorizontal(to: view, Grid.stripe)
         scroll.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
+        
+        addTaskButton.pinRight(to: view.trailingAnchor, 21)
+        addTaskButton.pinBottom(to: view.bottomAnchor, 20)
     }
     
     private func setupTaskLabel() {
