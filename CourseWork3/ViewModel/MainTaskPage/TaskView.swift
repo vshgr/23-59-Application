@@ -15,6 +15,8 @@ class TaskView: UIView {
         static let mainSpacing: Double = 15
         static let cornerRadius: Double = 10
         static let taskColor: UIColor = UIColor(rgb: 0xF8F8F8)
+        static let separator: String = ", "
+        static let multiline: Int = 0
         static let error: String = "init(coder:) has not been implemented"
     }
     
@@ -86,21 +88,21 @@ class TaskView: UIView {
     }
     
     private func configurePermissionLabel() {
-        permission.text = "private"
+        permission.text = task.permission.rawValue
         permission.textColor = UIColor.dl.hintCol()
         permission.font = UIFont.dl.ralewayMedium(12)
     }
     
     private func configureTaskNameLabel() {
         taskName.text = task.name
-        taskName.numberOfLines = 0
+        taskName.numberOfLines = Constants.multiline
         taskName.textColor = .black
         taskName.font = UIFont.dl.ralewayBold(14)
     }
     
     private func configureGroupsLabel() {
-        groups.text = task.groups.joined(separator: ", ")
-        groups.numberOfLines = 0
+        groups.text = task.groups.joined(separator: Constants.separator)
+        groups.numberOfLines = Constants.multiline
         groups.textColor = UIColor.dl.hintCol()
         groups.font = UIFont.dl.ralewayMedium(14)
     }
@@ -141,7 +143,7 @@ class TaskView: UIView {
             button.configuration = config
         }
         
-        doneBtn.addTarget(self, action: #selector(setDone(sender:)), for: .touchUpInside)
+        doneBtn.addTarget(self, action: #selector(setDone), for: .touchUpInside)
     }
     
     private func configureButtonsSV() {
@@ -155,7 +157,7 @@ class TaskView: UIView {
     
     // MARK: - Actions
     @objc
-    private func setDone(sender: UIButton){
+    private func setDone(){
         isDone.toggle()
         UIView.animate(withDuration: 0.5, delay: 0, animations: {
             if (self.isDone == false) {

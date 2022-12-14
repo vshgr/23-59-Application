@@ -30,6 +30,9 @@
 		48331F20294A202400C65197 /* NewTaskFirstPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F1F294A202400C65197 /* NewTaskFirstPageController.swift */; };
 		48331F22294A28AE00C65197 /* ButtonWithArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F21294A28AE00C65197 /* ButtonWithArrowView.swift */; };
 		48331F24294A2FED00C65197 /* InputTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F23294A2FED00C65197 /* InputTypeEnum.swift */; };
+		48331F26294A532200C65197 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F25294A532200C65197 /* ProfileInfoView.swift */; };
+		48331F29294A574200C65197 /* AddTaskGroupButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F28294A574200C65197 /* AddTaskGroupButtonsView.swift */; };
+		48331F2B294A678700C65197 /* TasksScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F2A294A678700C65197 /* TasksScrollView.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
 		485B198D29411AE000042F89 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B198C29411AE000042F89 /* Grid.swift */; };
@@ -80,6 +83,9 @@
 		48331F1F294A202400C65197 /* NewTaskFirstPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskFirstPageController.swift; sourceTree = "<group>"; };
 		48331F21294A28AE00C65197 /* ButtonWithArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithArrowView.swift; sourceTree = "<group>"; };
 		48331F23294A2FED00C65197 /* InputTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTypeEnum.swift; sourceTree = "<group>"; };
+		48331F25294A532200C65197 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
+		48331F28294A574200C65197 /* AddTaskGroupButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskGroupButtonsView.swift; sourceTree = "<group>"; };
+		48331F2A294A678700C65197 /* TasksScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksScrollView.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		485B198C29411AE000042F89 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
@@ -151,18 +157,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		48331F1B2949CE7300C65197 /* View */ = {
+		48331F1B2949CE7300C65197 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				48331F27294A563800C65197 /* MainTaskPage */,
 				481D44F2293FCAB1006764A4 /* ButtonView.swift */,
 				4886AC45293FDAB700640A4B /* InputFieldView.swift */,
 				48331F21294A28AE00C65197 /* ButtonWithArrowView.swift */,
-				4892320629420595002DCBEF /* TaskView.swift */,
 			);
-			path = View;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		48331F1C2949CE7B00C65197 /* ViewModel */ = {
+		48331F1C2949CE7B00C65197 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				486088692937E57B008B76ED /* WelcomeViewController.swift */,
@@ -171,7 +177,18 @@
 				483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */,
 				4892320829420702002DCBEF /* MainTasksPageController.swift */,
 			);
-			path = ViewModel;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		48331F27294A563800C65197 /* MainTaskPage */ = {
+			isa = PBXGroup;
+			children = (
+				4892320629420595002DCBEF /* TaskView.swift */,
+				48331F25294A532200C65197 /* ProfileInfoView.swift */,
+				48331F28294A574200C65197 /* AddTaskGroupButtonsView.swift */,
+				48331F2A294A678700C65197 /* TasksScrollView.swift */,
+			);
+			path = MainTaskPage;
 			sourceTree = "<group>";
 		};
 		485B19882941175800042F89 /* Extentions */ = {
@@ -224,8 +241,8 @@
 				48A6C1B529421B090001B962 /* Screens */,
 				485B19882941175800042F89 /* Extentions */,
 				3C2626B92943373800A0D1F1 /* Utilities */,
-				48331F1C2949CE7B00C65197 /* ViewModel */,
-				48331F1B2949CE7300C65197 /* View */,
+				48331F1C2949CE7B00C65197 /* Controllers */,
+				48331F1B2949CE7300C65197 /* ViewModel */,
 				48331F1A2949CDF900C65197 /* Model */,
 				48A4802F293E4574006540DC /* Fonts */,
 				486088652937E57B008B76ED /* AppDelegate.swift */,
@@ -352,6 +369,7 @@
 				481D44F3293FCAB1006764A4 /* ButtonView.swift in Sources */,
 				48331F1E2949DC4300C65197 /* Observable.swift in Sources */,
 				4892320929420702002DCBEF /* MainTasksPageController.swift in Sources */,
+				48331F26294A532200C65197 /* ProfileInfoView.swift in Sources */,
 				4815507529424602008EF3A1 /* UIView+TapAnimation.swift in Sources */,
 				3C2626C02943B23500A0D1F1 /* CellComponent.swift in Sources */,
 				488B8C66294216D000ED8B0C /* FriendAccountSVConponent.swift in Sources */,
@@ -363,6 +381,7 @@
 				4886AC4C2940EF0B00640A4B /* ProfileView.swift in Sources */,
 				4815507729425134008EF3A1 /* TaskPageController.swift in Sources */,
 				48331F22294A28AE00C65197 /* ButtonWithArrowView.swift in Sources */,
+				48331F2B294A678700C65197 /* TasksScrollView.swift in Sources */,
 				3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */,
 				486088662937E57B008B76ED /* AppDelegate.swift in Sources */,
 				485B198D29411AE000042F89 /* Grid.swift in Sources */,
@@ -380,6 +399,7 @@
 				4814C0CD29420B8F00939BA5 /* BubbleComponent.swift in Sources */,
 				485B199B2941FF6B00042F89 /* UIColor+.swift in Sources */,
 				481550832942BF8E008EF3A1 /* CALayer.swift in Sources */,
+				48331F29294A574200C65197 /* AddTaskGroupButtonsView.swift in Sources */,
 				4815507D2942B6A2008EF3A1 /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
