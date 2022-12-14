@@ -217,7 +217,6 @@
 				48331F1B2949CE7300C65197 /* View */,
 				48331F1A2949CDF900C65197 /* Model */,
 				48A4802F293E4574006540DC /* Fonts */,
-				48A48018293E0C9A006540DC /* backend */,
 				48A48017293E0C90006540DC /* frontend */,
 				486088652937E57B008B76ED /* AppDelegate.swift */,
 				486088672937E57B008B76ED /* SceneDelegate.swift */,
@@ -237,13 +236,6 @@
 				481D44F1293FCA36006764A4 /* Сomponents */,
 			);
 			path = frontend;
-			sourceTree = "<group>";
-		};
-		48A48018293E0C9A006540DC /* backend */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = backend;
 			sourceTree = "<group>";
 		};
 		48A4802F293E4574006540DC /* Fonts */ = {
