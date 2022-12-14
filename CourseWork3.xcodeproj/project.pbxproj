@@ -145,6 +145,15 @@
 			path = "Сomponents";
 			sourceTree = "<group>";
 		};
+		48331F1A2949CDF900C65197 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4894B3A1293E5B5B008CE633 /* User.swift */,
+				488C94D92948AB2200411481 /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		485B19882941175800042F89 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +198,7 @@
 		486088642937E57B008B76ED /* CourseWork3 */ = {
 			isa = PBXGroup;
 			children = (
+				48331F1A2949CDF900C65197 /* Model */,
 				48A4802F293E4574006540DC /* fonts */,
 				48A48018293E0C9A006540DC /* backend */,
 				48A48017293E0C90006540DC /* frontend */,
@@ -199,15 +209,6 @@
 				486088732937E57B008B76ED /* Info.plist */,
 			);
 			path = CourseWork3;
-			sourceTree = "<group>";
-		};
-		4894B3A0293E5B4D008CE633 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4894B3A1293E5B5B008CE633 /* User.swift */,
-				488C94D92948AB2200411481 /* Task.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		48A48017293E0C90006540DC /* frontend */ = {
@@ -225,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				3C2626B92943373800A0D1F1 /* Utilities */,
-				4894B3A0293E5B4D008CE633 /* Models */,
 			);
 			path = backend;
 			sourceTree = "<group>";
