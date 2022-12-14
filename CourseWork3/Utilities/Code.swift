@@ -10,11 +10,6 @@ import UIKit
 class Code {
     func checkCodeDigitsFilled(cell: UITextField) -> Bool {
         guard let cellNumber = cell.text else { return false }
-        
-        if (cellNumber.isEmpty) {
-            return false
-        } else {
-            return true
-        }
+        return !cellNumber.isEmpty
     }
 }
