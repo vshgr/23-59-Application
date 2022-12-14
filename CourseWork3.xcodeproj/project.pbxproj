@@ -212,6 +212,7 @@
 		486088642937E57B008B76ED /* CourseWork3 */ = {
 			isa = PBXGroup;
 			children = (
+				48A6C1B529421B090001B962 /* Screens */,
 				485B19882941175800042F89 /* Extentions */,
 				3C2626B92943373800A0D1F1 /* Utilities */,
 				48331F1C2949CE7B00C65197 /* ViewModel */,
@@ -231,7 +232,6 @@
 		48A48017293E0C90006540DC /* frontend */ = {
 			isa = PBXGroup;
 			children = (
-				48A6C1B529421B090001B962 /* Screens */,
 				485B198B29411AC300042F89 /* Common */,
 				481D44F1293FCA36006764A4 /* Сomponents */,
 			);
