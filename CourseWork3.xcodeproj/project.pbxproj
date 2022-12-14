@@ -53,7 +53,6 @@
 		48A48034293E49DC006540DC /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48032293E49DC006540DC /* Raleway-Bold.ttf */; };
 		48A48035293E49DC006540DC /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48033293E49DC006540DC /* Raleway-Medium.ttf */; };
 		48A48039293E4BD7006540DC /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48036293E4B78006540DC /* Raleway-Regular.ttf */; };
-		48A6C1B7294221070001B962 /* CustomNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6C1B6294221070001B962 /* CustomNavbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,7 +104,6 @@
 		48A48032293E49DC006540DC /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "CourseWork3/fonts/Raleway-Bold.ttf"; sourceTree = SOURCE_ROOT; };
 		48A48033293E49DC006540DC /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.ttf"; path = "CourseWork3/fonts/Raleway-Medium.ttf"; sourceTree = SOURCE_ROOT; };
 		48A48036293E4B78006540DC /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "CourseWork3/fonts/Raleway-Regular.ttf"; sourceTree = SOURCE_ROOT; };
-		48A6C1B6294221070001B962 /* CustomNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				4815507A2942ACBB008EF3A1 /* CustomTabBarController.swift */,
-				48A6C1B6294221070001B962 /* CustomNavbar.swift */,
 				4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */,
 				4886AC45293FDAB700640A4B /* FieldComponent.swift */,
 				4886AC4B2940EF0B00640A4B /* ProfileView.swift */,
@@ -376,7 +373,6 @@
 				4894B3A2293E5B5B008CE633 /* User.swift in Sources */,
 				3C1B79A42948BACF00636D0D /* AddTaskPopup.swift in Sources */,
 				3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */,
-				48A6C1B7294221070001B962 /* CustomNavbar.swift in Sources */,
 				4814C0CD29420B8F00939BA5 /* BubbleComponent.swift in Sources */,
 				485B199B2941FF6B00042F89 /* UIColor+.swift in Sources */,
 				481550832942BF8E008EF3A1 /* CALayer.swift in Sources */,
