@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskComponent: UIView {
+class TaskView: UIView {
     // MARK: - Constants
     enum Constants {
         static let done: UIImage? = UIImage(named: "done")
@@ -38,6 +38,7 @@ class TaskComponent: UIView {
     private let addBtn = UIButton()
     private let width: Double
     private var isDone = false
+    var taskClicked: (() -> Void)?
     
     // MARK: - Init
     init(frame: CGRect = .zero, isSelfTask: Bool = true) {
@@ -54,6 +55,10 @@ class TaskComponent: UIView {
     
     // MARK: - Configuration
     private func configureUI() {
+        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openTask))
+        gesture.numberOfTapsRequired = 1
+        taskView.addGestureRecognizer(gesture)
+        
         dateView = BubbleComponent(text: task.deadline)
         addSubview(taskView)
         addSubview(buttonsSV)
@@ -176,5 +181,11 @@ class TaskComponent: UIView {
     
     public func getDate() -> String {
         return dateView.getText()
+    }
+    
+    // MARK: - Actions
+    @objc
+    func openTask() {
+        taskClicked?()
     }
 }
