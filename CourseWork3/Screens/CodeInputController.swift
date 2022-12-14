@@ -105,7 +105,7 @@ class CodeInputController: UIViewController {
     }
     
     private func setupContinueButton() {
-        continueButton.addTarget(self, action: #selector(continueButtonPressed), for: .touchUpInside)
+        continueButton.buttonClicked = continueButtonPressed
         
         continueButton.pinHorizontal(to: view, Grid.stripe * 2)
         continueButton.pinBottom(to: view, Grid.stripe * 2)

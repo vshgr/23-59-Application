@@ -75,8 +75,7 @@ class CreateAccountViewController : UIViewController {
         
         btn.pinHorizontal(to: view, Grid.stripe * 2)
         btn.pinBottom(to: view, Grid.stripe * 2)
-        
-        btn.addTarget(self, action: #selector(createButtonPressed), for: .touchUpInside)
+        btn.buttonClicked = createButtonPressed
     }
     
     // MARK: - Actions

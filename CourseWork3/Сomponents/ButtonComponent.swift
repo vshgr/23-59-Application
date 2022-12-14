@@ -8,6 +8,9 @@
 import UIKit
 
 class CustomButton: UIButton {
+    // MARK: - Fields
+    var buttonClicked: (() -> Void)?
+    
     // MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +29,8 @@ class CustomButton: UIButton {
     
     // MARK: - Configure
     private func configure(title: String, height: CGFloat) {
+        addTarget(self, action: #selector(bottomButtonCLicked), for: .touchUpInside)
+        
         setTitle(title, for: .normal)
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.dl.mainFont(18)
@@ -33,5 +38,10 @@ class CustomButton: UIButton {
         
         setHeight(height)
         layer.cornerRadius = height / 2
+    }
+    
+    @objc
+    func bottomButtonCLicked() {
+        buttonClicked?()
     }
 }
