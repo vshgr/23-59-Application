@@ -90,12 +90,12 @@ class CreateAccountViewController : UIViewController {
         btn.showAnimation { [self] in
             var flag = true
             
-            if (nameField.checkInputCorrect(type: InputType.normal, value: nameField.getText())){
+            if (!nameField.checkInputCorrect(type: InputType.normal, value: nameField.getText())){
                 flag = false
                 self.nameField.setErrorState()
             }
             
-            if (usernameField.checkInputCorrect(type: InputType.username, value: usernameField.getText())){
+            if (!usernameField.checkInputCorrect(type: InputType.username, value: usernameField.getText())){
                 flag = false
                 self.usernameField.setErrorMessage(message: "from 5 to 18 simbols without special")
                 self.usernameField.setErrorState()
