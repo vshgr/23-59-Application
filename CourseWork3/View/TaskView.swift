@@ -19,10 +19,7 @@ class TaskView: UIView {
     }
     
     // MARK: - Fields
-    private let task: Task = Task(name: "Разработать дизайн курсового проекта для приложения - тасктрекера",
-                                  description: "",
-                                  deadline: "3 Dec, 2022",
-                                  groups: ["Курсовая работа", "Диплом", "Организация вечеринки"])
+    private let task: Task = Task()
     private let selfTask: Bool
     private let taskView = UIView()
     private let buttonsSV = UIStackView()

@@ -13,14 +13,12 @@ class TaskPageController: UIViewController {
         static let nfyImg: UIImage? = UIImage(named: "notification")
         static let spacing: Double = 17
         static let scrollHeight: Double = 40
-        static let descText: String = "Подготовить макеты в фигме для индивидуального/командного мини-проекта по созданию мобильного приложения по курсу. Необходимо сформулировать перечень функциональных требований к программе, построить use-case-диаграмму с покрытием прецедентами всех этих требований. Продумать все возможные сценарии использования и отразить их в виде вайрфреймов с проработанными макетами экранов приложения."
-        static let deadline: String = "3 Dec, 23:59"
-        static let taskTitle: String = "Разработать дизайн курсового проекта для приложения - тасктрекера"
         static let multiline: Int = 0
         static let linesSpacing: Double = 6
     }
     
     // MARK: - Fields
+    private let task = Task()
     private let buttonsSV = UIStackView()
     private let deleteButton = BubbleComponent(text: "delete task")
     private let notifyBtn = UIButton()
@@ -99,7 +97,7 @@ class TaskPageController: UIViewController {
         taskDesc.font = UIFont.dl.ralewayMedium(16)
         taskDesc.textColor = .black
         
-        let attributedString = NSMutableAttributedString(string: Constants.descText)
+        let attributedString = NSMutableAttributedString(string: task.description)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = Constants.linesSpacing
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
@@ -109,14 +107,14 @@ class TaskPageController: UIViewController {
     }
     
     private func configureTaskName() {
-        taskName.text = Constants.taskTitle
+        taskName.text = task.name
         taskName.textColor = .black
         taskName.numberOfLines = Constants.multiline
         taskName.font = UIFont.dl.ralewayBold(23)
     }
     
     private func configureDateTime() {
-        dateTime.text = Constants.deadline
+        dateTime.text = task.deadline
         dateTime.textColor = .black
         dateTime.font = dateTime.font.withSize(14)
     }
@@ -138,13 +136,9 @@ class TaskPageController: UIViewController {
     }
     
     private func configureGroups() {
-        let fb = getGroup(title: "курсовая работа")
-        let sb = getGroup(title: "диплом")
-        let tb = getGroup(title: "организация вечеринки")
-        let ftb = getGroup(title: "работа")
-        
-        for view in [fb, sb, tb, ftb]{
-            groupsSV.addArrangedSubview(view)
+        for view in task.groups {
+            let gr = getGroup(title: view)
+            groupsSV.addArrangedSubview(gr)
         }
         
         groupsSV.axis = .horizontal

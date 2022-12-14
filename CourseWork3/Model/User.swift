@@ -13,3 +13,12 @@ struct User {
     var profilePicUrl: String
 }
 
+extension User {
+    init() {
+        name = "Yana Barbashina"
+        username = "yana_wishnya"
+        email = "yana_wishnya@hse.ru"
+        profilePicUrl = "dog"
+    }
+}
+

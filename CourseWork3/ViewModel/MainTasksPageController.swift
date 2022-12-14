@@ -21,10 +21,7 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     }
     
     // MARK: - Fields
-    private let user = User(name: "Yana Barbashina",
-                            username: "yana_wishnya",
-                            email: "yana_wishnya@hse.ru",
-                            profilePicUrl: "dog")
+    private let user = User()
     private let name = UILabel()
     private let username = UILabel()
     private let nameStack = UIStackView()
@@ -200,7 +197,7 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     }
     
     private func setupTasksSV() {
-        for view in [getTask(), getTask( ), getTask(), getTask(), getTask()] {
+        for view in [getTask(), getTask(), getTask(), getTask(), getTask()] {
             tasksSV.addArrangedSubview(view)
         }
         
