@@ -26,6 +26,8 @@
 		481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D44F2293FCAB1006764A4 /* ButtonComponent.swift */; };
 		48331F172948FCE300C65197 /* UINavigationBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F162948FCE300C65197 /* UINavigationBar+.swift */; };
 		48331F192948FD1600C65197 /* NewTaskSecondPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F182948FD1600C65197 /* NewTaskSecondPageController.swift */; };
+		48331F1E2949DC4300C65197 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F1D2949DC4300C65197 /* Observable.swift */; };
+		48331F20294A202400C65197 /* NewTaskFirstPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F1F294A202400C65197 /* NewTaskFirstPageController.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
 		485B198D29411AE000042F89 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B198C29411AE000042F89 /* Grid.swift */; };
@@ -52,7 +54,6 @@
 		48A48035293E49DC006540DC /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48033293E49DC006540DC /* Raleway-Medium.ttf */; };
 		48A48039293E4BD7006540DC /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A48036293E4B78006540DC /* Raleway-Regular.ttf */; };
 		48A6C1B7294221070001B962 /* CustomNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A6C1B6294221070001B962 /* CustomNavbar.swift */; };
-		48FFAD082948BDC700E5820B /* NewTaskFirstPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FFAD072948BDC700E5820B /* NewTaskFirstPageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		481D44F2293FCAB1006764A4 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
 		48331F162948FCE300C65197 /* UINavigationBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+.swift"; sourceTree = "<group>"; };
 		48331F182948FD1600C65197 /* NewTaskSecondPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskSecondPageController.swift; sourceTree = "<group>"; };
+		48331F1D2949DC4300C65197 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		48331F1F294A202400C65197 /* NewTaskFirstPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskFirstPageController.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		485B198C29411AE000042F89 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
@@ -103,7 +106,6 @@
 		48A48033293E49DC006540DC /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.ttf"; path = "CourseWork3/fonts/Raleway-Medium.ttf"; sourceTree = SOURCE_ROOT; };
 		48A48036293E4B78006540DC /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "CourseWork3/fonts/Raleway-Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		48A6C1B6294221070001B962 /* CustomNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavbar.swift; sourceTree = "<group>"; };
-		48FFAD072948BDC700E5820B /* NewTaskFirstPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewTaskFirstPageController.swift; path = CourseWork3/Frontend/Screens/NewTaskFirstPageController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				486088702937E57B008B76ED /* LaunchScreen.storyboard */,
 				483EAA51293F7AA700A72D7F /* Assets.xcassets */,
 				486088732937E57B008B76ED /* Info.plist */,
+				48331F1D2949DC4300C65197 /* Observable.swift */,
 			);
 			path = CourseWork3;
 			sourceTree = "<group>";
@@ -253,8 +256,8 @@
 				4815507C2942B6A2008EF3A1 /* FeedController.swift */,
 				4815507E2942B6B1008EF3A1 /* FriendsController.swift */,
 				486D4DC92944E33000A23868 /* FilterPageController.swift */,
-				48FFAD072948BDC700E5820B /* NewTaskFirstPageController.swift */,
 				48331F182948FD1600C65197 /* NewTaskSecondPageController.swift */,
+				48331F1F294A202400C65197 /* NewTaskFirstPageController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -337,17 +340,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48FFAD082948BDC700E5820B /* NewTaskFirstPageController.swift in Sources */,
 				486D4DCA2944E33000A23868 /* FilterPageController.swift in Sources */,
 				4815507B2942ACBB008EF3A1 /* CustomTabBarController.swift in Sources */,
 				48331F172948FCE300C65197 /* UINavigationBar+.swift in Sources */,
 				481550812942B7D8008EF3A1 /* DevelopmentComponent.swift in Sources */,
 				483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */,
 				4892320729420595002DCBEF /* TaskComponent.swift in Sources */,
+				48331F20294A202400C65197 /* NewTaskFirstPageController.swift in Sources */,
 				488C94DC2948B00A00411481 /* CheckInput.swift in Sources */,
 				485B198F29411F4F00042F89 /* UIFont+.swift in Sources */,
 				4815507929425E57008EF3A1 /* UIButton+Select.swift in Sources */,
 				481D44F3293FCAB1006764A4 /* ButtonComponent.swift in Sources */,
+				48331F1E2949DC4300C65197 /* Observable.swift in Sources */,
 				4892320929420702002DCBEF /* MainTasksPageController.swift in Sources */,
 				4815507529424602008EF3A1 /* UIView+TapAnimation.swift in Sources */,
 				3C2626C02943B23500A0D1F1 /* CellComponent.swift in Sources */,
