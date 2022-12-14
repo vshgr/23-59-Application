@@ -40,8 +40,8 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     private var addTaskGroupButton = UIButton()
     private var closeTaskGroupButton = UIButton()
     private var addTaskGroupButtonConfig = UIButton.Configuration.plain()
-    private let addTaskButton = CustomButton(title: "Add task", height: 40)
-    private let addGroupButton = CustomButton(title: "Add group", height: 40)
+    private let addTaskButton = ButtonView(title: "Add task", height: 40)
+    private let addGroupButton = ButtonView(title: "Add group", height: 40)
     
     // MARK: - Load
     override func viewDidLoad() {

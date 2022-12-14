@@ -21,7 +21,7 @@ class CreateAccountViewController : UIViewController {
     var nameField = InputFieldView(title: "Name", hint: "enter name", message: "required")
     let usernameField = InputFieldView(title: "Username", hint: "enter username", message: "required")
     var emailField = InputFieldView(title: "Email", hint: "example@hse.ru")
-    let btn = CustomButton(title: "Create account")
+    let btn = ButtonView(title: "Create account")
     
     // MARK: - Load
     override func viewDidLoad() {

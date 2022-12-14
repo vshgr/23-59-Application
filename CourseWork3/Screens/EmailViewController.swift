@@ -4,7 +4,7 @@ class EmailViewController: UIViewController {
     
     // MARK: - Fields
     private let emailField: InputFieldView = InputFieldView(title: "Email", hint: "enter email", message: "invalid email", keyboard: UIKeyboardType.emailAddress)
-    let btn = CustomButton(title: "Send code")
+    let btn = ButtonView(title: "Send code")
 
     // MARK: - Load
     override func viewDidLoad() {

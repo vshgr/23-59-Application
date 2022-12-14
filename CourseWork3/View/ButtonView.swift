@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomButton: UIButton {
+class ButtonView: UIButton {
     // MARK: - Fields
     var buttonClicked: (() -> Void)?
     

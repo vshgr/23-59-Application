@@ -15,7 +15,7 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
     private let descriptionField = UITextView()
     private let descriptionLabel = UILabel()
     private let descStack = UIStackView()
-    private let continueButon = CustomButton(title: "Continue")
+    private let continueButon = ButtonView(title: "Continue")
     
     private let contentStack = UIStackView()
     
@@ -68,7 +68,7 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
     }
     
     private func configureContinueButton() {
-        continueButon.addTarget(self, action: #selector(continueButtonPressed), for: .touchUpInside)
+        continueButon.buttonClicked = continueButtonPressed
     }
     
     private func configureDescriptionField() {

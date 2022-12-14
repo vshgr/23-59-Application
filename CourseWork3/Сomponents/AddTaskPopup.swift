@@ -16,8 +16,8 @@ class AddTaskPopup : UIView {
     }
     
     // MARK: - Fields
-    private let addTaskButton = CustomButton(title: "Add task", height: 40)
-    private let addGroupButton = CustomButton(title: "Add group", height: 40)
+    private let addTaskButton = ButtonView(title: "Add task", height: 40)
+    private let addGroupButton = ButtonView(title: "Add group", height: 40)
     
     
     // MARK: - Init

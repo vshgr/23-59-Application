@@ -21,7 +21,7 @@ class CodeInputController: UIViewController {
     
     private let cells: CellComponent = CellComponent(size: 45)
     private let cellsTitleLabel: UILabel = UILabel()
-    private let continueButton: CustomButton = CustomButton(title: "Continue")
+    private let continueButton: ButtonView = ButtonView(title: "Continue")
     private let securityCodeTextField = UITextField()
     private let checkEmailLabel = UILabel()
     private let sendCodeButton = UIButton(type: .system)

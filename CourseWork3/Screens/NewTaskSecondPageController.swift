@@ -18,7 +18,7 @@ class NewTaskSecondPageController: UIViewController {
     
     private let linkField: InputFieldView = InputFieldView(title: "Link", hint: "url")
     
-    private let createButton = CustomButton(title: "Create task")
+    private let createButton = ButtonView(title: "Create task")
     
     private let groupsLabel = UILabel()
     private let groupsStack = UIStackView()
@@ -158,7 +158,7 @@ class NewTaskSecondPageController: UIViewController {
     }
     
     private func configureCreateButton() {
-        createButton.addTarget(self, action: #selector(continueButtonPressed), for: .touchUpInside)
+        createButton.buttonClicked = continueButtonPressed
     }
     
     // MARK: - Actions
