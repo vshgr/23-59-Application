@@ -5,8 +5,6 @@
 //  Created by Алиса Вышегородцева on 13.12.2022.
 //
 
-import Foundation
-
 struct Task {
     var name: String
     var description: String

@@ -83,7 +83,7 @@ class CreateAccountViewController : UIViewController {
     @objc
     private func addPhotoButtonPressed() {
         let popup = PhotoPickerController()
-        self.present(popup, animated: true, completion: nil)
+        present(popup, animated: true, completion: nil)
     }
     
     @objc
