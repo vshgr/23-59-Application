@@ -19,13 +19,12 @@ class CodeInputController: UIViewController {
     // MARK: - Fields
     private var content: UIStackView = UIStackView()
     
-    private let cells: CellComponent = CellComponent(size: 45)
     private let cellsTitleLabel: UILabel = UILabel()
     private let continueButton: ButtonView = ButtonView(title: "Continue")
+    private let sendBtn = ButtonWithArrowView(title: "send code again")
+    private let cells: CellComponent = CellComponent(size: 45)
     private let securityCodeTextField = UITextField()
     private let checkEmailLabel = UILabel()
-    private let sendCodeButton = UIButton(type: .system)
-    private var sendCodeButtonConfig = UIButton.Configuration.plain()
     private let warningLabel: UILabel = UILabel()
     private var count: Int = 59
     
@@ -68,7 +67,7 @@ class CodeInputController: UIViewController {
     }
     
     private func setupStackView() {
-        for element in [checkEmailLabel, cellsTitleLabel, cells, warningLabel, sendCodeButton] {
+        for element in [checkEmailLabel, cellsTitleLabel, cells, warningLabel, sendBtn] {
             content.addArrangedSubview(element)
         }
         
@@ -89,13 +88,9 @@ class CodeInputController: UIViewController {
     }
     
     private func setupSendCodeAgainButton() {
-        sendCodeButton.configuration = getConfig(color: UIColor.dl.hintCol() ?? UIColor.gray)
-        sendCodeButton.titleLabel?.font = Constants.buttonFont
-        sendCodeButton.isEnabled = false
-        
-        sendCodeButton.titleLabel?.textAlignment = .left
-        
-        sendCodeButton.addTarget(self, action: #selector(restartTimer), for: .touchUpInside)
+        sendBtn.setDisabledState()
+        sendBtn.setTitle(title: makeTimerLabelString(seconds: count))
+        sendBtn.buttonClicked = restartTimer
     }
     
     private func setupWarningLabel() {
@@ -111,19 +106,6 @@ class CodeInputController: UIViewController {
         continueButton.pinBottom(to: view, Grid.stripe * 2)
     }
     
-    private func getConfig(color: UIColor) -> UIButton.Configuration {
-        sendCodeButtonConfig.title = makeTimerLabelString(seconds: count)
-        sendCodeButtonConfig.contentInsets = .zero
-        
-        sendCodeButtonConfig.baseForegroundColor = color
-        sendCodeButtonConfig.image = UIImage(named: "arrow_right")?.withTintColor(color)
-        
-        sendCodeButtonConfig.imagePlacement = .trailing
-        sendCodeButtonConfig.imagePadding = Constants.imagePadding
-        
-        return sendCodeButtonConfig
-    }
-    
     private func setupDefaultStateCell() {
         cells.arrangedSubviews.forEach {
             $0.layer.borderColor = UIColor.lightGray.cgColor
@@ -135,13 +117,13 @@ class CodeInputController: UIViewController {
         count = 59
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
             guard let self = self else { return }
+            self.sendBtn.setTitle(title: self.makeTimerLabelString(seconds: self.count))
             if self.count == 0 {
                 timer.invalidate()
-                self.sendCodeButton.isEnabled = true
-                self.sendCodeButton.configuration = self.getConfig(color: .black)
+                self.sendBtn.setEnabledState()
             } else {
                 self.count -= 1
-                self.sendCodeButton.configuration = self.getConfig(color: UIColor.dl.hintCol() ?? UIColor.gray)
+                self.sendBtn.setDisabledState()
             }
         }
     }

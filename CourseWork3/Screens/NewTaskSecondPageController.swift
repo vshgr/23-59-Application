@@ -26,7 +26,7 @@ class NewTaskSecondPageController: UIViewController {
     private let scrollGroups = UIScrollView()
 
     private let visibilityStack = UIStackView()
-    private let repeatButton = UIButton()
+    private let repeatButton = ButtonWithArrowView(title: "Repeat")
     private var config = UIButton.Configuration.plain()
     
     private let contentStack = UIStackView()
@@ -68,12 +68,7 @@ class NewTaskSecondPageController: UIViewController {
     }
     
     private func configureRepeatButton() {
-        repeatButton.configuration = getConfig()
-        repeatButton.titleLabel?.font = Constants.buttonFont
-        
-        repeatButton.titleLabel?.textAlignment = .left
-        
-        repeatButton.addTarget(self, action: #selector(repeatsButtonPressed), for: .touchUpInside)
+        repeatButton.buttonClicked = repeatsButtonPressed
     }
     
     private func getConfig() -> UIButton.Configuration {

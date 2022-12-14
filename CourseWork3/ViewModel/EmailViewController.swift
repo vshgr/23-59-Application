@@ -41,12 +41,12 @@ class EmailViewController: UIViewController {
     // MARK: - Actions
     @objc
     private func sendCodeButtonPressed() {
-        btn.showAnimation {
-            if (CheckInput.checkEmailisCorrect(email: self.emailField.getText())) {
+        btn.showAnimation { [self] in
+            if (emailField.checkInputCorrect(type: InputType.email, value: emailField.getText())) {
                 let codeInputController = CodeInputController()
-                self.navigationController?.pushViewController(codeInputController, animated: true)
+                navigationController?.pushViewController(codeInputController, animated: true)
             } else {
-                self.emailField.setErrorState()
+                emailField.setErrorState()
                 Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
                     self.emailField.setDefaultState()
                 }

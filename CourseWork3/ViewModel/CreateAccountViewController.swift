@@ -87,15 +87,15 @@ class CreateAccountViewController : UIViewController {
     
     @objc
     private func createButtonPressed() {
-        btn.showAnimation {
+        btn.showAnimation { [self] in
             var flag = true
             
-            if (self.nameField.getText().trimmingCharacters(in: .whitespaces) == ""){
+            if (nameField.checkInputCorrect(type: InputType.normal, value: nameField.getText())){
                 flag = false
                 self.nameField.setErrorState()
             }
             
-            if (!CheckInput.checkUsernameIsCorrect(username: self.usernameField.getText())){
+            if (usernameField.checkInputCorrect(type: InputType.username, value: usernameField.getText())){
                 flag = false
                 self.usernameField.setErrorMessage(message: "from 5 to 18 simbols without special")
                 self.usernameField.setErrorState()

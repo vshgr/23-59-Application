@@ -10,7 +10,7 @@ import UIKit
 class WelcomeViewController: UIViewController {
     // MARK: - Fields
     let onboardingIconView = UIImageView(image: UIImage(named: "onboarding_logo"))
-    let btn = CustomButton(title: "Sign in", height: 70)
+    let btn = ButtonView(title: "Sign in", height: 70)
     
     // MARK: - Load
     override func viewDidLoad() {
