@@ -212,6 +212,7 @@
 		486088642937E57B008B76ED /* CourseWork3 */ = {
 			isa = PBXGroup;
 			children = (
+				481D44F1293FCA36006764A4 /* Сomponents */,
 				485B198B29411AC300042F89 /* Common */,
 				48A6C1B529421B090001B962 /* Screens */,
 				485B19882941175800042F89 /* Extentions */,
@@ -233,7 +234,6 @@
 		48A48017293E0C90006540DC /* frontend */ = {
 			isa = PBXGroup;
 			children = (
-				481D44F1293FCA36006764A4 /* Сomponents */,
 			);
 			path = frontend;
 			sourceTree = "<group>";
