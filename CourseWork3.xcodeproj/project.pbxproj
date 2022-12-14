@@ -154,6 +154,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		48331F1B2949CE7300C65197 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		48331F1C2949CE7B00C65197 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		485B19882941175800042F89 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +212,8 @@
 		486088642937E57B008B76ED /* CourseWork3 */ = {
 			isa = PBXGroup;
 			children = (
+				48331F1C2949CE7B00C65197 /* ViewModel */,
+				48331F1B2949CE7300C65197 /* View */,
 				48331F1A2949CDF900C65197 /* Model */,
 				48A4802F293E4574006540DC /* fonts */,
 				48A48018293E0C9A006540DC /* backend */,
