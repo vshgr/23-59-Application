@@ -8,6 +8,11 @@
 import UIKit
 
 class BubbleView: UIButton {
+    // MARK: - Constants
+    enum Constants {
+        static let width: Double = 30
+    }
+    
     // MARK: - Fields
     private let dateLabel = UILabel()
     private let bubbleText: String
@@ -38,11 +43,11 @@ class BubbleView: UIButton {
         addTarget(self, action: #selector(bubbleClicked), for: .touchUpInside)
         setTitle(bubbleText, for: .normal)
         setTitleColor(.black, for: .normal)
-        // ИСПОЛЬЗОВАТЬ КОНФИГ
-        contentEdgeInsets = UIEdgeInsets(top: 10, left: 17, bottom: 10, right: 17)
         titleLabel?.font = titleLabel?.font.withSize(12)
         titleLabel?.textAlignment = .center
         titleLabel?.numberOfLines = 1
+        setHeight(intrinsicContentSize.height + Constants.width / 6)
+        setWidth(intrinsicContentSize.width + Constants.width)
         setBorder(width: 1, color: .black)
     }
     
