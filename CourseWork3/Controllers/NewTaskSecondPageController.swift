@@ -128,8 +128,8 @@ class NewTaskSecondPageController: UIViewController {
     @objc
     func continueButtonPressed() {
         createButton.showAnimation {
-            let mainControlle = MainTasksPageController()
-            self.navigationController?.pushViewController(mainControlle, animated: true)
+            let tabController = CustomTabBarController()
+            self.navigationController?.pushViewController(tabController, animated: true)
         }
     }
     
