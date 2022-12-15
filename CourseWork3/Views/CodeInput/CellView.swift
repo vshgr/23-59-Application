@@ -2,8 +2,15 @@ import UIKit
 
 class CellView: UIStackView, UITextFieldDelegate {
     
+    // MARK: - Constants
+    enum Constants {
+        static let error: String = "init(coder:) has not been implemented"
+        static let cornerRadius: CGFloat = 10
+        static let contentSpacing: Double = 12
+        static let codeFontSize: CGFloat = 22
+    }
+    
     // MARK: - Fields
-    //private var title: UILabel = UILabel()
     private var firstCell: UITextField = UITextField()
     private var secondCell: UITextField = UITextField()
     private var thirdCell: UITextField = UITextField()
@@ -20,17 +27,17 @@ class CellView: UIStackView, UITextFieldDelegate {
         setSize(cell: secondCell, size: size)
         setSize(cell: thirdCell, size: size)
         setSize(cell: fourthCell, size: size)
-        configure()
+        configureUI()
     }
     
     @available(*, unavailable)
     required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(Constants.error)
     }
     
     // MARK: - Configuration
     
-    private func configure() {
+    private func configureUI() {
         for element in [firstCell, secondCell, thirdCell, fourthCell] {
             addArrangedSubview(element)
             element.delegate = self
@@ -40,6 +47,10 @@ class CellView: UIStackView, UITextFieldDelegate {
         configureTags()
         configureTextFieldTargets()
         configureStackView()
+    }
+    
+    private func configureCellSize() {
+        
     }
     
     private func configureTextFieldTargets() {
@@ -60,9 +71,9 @@ class CellView: UIStackView, UITextFieldDelegate {
     
     private func configureCell(cell: UITextField) {
         cell.setBorder(width: 1, color: UIColor.dl.hintCol() ?? .gray)
-        cell.layer.cornerRadius = 10
+        cell.layer.cornerRadius = Constants.cornerRadius
         cell.textColor = .black
-        cell.font = cell.font?.withSize(22)
+        cell.font = cell.font?.withSize(Constants.codeFontSize)
         cell.textAlignment = .center
         cell.keyboardType = .asciiCapableNumberPad
         cell.attributedPlaceholder = NSAttributedString(
@@ -78,7 +89,7 @@ class CellView: UIStackView, UITextFieldDelegate {
     }
     
     private func configureStackView() {
-        spacing = 12
+        spacing = Constants.contentSpacing
         axis = .horizontal
         distribution = .fillEqually
     }
