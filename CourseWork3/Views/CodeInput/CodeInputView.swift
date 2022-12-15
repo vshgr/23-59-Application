@@ -58,10 +58,10 @@ class CodeInputView: UIStackView {
     private func configureLabels() {
         configureLabel(label: checkEmailLabel, font: Constants.mainFont ?? .systemFont(ofSize: 16), text: "check your email", textColor: .black)
         configureLabel(label: cellsTitleLabel, font: Constants.basicFont ?? .systemFont(ofSize: 14), text: "Code", textColor: .black)
-        configureLabel(label: warningLabel, font: Constants.basicFont ?? .systemFont(ofSize: 14), text: "please fill all the cells", textColor: UIColor.dl.attentionCol() ?? .red)
+        configureLabel(label: warningLabel, font: Constants.basicFont ?? .systemFont(ofSize: 14), textColor: UIColor.dl.attentionCol() ?? .red)
     }
     
-    private func configureLabel(label: UILabel, font: UIFont, text: String, textColor: UIColor) {
+    private func configureLabel(label: UILabel, font: UIFont, text: String = "", textColor: UIColor) {
         label.textColor = textColor
         label.font = font
         label.text = text
@@ -86,9 +86,7 @@ class CodeInputView: UIStackView {
     
     // MARK: - Setters
     func configureDefaultStateCell() {
-        cells.arrangedSubviews.forEach {
-            $0.layer.borderColor = UIColor.dl.hintCol()?.cgColor
-        }
+        cells.setDefaultState()
     }
     
     func makeWarningLabelHidden() {
@@ -97,6 +95,14 @@ class CodeInputView: UIStackView {
     
     func makeWarningLabelVisible() {
         warningLabel.isHidden = false
+    }
+    
+    func setWarningLabelText(text: String) {
+        warningLabel.text = text
+    }
+    
+    func clearCells() {
+        cells.clearCells()
     }
     
     // MARK: - Timer
@@ -122,11 +128,19 @@ class CodeInputView: UIStackView {
         var _: () = cells.arrangedSubviews.forEach {
             if (!codeChecker.checkCodeDigitsFilled(cell: $0 as! UITextField)) {
                 $0.layer.borderColor = UIColor.dl.attentionCol()?.cgColor
-                    cellsFilled = false
+                cellsFilled = false
             }
         }
         
         return cellsFilled
+    }
+    
+    func checkIfCodeIsCorrect() -> Bool {
+        let code = cells.getInsertedCode()
+        if code == "1234" {
+            return true
+        }
+        return false
     }
     
     // MARK: - Actions
