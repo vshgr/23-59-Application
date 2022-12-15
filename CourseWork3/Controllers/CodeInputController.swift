@@ -17,16 +17,8 @@ class CodeInputController: UIViewController {
     }
     
     // MARK: - Fields
-    private var content: UIStackView = UIStackView()
-    
-    private let cellsTitleLabel: UILabel = UILabel()
+    private var content: CellStackView = CellStackView()
     private let continueButton: ButtonView = ButtonView(title: "Continue")
-    private let sendBtn = ButtonWithArrowView(title: "send code again")
-    private let cells: CellComponent = CellComponent(size: 45)
-    private let securityCodeTextField = UITextField()
-    private let checkEmailLabel = UILabel()
-    private let warningLabel: UILabel = UILabel()
-    private var count: Int = 59
     
     // MARK: - Load
     override func viewDidLoad() {
@@ -43,127 +35,39 @@ class CodeInputController: UIViewController {
         }
         
         setupMainView()
-        setupMainTitle()
-        setupStackTitle()
-        setupSendCodeAgainButton()
         setupContinueButton()
-        setupStackTitle()
-        setupTimer()
-        setupWarningLabel()
         setupStackView()
     }
     
     private func setupMainView() {
         self.view.backgroundColor = .white
         self.hideKeyboardWhenTappedAround()
-        securityCodeTextField.textContentType = .oneTimeCode
         overrideUserInterfaceStyle = .light
     }
     
-    private func setupStackTitle() {
-        cellsTitleLabel.textColor = .black
-        cellsTitleLabel.font = UIFont.dl.ralewayMedium(14)
-        cellsTitleLabel.text = "Code"
-    }
-    
     private func setupStackView() {
-        for element in [checkEmailLabel, cellsTitleLabel, cells, warningLabel, sendBtn] {
-            content.addArrangedSubview(element)
-        }
-        
-        warningLabel.isHidden = true
-        
-        content.axis = .vertical
-        content.spacing = Constants.contentSpacing
-        content.alignment = .leading
-        
+        content.startTimer()
         content.pinCenterY(to: view)
         content.pinLeft(to: view, Grid.stripe)
     }
     
-    private func setupMainTitle() {
-        checkEmailLabel.textColor = .black
-        checkEmailLabel.font = UIFont.dl.mainFont(16)
-        checkEmailLabel.text = "check your email"
-    }
-    
-    private func setupSendCodeAgainButton() {
-        sendBtn.setDisabledState()
-        sendBtn.setTitle(title: makeTimerLabelString(seconds: count))
-        sendBtn.buttonClicked = restartTimer
-    }
-    
-    private func setupWarningLabel() {
-        warningLabel.text = "please fill all the cells"
-        warningLabel.textColor = UIColor.dl.attentionCol()
-        warningLabel.font = Constants.buttonFont
-    }
-    
     private func setupContinueButton() {
         continueButton.buttonClicked = continueButtonPressed
-        
         continueButton.pinHorizontal(to: view, Grid.stripe * 2)
         continueButton.pinBottom(to: view, Grid.stripe * 2)
     }
     
-    private func setupDefaultStateCell() {
-        cells.arrangedSubviews.forEach {
-            $0.layer.borderColor = UIColor.lightGray.cgColor
-        }
-    }
-    
-    // MARK: - Timer
-    private func setupTimer() {
-        count = 59
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
-            guard let self = self else { return }
-            self.sendBtn.setTitle(title: self.makeTimerLabelString(seconds: self.count))
-            if self.count == 0 {
-                timer.invalidate()
-                self.sendBtn.setEnabledState()
-            } else {
-                self.count -= 1
-                self.sendBtn.setDisabledState()
-            }
-        }
-    }
-    
-    private func makeTimerLabelString(seconds: Int) -> String {
-        var timerStr = "send code again"
-        if seconds >= 10 {
-            timerStr += " 0:\(seconds)"
-        } else if (seconds > 0) {
-            timerStr += " 0:0\(seconds)"
-        }
-        
-        return timerStr
-    }
-    
     // MARK: - Actions
     @objc
-    private func restartTimer() {
-        setupTimer()
-    }
-    
-    @objc
     private func continueButtonPressed() {
-        setupDefaultStateCell()
-        warningLabel.isHidden = true
+        content.configureDefaultStateCell()
+        content.makeWarningLabelHidden()
 
-        let codeChecker = Code()
-        var filled: Bool = true
-        var _: () = cells.arrangedSubviews.forEach {
-            if (!codeChecker.checkCodeDigitsFilled(cell: $0 as! UITextField)) {
-                $0.layer.borderColor = UIColor.dl.attentionCol()?.cgColor
-                    filled = false
-            }
-        }
-
-        if filled {
+        if content.checkIfCellsAreFilled() {
             let createAccountViewController = CreateAccountViewController()
             navigationController?.pushViewController(createAccountViewController, animated: true)
         } else {
-            warningLabel.isHidden = false
+            content.makeWarningLabelVisible()
         }
     }
 }
