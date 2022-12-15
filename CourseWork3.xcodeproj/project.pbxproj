@@ -37,6 +37,7 @@
 		48331F29294A574200C65197 /* AddTaskGroupButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F28294A574200C65197 /* AddTaskGroupButtonsView.swift */; };
 		48331F2B294A678700C65197 /* TasksScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F2A294A678700C65197 /* TasksScrollView.swift */; };
 		48331F30294B21EE00C65197 /* BubblesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F2F294B21EE00C65197 /* BubblesScrollView.swift */; };
+		48331F32294B35CC00C65197 /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F31294B35CC00C65197 /* UsersList.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
 		485B198D29411AE000042F89 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B198C29411AE000042F89 /* Grid.swift */; };
@@ -94,6 +95,7 @@
 		48331F28294A574200C65197 /* AddTaskGroupButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskGroupButtonsView.swift; sourceTree = "<group>"; };
 		48331F2A294A678700C65197 /* TasksScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksScrollView.swift; sourceTree = "<group>"; };
 		48331F2F294B21EE00C65197 /* BubblesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesScrollView.swift; sourceTree = "<group>"; };
+		48331F31294B35CC00C65197 /* UsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		485B198C29411AE000042F89 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				4894B3A1293E5B5B008CE633 /* User.swift */,
 				488C94D92948AB2200411481 /* Task.swift */,
+				48331F31294B35CC00C65197 /* UsersList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				4814C0CD29420B8F00939BA5 /* BubbleView.swift in Sources */,
 				485B199B2941FF6B00042F89 /* UIColor+.swift in Sources */,
 				481550832942BF8E008EF3A1 /* CALayer.swift in Sources */,
+				48331F32294B35CC00C65197 /* UsersList.swift in Sources */,
 				48331F29294A574200C65197 /* AddTaskGroupButtonsView.swift in Sources */,
 				4815507D2942B6A2008EF3A1 /* FeedController.swift in Sources */,
 			);
