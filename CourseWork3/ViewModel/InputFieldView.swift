@@ -1,5 +1,11 @@
 import UIKit
 
+enum InputType {
+    case email
+    case normal
+    case username
+}
+
 class InputFieldView: UIView, UITextFieldDelegate {
     // MARK: - Fields
     private let label = UILabel()

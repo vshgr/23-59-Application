@@ -33,7 +33,6 @@
 		48331F1E2949DC4300C65197 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F1D2949DC4300C65197 /* Observable.swift */; };
 		48331F20294A202400C65197 /* NewTaskFirstPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F1F294A202400C65197 /* NewTaskFirstPageController.swift */; };
 		48331F22294A28AE00C65197 /* ButtonWithArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F21294A28AE00C65197 /* ButtonWithArrowView.swift */; };
-		48331F24294A2FED00C65197 /* InputTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F23294A2FED00C65197 /* InputTypeEnum.swift */; };
 		48331F26294A532200C65197 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F25294A532200C65197 /* ProfileInfoView.swift */; };
 		48331F29294A574200C65197 /* AddTaskGroupButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F28294A574200C65197 /* AddTaskGroupButtonsView.swift */; };
 		48331F2B294A678700C65197 /* TasksScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F2A294A678700C65197 /* TasksScrollView.swift */; };
@@ -91,7 +90,6 @@
 		48331F1D2949DC4300C65197 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		48331F1F294A202400C65197 /* NewTaskFirstPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskFirstPageController.swift; sourceTree = "<group>"; };
 		48331F21294A28AE00C65197 /* ButtonWithArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithArrowView.swift; sourceTree = "<group>"; };
-		48331F23294A2FED00C65197 /* InputTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTypeEnum.swift; sourceTree = "<group>"; };
 		48331F25294A532200C65197 /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		48331F28294A574200C65197 /* AddTaskGroupButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskGroupButtonsView.swift; sourceTree = "<group>"; };
 		48331F2A294A678700C65197 /* TasksScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksScrollView.swift; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				485B198C29411AE000042F89 /* Grid.swift */,
-				48331F23294A2FED00C65197 /* InputTypeEnum.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -426,7 +423,6 @@
 				486D4DC62943E8E700A23868 /* UIViewController+NavBar.swift in Sources */,
 				3C2626B8294231CA00A0D1F1 /* Code.swift in Sources */,
 				3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */,
-				48331F24294A2FED00C65197 /* InputTypeEnum.swift in Sources */,
 				485B19992941FEEC00042F89 /* UIView+Pin.swift in Sources */,
 				4894B3A2293E5B5B008CE633 /* User.swift in Sources */,
 				3C107251294ABEF00081E6FE /* DescriptionFieldView.swift in Sources */,
