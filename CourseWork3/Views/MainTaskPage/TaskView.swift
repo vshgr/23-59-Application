@@ -110,7 +110,7 @@ class TaskView: UIView {
         for view in [friend, permission, taskName, bottomLineSV] {
             contentSV.addArrangedSubview(view)
         }
-        
+                
         if (selfTask == true) {
             friend.isHidden = true
         } else {
@@ -120,7 +120,8 @@ class TaskView: UIView {
     
     private func configureBottomLineSV() {
         bottomLineSV.axis = .horizontal
-        bottomLineSV.spacing = CommonConstants.contentStackSpacing
+        bottomLineSV.spacing = CommonConstants.horizontalStackSpacing
+        bottomLineSV.alignment = .center
         
         for view in [dateView, groups] {
             bottomLineSV.addArrangedSubview(view)
