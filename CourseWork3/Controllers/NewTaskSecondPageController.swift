@@ -13,17 +13,18 @@ class NewTaskSecondPageController: UIViewController {
         static let contentSpacing: Double = 15
         static let spacing: Double = 17
         static let imagePadding: Double = 10
+        static let bigSpacing: Double = 25
+        static let fieldSpacing: Double = 14
         static let buttonFont: UIFont? = UIFont.dl.ralewayMedium(14)
     }
     
+    // MARK: - Fields
     private let linkField: InputFieldView = InputFieldView(title: "Link", hint: "url")
-    
     private let createButton = ButtonView(title: "Create task")
+    private let groupsScroll = BubblesScrollView(isInteractable: true)
     
     private let groupsLabel = UILabel()
     private let groupsStack = UIStackView()
-    private let groupsBubblesStack = UIStackView()
-    private let scrollGroups = UIScrollView()
 
     private let visibilityStack = UIStackView()
     private let repeatButton = ButtonWithArrowView(title: "Repeat")
@@ -31,6 +32,7 @@ class NewTaskSecondPageController: UIViewController {
     
     private let contentStack = UIStackView()
     
+    // MARK: -  ViewLoads
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
@@ -46,6 +48,7 @@ class NewTaskSecondPageController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    // MARK: - Configurations
     private func configureUI() {
         view.backgroundColor = .white
         
@@ -55,15 +58,10 @@ class NewTaskSecondPageController: UIViewController {
         }
         
         configureGroupsLabel()
-        configureGroupsBubblesStack()
-        configureScrollGroups()
         configureGroupsStack()
-        
         configureRepeatButton()
         configureCreateButton()
-    
         configureContentStack()
-        
         configureConstraints()
     }
     
@@ -92,48 +90,19 @@ class NewTaskSecondPageController: UIViewController {
     
     private func configureGroupsStack() {
         groupsStack.axis = .vertical
-        groupsStack.spacing = 14
+        groupsStack.spacing = Constants.fieldSpacing
         
-        for view in [groupsLabel, scrollGroups] {
+        for view in [groupsLabel, groupsScroll] {
             groupsStack.addArrangedSubview(view)
         }
         
-        scrollGroups.pinHorizontal(to: groupsStack)
+        groupsScroll.pinHorizontal(to: groupsStack)
     }
     
-    private func getGroup(title: String) -> UIView {
-        let group = BubbleComponent(text: title)
-        return group
-    }
-    
-    private func configureGroupsBubblesStack() {
-        let fb = getGroup(title: "курсовая работа")
-        let sb = getGroup(title: "диплом")
-        let tb = getGroup(title: "организация вечеринки")
-        let ftb = getGroup(title: "работа")
-        
-        for view in [fb, sb, tb, ftb]{
-            groupsBubblesStack.addArrangedSubview(view)
-        }
-        
-        groupsBubblesStack.axis = .horizontal
-        groupsBubblesStack.spacing = Constants.spacing - 5
-    }
-    
-    private func configureScrollGroups() {
-        scrollGroups.addSubview(groupsBubblesStack)
-        scrollGroups.clipsToBounds = false
-        scrollGroups.showsHorizontalScrollIndicator = false
-        scrollGroups.showsVerticalScrollIndicator = false
-        
-        groupsBubblesStack.pin(to: scrollGroups)
-        
-        scrollGroups.setHeight(30)
-    }
     
     private func configureContentStack() {
         contentStack.axis = .vertical
-        contentStack.spacing = 25
+        contentStack.spacing = Constants.bigSpacing
         contentStack.alignment = .leading
         
         for view in [linkField, groupsStack, repeatButton] {
@@ -145,7 +114,7 @@ class NewTaskSecondPageController: UIViewController {
     }
     
     private func configureConstraints() {
-        contentStack.pinTop(to: view.safeAreaLayoutGuide.topAnchor, 17)
+        contentStack.pinTop(to: view.safeAreaLayoutGuide.topAnchor, Constants.spacing)
         contentStack.pinHorizontal(to: view, Grid.stripe)
         
         createButton.pinHorizontal(to: view, Grid.stripe * 2)
@@ -160,7 +129,8 @@ class NewTaskSecondPageController: UIViewController {
     @objc
     func continueButtonPressed() {
         createButton.showAnimation {
-            
+            let mainControlle = MainTasksPageController()
+            self.navigationController?.pushViewController(mainControlle, animated: true)
         }
     }
     

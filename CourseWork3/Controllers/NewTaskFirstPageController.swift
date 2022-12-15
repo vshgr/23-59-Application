@@ -12,8 +12,8 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
     private var taskDate: InputFieldView = InputFieldView(title: "Deadline date", hint: "3 Dec, 2022", message: "required")
     private let taskTime: InputFieldView = InputFieldView(title: "Time", hint: "23:59", message: "required")
     
-//    private let descriptionField = DescriptionFieldView()
-    private let descriptionField = UITextView()
+    private let descriptionField = DescriptionFieldView()
+//    private let descriptionField = UITextView()
     private let descriptionLabel = UILabel()
     private let descStack = UIStackView()
     private let continueButon = ButtonView(title: "Continue")
@@ -46,7 +46,6 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
         }
         
         configureDescriptionLabel()
-        configureDescriptionField()
         configureDescStack()
         configureContentStack()
         configureContinueButton()
@@ -72,26 +71,6 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
     
     private func configureContinueButton() {
         continueButon.buttonClicked = continueButtonPressed
-    }
-    
-    private func configureDescriptionField() {
-        descriptionField.isSelectable = true
-        descriptionField.isEditable = true
-        
-        descriptionField.text = "enter description"
-        descriptionField.textColor = UIColor.dl.hintCol()
-        descriptionField.font = UIFont.systemFont(ofSize: 15)
-        
-        descriptionField.setHeight(130)
-        descriptionField.isScrollEnabled = true
-        descriptionField.isUserInteractionEnabled = true
-        descriptionField.backgroundColor = .clear
-        descriptionField.layer.cornerRadius = 10
-        descriptionField.setBorder(width: 1, color: .black)
-        
-        descriptionField.delegate = self
-        descriptionField.textContainerInset = UIEdgeInsets(top: 11, left: 11, bottom: 11, right: 11)
-
     }
     
     private func configureDescriptionLabel() {

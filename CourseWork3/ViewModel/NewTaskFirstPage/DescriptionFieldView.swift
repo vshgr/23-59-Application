@@ -46,4 +46,19 @@ class DescriptionFieldView: UITextView, UITextViewDelegate {
         delegate = self
         textContainerInset = UIEdgeInsets(top: Constants.inset, left: Constants.inset, bottom: Constants.inset, right: Constants.inset)
     }
+    
+    // MARK: - Additions
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.dl.hintCol() {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.textColor != UIColor.black || textView.text == "" {
+            textView.text = "enter description"
+            textView.textColor = UIColor.dl.hintCol()
+        }
+    }
 }

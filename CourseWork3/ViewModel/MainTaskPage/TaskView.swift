@@ -31,7 +31,7 @@ class TaskView: UIView {
     private let taskDesc = UILabel()
     private let groups = UILabel()
     private let bottomLineSV = UIStackView()
-    private var dateView = BubbleComponent()
+    private var dateView = BubbleView()
     private let friend = FriendAccountSVConponent()
     private let doneBtn = UIButton()
     private let addBtn = UIButton()
@@ -58,7 +58,7 @@ class TaskView: UIView {
         gesture.numberOfTapsRequired = 1
         taskView.addGestureRecognizer(gesture)
         
-        dateView = BubbleComponent(text: task.deadline)
+        dateView = BubbleView(text: task.deadline)
         addSubview(taskView)
         addSubview(buttonsSV)
         taskView.addSubview(contentSV)

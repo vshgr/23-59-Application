@@ -19,15 +19,15 @@ class TaskPageController: UIViewController {
     
     // MARK: - Fields
     private let task = Task()
-    private let buttonsSV = UIStackView()
-    private let deleteButton = BubbleComponent(text: "delete task")
-    private let notifyBtn = UIButton()
     private let friend = FriendAccountSVConponent()
+    private let groupsScroll = BubblesScrollView(type: .filled)
+    private let deleteButton = BubbleView(text: "delete task")
+    
+    private let buttonsSV = UIStackView()
+    private let notifyBtn = UIButton()
     private let dateTime = UILabel()
-    private let groupsSV = UIStackView()
     private let taskName = UILabel()
     private let taskDesc = UILabel()
-    private let scrollGroups = UIScrollView()
     
     // MARK: - Load
     override func viewDidLoad() {
@@ -45,15 +45,13 @@ class TaskPageController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .white
                 
-        for view in [friend, dateTime, scrollGroups, taskName, taskDesc] {
+        for view in [friend, dateTime, groupsScroll, taskName, taskDesc] {
             self.view.addSubview(view)
         }
         
         configureNotifyBtn()
         configureButtonsSV()
         configureDateTime()
-        configureGroups()
-        configureScrollView()
         configureTaskName()
         configureTaskDesc()
         
@@ -64,12 +62,12 @@ class TaskPageController: UIViewController {
         taskDesc.pinHorizontal(to: view, Grid.stripe)
         taskDesc.pinTop(to: taskName.bottomAnchor, Constants.spacing * 2)
         
-        taskName.pinTop(to: scrollGroups.bottomAnchor, Constants.spacing)
+        taskName.pinTop(to: groupsScroll.bottomAnchor, Constants.spacing)
         taskName.pinHorizontal(to: view, Grid.stripe)
         
-        scrollGroups.pinHorizontal(to: view, Grid.stripe)
-        scrollGroups.pinTop(to: friend.bottomAnchor, Constants.spacing)
-        scrollGroups.setHeight(Constants.scrollHeight)
+        groupsScroll.pinHorizontal(to: view, Grid.stripe)
+        groupsScroll.pinTop(to: friend.bottomAnchor, Constants.spacing)
+        groupsScroll.setHeight(Constants.scrollHeight)
         
         dateTime.pinCenterY(to: friend.centerYAnchor)
         dateTime.pinRight(to: view, Grid.stripe)
@@ -103,7 +101,6 @@ class TaskPageController: UIViewController {
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
 
         taskDesc.attributedText = attributedString
-        
     }
     
     private func configureTaskName() {
@@ -119,31 +116,6 @@ class TaskPageController: UIViewController {
         dateTime.font = dateTime.font.withSize(14)
     }
     
-    private func getGroup(title: String) -> UIView {
-        let group = BubbleComponent(text: title)
-        group.backgroundColor = UIColor.dl.mainCol()
-        group.setBorder(width: 0, color: .white)
-        return group
-    }
-    
-    private func configureScrollView() {
-        scrollGroups.addSubview(groupsSV)
-        scrollGroups.clipsToBounds = false
-        scrollGroups.showsHorizontalScrollIndicator = false
-        scrollGroups.showsVerticalScrollIndicator = false
-        
-        groupsSV.pin(to: scrollGroups)
-    }
-    
-    private func configureGroups() {
-        for view in task.groups {
-            let gr = getGroup(title: view)
-            groupsSV.addArrangedSubview(gr)
-        }
-        
-        groupsSV.axis = .horizontal
-        groupsSV.spacing = Constants.spacing - 5
-    }
     
     // MARK: - Setters
     public func setTask(title: String, desc: String, date: String) {

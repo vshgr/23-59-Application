@@ -7,13 +7,17 @@
 
 import UIKit
 
-class BubbleComponent: UIButton {
+class BubbleView: UIButton {
+    // MARK: - Fields
     private let dateLabel = UILabel()
     private let bubbleText: String
+    private var bubbleSelected: Bool = false
+    private let isInteractable: Bool
     
     // MARK: - Init
-    init(frame: CGRect = .zero, text: String = "") {
+    init(frame: CGRect = .zero, text: String = "", isInteractable: Bool = false) {
         bubbleText = text
+        self.isInteractable = isInteractable
         super.init(frame: frame)
         configureUI()
     }
@@ -31,6 +35,7 @@ class BubbleComponent: UIButton {
     }
     
     private func configureUI() {
+        addTarget(self, action: #selector(bubbleClicked), for: .touchUpInside)
         setTitle(bubbleText, for: .normal)
         setTitleColor(.black, for: .normal)
         // ИСПОЛЬЗОВАТЬ КОНФИГ
@@ -46,4 +51,17 @@ class BubbleComponent: UIButton {
         return bubbleText
     }
     
+    @objc
+    func bubbleClicked() {
+        if isInteractable {
+            bubbleSelected.toggle()
+            if bubbleSelected == true {
+                backgroundColor = .black
+                setTitleColor(.white, for: .normal)
+            } else {
+                backgroundColor = .clear
+                setTitleColor(.black, for: .normal)
+            }
+        }
+    }
 }
