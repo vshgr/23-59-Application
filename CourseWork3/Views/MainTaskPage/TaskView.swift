@@ -100,7 +100,7 @@ class TaskView: UIView {
         groups.text = task.groups.joined(separator: Constants.separator)
         groups.numberOfLines = CommonConstants.multiline
         groups.textColor = UIColor.dl.hintCol()
-        groups.font = UIFont.dl.ralewayMedium(14)
+        groups.font = CommonConstants.mainLabelFont
     }
     
     private func configureContentSV() {

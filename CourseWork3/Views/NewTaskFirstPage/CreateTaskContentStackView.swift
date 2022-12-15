@@ -13,7 +13,6 @@ class CreateTaskContentStackView: UIStackView {
     enum Constants {
         static let contentSpacing: Double = 25
         static let descSpacing: Double = 14
-        static let basicFont: UIFont? = UIFont.dl.ralewayMedium(14)
         static let descriptionLabelText: String = "Description"
     }
     
@@ -69,7 +68,7 @@ class CreateTaskContentStackView: UIStackView {
     
     private func configureDescriptionLabel() {
         descriptionLabel.text = Constants.descriptionLabelText
-        descriptionLabel.font = Constants.basicFont
+        descriptionLabel.font = CommonConstants.mainLabelFont
         descriptionLabel.textColor = .black
     }
     

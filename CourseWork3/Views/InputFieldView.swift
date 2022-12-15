@@ -48,7 +48,7 @@ class InputFieldView: UIView, UITextFieldDelegate {
     // MARK: - Configuration
     private func configureLabel() {
         label.textColor = .black
-        label.font = UIFont.dl.ralewayMedium(14)
+        label.font = CommonConstants.mainLabelFont
         label.textAlignment = .left
     }
     
@@ -66,7 +66,7 @@ class InputFieldView: UIView, UITextFieldDelegate {
     
     private func configureErrorMessage() {
         errorMessage.textColor = UIColor.dl.attentionCol()
-        errorMessage.font = UIFont.dl.ralewayMedium(15)
+        errorMessage.font = CommonConstants.mainLabelFont
     }
     
     private func configure() {

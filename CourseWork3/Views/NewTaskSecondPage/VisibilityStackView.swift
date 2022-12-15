@@ -49,7 +49,7 @@ class VisibilityStackView: UIStackView {
     
     private func configureLabel() {
         visibilityLabel.text = Constants.labelText
-        visibilityLabel.font = UIFont.dl.ralewayMedium(14)
+        visibilityLabel.font = CommonConstants.mainLabelFont
         visibilityLabel.textColor = .black
     }
     

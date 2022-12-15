@@ -42,7 +42,7 @@ class GroupsStackView: UIStackView {
     
     private func configureLabel() {
         groupsLabel.text = "Groups"
-        groupsLabel.font = UIFont.dl.ralewayMedium(14)
+        groupsLabel.font = CommonConstants.mainLabelFont
         groupsLabel.textColor = .black
     }
 }

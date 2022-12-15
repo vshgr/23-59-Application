@@ -22,7 +22,7 @@ extension UIFont {
             UIFont(name: ralewayRegular, size: size)
         }
         
-        static func ralewayMedium(_ size: CGFloat = 16) -> UIFont? {
+        static func ralewayMedium(_ size: CGFloat = 14) -> UIFont? {
             UIFont(name: ralewayMedium, size: size)
         }
         

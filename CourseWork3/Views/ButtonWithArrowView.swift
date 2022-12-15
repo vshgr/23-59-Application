@@ -34,7 +34,7 @@ class ButtonWithArrowView: UIButton {
     // MARK: - Configure
     private func configure() {
         addTarget(self, action: #selector(arrowButtonClicked), for: .touchUpInside)
-        titleLabel?.font = UIFont.dl.ralewayMedium(14)
+        titleLabel?.font = CommonConstants.mainLabelFont
         
         config.title = buttonTitle
         config.contentInsets = .zero

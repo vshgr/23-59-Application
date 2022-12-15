@@ -15,7 +15,6 @@ class NewTaskSecondPageController: UIViewController {
         static let imagePadding: Double = 10
         static let bigSpacing: Double = 25
         static let fieldSpacing: Double = 14
-        static let buttonFont: UIFont? = UIFont.dl.ralewayMedium(14)
     }
     
     // MARK: - Fields

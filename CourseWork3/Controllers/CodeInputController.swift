@@ -12,7 +12,6 @@ class CodeInputController: UIViewController {
     // MARK: - Constants
     private enum Constants {
         static let imagePadding: Double = 10
-        static let buttonFont: UIFont? = UIFont.dl.ralewayMedium(14)
     }
     
     // MARK: - Fields

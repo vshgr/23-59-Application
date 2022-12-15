@@ -14,7 +14,6 @@ final class ProfileView: UIView {
         static let photoWidth: Double = 146
         static let imagePadding: Double = 10
         static let buttonTitle: String = "add photo"
-        static let buttonFont: UIFont? = UIFont.dl.ralewayMedium(14)
         static let backImageViewColor: UIColor? = UIColor.dl.mainCol()
         static let addButtonColor: UIColor? = UIColor.dl.violetCol()
         static let buttonImage: UIImage? = UIImage(named: "photo")
@@ -58,7 +57,7 @@ final class ProfileView: UIView {
         button.pinBottom(to: self)
         
         button.configuration = getConfig()
-        button.titleLabel?.font = Constants.buttonFont
+        button.titleLabel?.font = CommonConstants.mainLabelFont
         button.addTarget(self, action: #selector(changePicTapped), for: .touchUpInside)
     }
     
