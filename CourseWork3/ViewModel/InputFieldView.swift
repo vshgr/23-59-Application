@@ -3,7 +3,7 @@ import UIKit
 class InputFieldView: UIView, UITextFieldDelegate {
     // MARK: - Fields
     private let label = UILabel()
-    var input = UITextField()
+    private var input = UITextField()
     private let underline = UIView()
     private let errorMessage = UILabel()
     private var keyboardType = UIKeyboardType.default
@@ -20,6 +20,7 @@ class InputFieldView: UIView, UITextFieldDelegate {
     init(frame: CGRect = .zero, title: String = "", hint: String = "", message: String = "", keyboard: UIKeyboardType = UIKeyboardType.default) {
         self.keyboardType = keyboard
         super.init(frame: frame)
+        setPicker(type: title)
         setTitle(title: title)
         setPlaceholder(hint: hint)
         setErrorMessage(message: message)
@@ -79,6 +80,14 @@ class InputFieldView: UIView, UITextFieldDelegate {
     }
     
     // MARK: - Setters
+    private func setPicker(type: String) {
+        if type == "Deadline date" {
+            input = DateTextFieldView()
+        } else if type == "Time" {
+            input = TimeTextFieldView()
+        }
+    }
+    
     func setTitle(title: String) {
         label.text = title
     }

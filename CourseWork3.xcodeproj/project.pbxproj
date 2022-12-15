@@ -10,6 +10,8 @@
 		3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04E878293E15FD00DF73B3 /* EmailViewController.swift */; };
 		3C10724A294A98920081E6FE /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C107249294A98920081E6FE /* CodeInputView.swift */; };
 		3C10724D294AAB5E0081E6FE /* DateTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C10724C294AAB5E0081E6FE /* DateTextFieldView.swift */; };
+		3C10724F294AB91B0081E6FE /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C10724E294AB91B0081E6FE /* TimeTextFieldView.swift */; };
+		3C107251294ABEF00081E6FE /* DescriptionFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C107250294ABEF00081E6FE /* DescriptionFieldView.swift */; };
 		3C1B79A42948BACF00636D0D /* AddTaskPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */; };
 		3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */; };
 		3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */; };
@@ -65,6 +67,8 @@
 		3C04E878293E15FD00DF73B3 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		3C107249294A98920081E6FE /* CodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
 		3C10724C294AAB5E0081E6FE /* DateTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTextFieldView.swift; sourceTree = "<group>"; };
+		3C10724E294AB91B0081E6FE /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
+		3C107250294ABEF00081E6FE /* DescriptionFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionFieldView.swift; sourceTree = "<group>"; };
 		3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPopup.swift; sourceTree = "<group>"; };
 		3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Borders.swift"; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				3C10724C294AAB5E0081E6FE /* DateTextFieldView.swift */,
+				3C10724E294AB91B0081E6FE /* TimeTextFieldView.swift */,
+				3C107250294ABEF00081E6FE /* DescriptionFieldView.swift */,
 			);
 			path = NewTaskFirstPage;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 				481550812942B7D8008EF3A1 /* DevelopmentComponent.swift in Sources */,
 				483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */,
 				4892320729420595002DCBEF /* TaskView.swift in Sources */,
+				3C10724F294AB91B0081E6FE /* TimeTextFieldView.swift in Sources */,
 				48331F20294A202400C65197 /* NewTaskFirstPageController.swift in Sources */,
 				485B198F29411F4F00042F89 /* UIFont+.swift in Sources */,
 				4815507929425E57008EF3A1 /* UIButton+Select.swift in Sources */,
@@ -418,6 +425,7 @@
 				48331F24294A2FED00C65197 /* InputTypeEnum.swift in Sources */,
 				485B19992941FEEC00042F89 /* UIView+Pin.swift in Sources */,
 				4894B3A2293E5B5B008CE633 /* User.swift in Sources */,
+				3C107251294ABEF00081E6FE /* DescriptionFieldView.swift in Sources */,
 				3C1B79A42948BACF00636D0D /* AddTaskPopup.swift in Sources */,
 				3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */,
 				4814C0CD29420B8F00939BA5 /* BubbleComponent.swift in Sources */,
