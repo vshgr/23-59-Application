@@ -104,10 +104,6 @@ class InputFieldView: UIView, UITextFieldDelegate {
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.dl.hintCol() ?? .systemGray])
     }
     
-    func setText() {
-        
-    }
-    
     func setErrorMessage(message: String){
         errorMessage.text = message
     }
