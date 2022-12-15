@@ -31,7 +31,6 @@ class NewTaskFirstPageController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .white
         
-        
         for view in [contentStack, continueButon] {
             self.view.addSubview(view)
         }
