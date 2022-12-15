@@ -126,7 +126,7 @@ class CodeInputView: UIStackView {
         let codeChecker = Code()
         var cellsFilled = true
         var _: () = cells.arrangedSubviews.forEach {
-            if (!codeChecker.checkCodeDigitsFilled(cell: $0 as! UITextField)) {
+            if (!codeChecker.checkCodeDigitsFilled(cell: $0 as? UITextField ?? UITextField())) {
                 $0.layer.borderColor = UIColor.dl.attentionCol()?.cgColor
                 cellsFilled = false
             }
