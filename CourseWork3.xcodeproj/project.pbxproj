@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C04E879293E15FD00DF73B3 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04E878293E15FD00DF73B3 /* EmailViewController.swift */; };
-		3C10724A294A98920081E6FE /* CellStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C107249294A98920081E6FE /* CellStackView.swift */; };
+		3C10724A294A98920081E6FE /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C107249294A98920081E6FE /* CodeInputView.swift */; };
 		3C1B79A42948BACF00636D0D /* AddTaskPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */; };
 		3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */; };
 		3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */; };
@@ -62,7 +62,7 @@
 
 /* Begin PBXFileReference section */
 		3C04E878293E15FD00DF73B3 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
-		3C107249294A98920081E6FE /* CellStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellStackView.swift; sourceTree = "<group>"; };
+		3C107249294A98920081E6FE /* CodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
 		3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPopup.swift; sourceTree = "<group>"; };
 		3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Borders.swift"; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		3C107248294A98710081E6FE /* CodeInput */ = {
 			isa = PBXGroup;
 			children = (
-				3C107249294A98920081E6FE /* CellStackView.swift */,
+				3C107249294A98920081E6FE /* CodeInputView.swift */,
 			);
 			path = CodeInput;
 			sourceTree = "<group>";
@@ -394,7 +394,7 @@
 				48331F22294A28AE00C65197 /* ButtonWithArrowView.swift in Sources */,
 				48331F2B294A678700C65197 /* TasksScrollView.swift in Sources */,
 				3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */,
-				3C10724A294A98920081E6FE /* CellStackView.swift in Sources */,
+				3C10724A294A98920081E6FE /* CodeInputView.swift in Sources */,
 				486088662937E57B008B76ED /* AppDelegate.swift in Sources */,
 				485B198D29411AE000042F89 /* Grid.swift in Sources */,
 				3C2626BE2943AF2C00A0D1F1 /* CodeInputController.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  CellStackView.swift
+//  CodeInputView.swift
 //  CourseWork3
 //
 //  Created by Барбашина Яна on 15.12.2022.
@@ -7,13 +7,15 @@
 
 import UIKit
 
-class CellStackView: UIStackView {
+class CodeInputView: UIStackView {
     
     // MARK: - Constants
     enum Constants {
         static let error: String = "init(coder:) has not been implemented"
         static let contentSpacing: Double = 15
-        static let buttonFont: UIFont? = UIFont.dl.ralewayMedium(14)
+        static let basicFont: UIFont? = UIFont.dl.ralewayMedium(14)
+        static let mainFont: UIFont? = UIFont.dl.mainFont(16)
+        static let cellSize: Double = 45
     }
     
     // MARK: - Fields
@@ -21,7 +23,7 @@ class CellStackView: UIStackView {
     private let checkEmailLabel = UILabel()
     private let warningLabel: UILabel = UILabel()
     private let cellsTitleLabel: UILabel = UILabel()
-    private let cells: CellComponent = CellComponent(size: 45)
+    private let cells: CellComponent = CellComponent(size: Constants.cellSize)
     private let sendBtn = ButtonWithArrowView(title: "send code again")
     private let securityCodeTextField = UITextField()
     private var count: Int = 59
@@ -40,10 +42,7 @@ class CellStackView: UIStackView {
     // MARK: - Configuration
     private func configureUI() {
         securityCodeTextField.textContentType = .oneTimeCode
-        
-        configureCheckEmailLabel()
-        configureCellsTitleLabel()
-        configureWarningLabel()
+        configureLabels()
         configureSendButton()
         configureStack()
     }
@@ -58,22 +57,16 @@ class CellStackView: UIStackView {
         alignment = .leading
     }
     
-    private func configureCheckEmailLabel() {
-        checkEmailLabel.textColor = .black
-        checkEmailLabel.font = UIFont.dl.mainFont(16)
-        checkEmailLabel.text = "check your email"
+    private func configureLabels() {
+        configureLabel(label: checkEmailLabel, font: Constants.mainFont ?? .systemFont(ofSize: 16), text: "check your email", textColor: .black)
+        configureLabel(label: cellsTitleLabel, font: Constants.basicFont ?? .systemFont(ofSize: 14), text: "Code", textColor: .black)
+        configureLabel(label: warningLabel, font: Constants.basicFont ?? .systemFont(ofSize: 14), text: "please fill all the cells", textColor: UIColor.dl.attentionCol() ?? .red)
     }
     
-    private func configureCellsTitleLabel() {
-        cellsTitleLabel.textColor = .black
-        cellsTitleLabel.font = UIFont.dl.ralewayMedium(14)
-        cellsTitleLabel.text = "Code"
-    }
-    
-    private func configureWarningLabel() {
-        warningLabel.text = "please fill all the cells"
-        warningLabel.textColor = UIColor.dl.attentionCol()
-        warningLabel.font = Constants.buttonFont
+    private func configureLabel(label: UILabel, font: UIFont, text: String, textColor: UIColor) {
+        label.textColor = textColor
+        label.font = font
+        label.text = text
     }
     
     private func configureSendButton() {
@@ -96,7 +89,7 @@ class CellStackView: UIStackView {
     // MARK: - Setters
     func configureDefaultStateCell() {
         cells.arrangedSubviews.forEach {
-            $0.layer.borderColor = UIColor.lightGray.cgColor
+            $0.layer.borderColor = UIColor.dl.hintCol()?.cgColor
         }
     }
     

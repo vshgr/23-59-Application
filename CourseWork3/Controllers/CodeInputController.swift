@@ -17,7 +17,7 @@ class CodeInputController: UIViewController {
     }
     
     // MARK: - Fields
-    private var content: CellStackView = CellStackView()
+    private var content: CodeInputView = CodeInputView()
     private let continueButton: ButtonView = ButtonView(title: "Continue")
     
     // MARK: - Load
