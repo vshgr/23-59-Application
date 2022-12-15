@@ -52,7 +52,6 @@ class NewTaskSecondPageController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .white
         
-        
         for view in [contentStack, createButton] {
             self.view.addSubview(view)
         }

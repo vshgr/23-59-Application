@@ -185,7 +185,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		48331F1B2949CE7300C65197 /* ViewModel */ = {
+		48331F1B2949CE7300C65197 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				3C10724B294AAB3D0081E6FE /* NewTaskFirstPage */,
@@ -197,7 +197,7 @@
 				48331F21294A28AE00C65197 /* ButtonWithArrowView.swift */,
 				48331F2F294B21EE00C65197 /* BubblesScrollView.swift */,
 			);
-			path = ViewModel;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		48331F1C2949CE7B00C65197 /* Controllers */ = {
@@ -278,7 +278,7 @@
 				485B19882941175800042F89 /* Extentions */,
 				3C2626B92943373800A0D1F1 /* Utilities */,
 				48331F1C2949CE7B00C65197 /* Controllers */,
-				48331F1B2949CE7300C65197 /* ViewModel */,
+				48331F1B2949CE7300C65197 /* Views */,
 				48331F1A2949CDF900C65197 /* Model */,
 				48A4802F293E4574006540DC /* Fonts */,
 				486088652937E57B008B76ED /* AppDelegate.swift */,
