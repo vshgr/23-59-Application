@@ -126,6 +126,12 @@ class InputFieldView: UIView, UITextFieldDelegate {
         underline.backgroundColor = .black
     }
     
+    // MARK: - Functions
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        setDefaultState()
+    }
+    
+    
     // MARK: - Checker
     func checkInputCorrect(type: InputType, value: String) -> Bool {
         let regEx: String

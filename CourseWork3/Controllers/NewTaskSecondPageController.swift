@@ -122,6 +122,5 @@ class NewTaskSecondPageController: UIViewController {
         repeatButton.showAnimation {
             
         }
-        
     }
 }

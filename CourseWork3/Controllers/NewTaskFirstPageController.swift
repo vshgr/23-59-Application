@@ -57,9 +57,6 @@ class NewTaskFirstPageController: UIViewController {
         continueButon.showAnimation {
             if self.contentStack.getTastTitleText() == "" {
                 self.contentStack.setTaskTitleErrorState()
-                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
-                    self.contentStack.setTaskTitleDefaultState()
-                }
             } else {
                 let secondPage = NewTaskSecondPageController()
                 self.navigationController?.pushViewController(secondPage, animated: true)

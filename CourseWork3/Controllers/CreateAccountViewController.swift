@@ -100,11 +100,6 @@ class CreateAccountViewController : UIViewController {
                 self.usernameField.setErrorState()
             }
             
-            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
-                self.nameField.setDefaultState()
-                self.usernameField.setDefaultState()
-            }
-            
             if(flag){
                 let pages = CustomTabBarController()
                 self.navigationController?.pushViewController(pages, animated: true)

@@ -47,9 +47,6 @@ class EmailViewController: UIViewController {
                 navigationController?.pushViewController(codeInputController, animated: true)
             } else {
                 emailField.setErrorState()
-                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
-                    self.emailField.setDefaultState()
-                }
             }
         }
     }
