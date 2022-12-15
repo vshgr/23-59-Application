@@ -36,11 +36,17 @@ class CellView: UIStackView, UITextFieldDelegate {
             element.delegate = self
         }
         
-        firstCell.addTarget(self, action: #selector(textfieldChanged), for: .editingChanged)
-        
         configureCells()
         configureTags()
+        configureTextFieldTargets()
         configureStackView()
+    }
+    
+    private func configureTextFieldTargets() {
+        firstCell.addTarget(self, action: #selector(textfieldDidChange(_:)), for: .editingChanged)
+        secondCell.addTarget(self, action: #selector(textfieldDidChange(_:)), for: .editingChanged)
+        thirdCell.addTarget(self, action: #selector(textfieldDidChange(_:)), for: .editingChanged)
+        fourthCell.addTarget(self, action: #selector(textfieldDidChange(_:)), for: .editingChanged)
     }
     
     private func configureTags() {
@@ -89,13 +95,22 @@ class CellView: UIStackView, UITextFieldDelegate {
         textField.layer.borderColor = UIColor.darkGray.cgColor
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let currentText = textField.text ?? ""
-        guard let stringRange = Range(range, in: currentText) else { return false }
-        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        
-        if currentText.count == 1 {
+        let maxLength = 1
+        let currentString = (textField.text ?? "") as NSString
+        let newString = currentString.replacingCharacters(in: range, with: string)
+
+        return newString.count <= maxLength
+    }
+    
+    @objc
+    private func textfieldDidChange(_ textField: UITextField) {
+        viewWithTag(textField.tag)?.resignFirstResponder()
+        if textField.text?.count == 1 {
             let nextTag = textField.tag + 1
             if let nextRespondent = textField.superview?.viewWithTag(nextTag) {
                 nextRespondent.becomeFirstResponder()
@@ -103,17 +118,8 @@ class CellView: UIStackView, UITextFieldDelegate {
                 textField.resignFirstResponder()
             }
         }
-        return updatedText.count <= 1
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.layer.borderColor = UIColor.lightGray.cgColor
-    }
-    
-    @objc
-    private func textfieldChanged() {
-        if (firstCell.text?.count == 0) {
-            
+        if textField.text?.count == 0 {
+            textField.becomeFirstResponder()
         }
     }
 }
