@@ -8,9 +8,17 @@
 import UIKit
 
 class FriendAccountSVConponent: UIStackView {
+    // MARK: - Constants
+    enum Constants {
+        static let imageWidth: Double = 36
+    }
+    
+    // MARK: - Fields
+    private let user = User()
     private let image = UIImageView()
     private let name = UILabel()
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
@@ -18,12 +26,13 @@ class FriendAccountSVConponent: UIStackView {
     
     @available (*,unavailable)
     required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(CommonConstants.errorMessage)
     }
     
+    // MARK: - Configuration
     private func configureUI() {
         axis = .horizontal
-        spacing = 15
+        spacing = CommonConstants.smallContentSpacing
         
         configureNameLabel()
         configureImage()
@@ -35,14 +44,14 @@ class FriendAccountSVConponent: UIStackView {
     }
     
     private func configureNameLabel() {
-        name.text = "Yana Barbashina"
+        name.text = user.name
         name.textColor = .black
         name.font = UIFont.dl.ralewayMedium(15)
     }
     
     private func configureImage() {
-        image.image = UIImage(named: "rabbit")
-        image.setWidth(36)
+        image.image = UIImage(named: user.profilePicUrl)
+        image.setWidth(Constants.imageWidth)
         image.pinHeight(to: image.widthAnchor)
     }
 }

@@ -8,6 +8,12 @@
 import UIKit
 
 class ButtonWithArrowView: UIButton {
+    // MARK: - Constants
+    enum Constants {
+        static let imagePaddind: Double = 10
+        static let arrowImage: UIImage? = UIImage(named: "arrow_right")
+    }
+    
     // MARK: - Fields
     var buttonClicked: (() -> Void)?
     private let buttonTitle: String
@@ -22,7 +28,7 @@ class ButtonWithArrowView: UIButton {
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configure
@@ -33,9 +39,9 @@ class ButtonWithArrowView: UIButton {
         config.title = buttonTitle
         config.contentInsets = .zero
         config.baseForegroundColor = .black
-        config.image = UIImage(named: "arrow_right")?.withTintColor(.black)
+        config.image = Constants.arrowImage?.withTintColor(.black)
         config.imagePlacement = .trailing
-        config.imagePadding = 10
+        config.imagePadding = Constants.imagePaddind
         
         self.configuration = config
     }
@@ -43,7 +49,7 @@ class ButtonWithArrowView: UIButton {
     func setEnabledState() {
         isEnabled = true
         config.baseForegroundColor = .black
-        config.image = UIImage(named: "arrow_right")?.withTintColor(.black)
+        config.image = Constants.arrowImage?.withTintColor(.black)
         
         self.configuration = config
     }
@@ -51,7 +57,7 @@ class ButtonWithArrowView: UIButton {
     func setDisabledState() {
         isEnabled = false
         config.baseForegroundColor = UIColor.dl.hintCol()
-        config.image = UIImage(named: "arrow_right")?.withTintColor(UIColor.dl.hintCol() ?? .gray)
+        config.image = Constants.arrowImage?.withTintColor(UIColor.dl.hintCol() ?? .gray)
         
         self.configuration = config
     }

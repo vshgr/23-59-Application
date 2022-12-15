@@ -10,13 +10,11 @@ import UIKit
 class AddTaskGroupButtonsView: UIStackView {
     // MARK: - Constants
     enum Constants{
-        static let buttonsSpacing: Double = 12
         static let weight: Double = 133
         static let imagePadding: Double = 8.33
         static let circleWeight: Double = 56
         static let shadowRadius: Double = 5
         static let shadowOpacity: Float = 0.3
-        static let error: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
@@ -36,14 +34,14 @@ class AddTaskGroupButtonsView: UIStackView {
     
     @available(*,unavailable)
     required init(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configurations
     private func configureUI() {
         axis = .vertical
         alignment = .trailing
-        spacing = Constants.buttonsSpacing
+        spacing = CommonConstants.horizontalStackSpacing
         
         for view in [addTaskButton, addGroupButton, addTaskGroupButton, closeTaskGroupButton] {
             addArrangedSubview(view)

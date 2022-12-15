@@ -11,8 +11,6 @@ class TasksScrollView: UIScrollView, UIScrollViewDelegate {
     // MARK: - Constants
     enum Constants{
         static let offset: Double = 0
-        static let bigSpacing: Double = 25
-        static let error: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
@@ -27,7 +25,7 @@ class TasksScrollView: UIScrollView, UIScrollViewDelegate {
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Functions
@@ -62,14 +60,14 @@ class TasksScrollView: UIScrollView, UIScrollViewDelegate {
             tasksSV.addArrangedSubview(view)
         }
         
-        tasksSV.spacing = Constants.bigSpacing
+        tasksSV.spacing = CommonConstants.contentStackSpacing
         tasksSV.axis = .vertical
     }
     
     private func configureConstraints() {
         tasksSV.pinTop(to: topAnchor)
         tasksSV.pinWidth(to: widthAnchor)
-        tasksSV.pinBottom(to: bottomAnchor, Constants.bigSpacing)
+        tasksSV.pinBottom(to: bottomAnchor, CommonConstants.contentStackSpacing)
     }
     
     // MARK: - Actions

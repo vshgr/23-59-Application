@@ -12,8 +12,6 @@ class ProfileInfoView : UIStackView {
     enum Constants {
         static let picWH: Double = 75
         static let multiline: Int = 0
-        static let spacing: Double = 25
-        static let error: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
@@ -31,14 +29,14 @@ class ProfileInfoView : UIStackView {
     
     @available(*,unavailable)
     required init(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configurations
     private func configureUI() {
         axis = .horizontal
         alignment = .center
-        spacing = Constants.spacing
+        spacing = CommonConstants.contentStackSpacing
         
         configureNameLabel()
         configureUsernameLabel()

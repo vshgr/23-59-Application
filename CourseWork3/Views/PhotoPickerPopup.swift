@@ -14,13 +14,9 @@ class PhotoPicker : UIView {
         static let rabbitImg: UIImage? = UIImage(named: "rabbit")
         static let catImg: UIImage? = UIImage(named: "cat")
         static let dogImg: UIImage? = UIImage(named: "dog")
-        static let stackSpacing: Double = 33
         static let alpha: Double = 0.3
-        static let contentSpacing: Double = 23
         static let upDownSpacing: Double = 30
         static let buttonHeight: Double = 46
-        static let cornerRadius: Double = 10
-        static let errorMessage: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
@@ -38,7 +34,7 @@ class PhotoPicker : UIView {
     // MARK: - Init
     @available (*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError(Constants.errorMessage)
+        fatalError(CommonConstants.errorMessage)
     }
     
     override init(frame: CGRect) {
@@ -80,7 +76,7 @@ class PhotoPicker : UIView {
         popup.addSubview(stackSecondLine)
         popup.addSubview(saveButton)
         popup.backgroundColor = .white
-        popup.layer.cornerRadius = Constants.cornerRadius
+        popup.layer.cornerRadius = CommonConstants.cornerRadius
         
         addSubview(popup)
         
@@ -93,7 +89,7 @@ class PhotoPicker : UIView {
     private func setupStacks() {
         for stack in [stackFirstLine, stackSecondLine] {
             stack.axis = .horizontal
-            stack.spacing = Constants.stackSpacing
+            stack.spacing = CommonConstants.contentStackSpacing
         }
     }
     
@@ -119,10 +115,10 @@ class PhotoPicker : UIView {
         popup.pinHorizontal(to: self, Grid.stripe * 2)
         popup.pinCenter(to: self)
         title.pinTop(to: popup.topAnchor, Constants.upDownSpacing)
-        stackFirstLine.pinTop(to: title.bottomAnchor, Constants.contentSpacing)
-        stackSecondLine.pinTop(to: stackFirstLine.bottomAnchor, Constants.contentSpacing)
-        saveButton.pinTop(to: stackSecondLine.bottomAnchor, Constants.contentSpacing)
-        saveButton.pinHorizontal(to: popup, Constants.contentSpacing * 3)
+        stackFirstLine.pinTop(to: title.bottomAnchor, CommonConstants.contentStackSpacing)
+        stackSecondLine.pinTop(to: stackFirstLine.bottomAnchor, CommonConstants.contentStackSpacing)
+        saveButton.pinTop(to: stackSecondLine.bottomAnchor, CommonConstants.contentStackSpacing)
+        saveButton.pinHorizontal(to: popup, CommonConstants.contentStackSpacing * 3)
         saveButton.pinBottom(to: popup.bottomAnchor, Constants.upDownSpacing)
     }
     
@@ -155,7 +151,7 @@ class PhotoPickerController: UIViewController {
     
     @available (*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Actions

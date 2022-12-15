@@ -11,8 +11,6 @@ class CodeInputView: UIStackView {
     
     // MARK: - Constants
     enum Constants {
-        static let error: String = "init(coder:) has not been implemented"
-        static let contentSpacing: Double = 15
         static let basicFont: UIFont? = UIFont.dl.ralewayMedium(14)
         static let mainFont: UIFont? = UIFont.dl.mainFont(16)
         static let cellSize: Double = 45
@@ -36,7 +34,7 @@ class CodeInputView: UIStackView {
     
     @available(*, unavailable)
     required init(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configuration
@@ -53,7 +51,7 @@ class CodeInputView: UIStackView {
         }
         makeWarningLabelHidden()
         axis = .vertical
-        spacing = Constants.contentSpacing
+        spacing = CommonConstants.smallContentSpacing
         alignment = .leading
     }
     

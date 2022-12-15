@@ -40,6 +40,7 @@ class ButtonView: UIButton {
         layer.cornerRadius = height / 2
     }
     
+    // MARK: - Actions
     @objc
     func bottomButtonCLicked() {
         buttonClicked?()

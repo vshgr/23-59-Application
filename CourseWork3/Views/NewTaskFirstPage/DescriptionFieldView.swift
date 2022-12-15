@@ -10,7 +10,6 @@ import UIKit
 class DescriptionFieldView: UITextView, UITextViewDelegate {
     // MARK: - Constants
     enum Constants {
-        static let error: String = "init(coder:) has not been implemented"
         static let height: Double = 130
         static let inset: CGFloat = 11
         static let descFont: UIFont = UIFont.systemFont(ofSize: 15)
@@ -24,7 +23,7 @@ class DescriptionFieldView: UITextView, UITextViewDelegate {
         
     @available(*, unavailable)
     required init(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configuration

@@ -4,9 +4,6 @@ class CellView: UIStackView, UITextFieldDelegate {
     
     // MARK: - Constants
     enum Constants {
-        static let error: String = "init(coder:) has not been implemented"
-        static let cornerRadius: CGFloat = 10
-        static let contentSpacing: Double = 12
         static let codeFontSize: CGFloat = 22
     }
     
@@ -32,7 +29,7 @@ class CellView: UIStackView, UITextFieldDelegate {
     
     @available(*, unavailable)
     required init(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configuration
@@ -71,7 +68,7 @@ class CellView: UIStackView, UITextFieldDelegate {
     
     private func configureCell(cell: UITextField) {
         cell.setBorder(width: 1, color: UIColor.dl.hintCol() ?? .gray)
-        cell.layer.cornerRadius = Constants.cornerRadius
+        cell.layer.cornerRadius = CommonConstants.cornerRadius
         cell.textColor = .black
         cell.font = cell.font?.withSize(Constants.codeFontSize)
         cell.textAlignment = .center
@@ -89,7 +86,7 @@ class CellView: UIStackView, UITextFieldDelegate {
     }
     
     private func configureStackView() {
-        spacing = Constants.contentSpacing
+        spacing = CommonConstants.horizontalStackSpacing
         axis = .horizontal
         distribution = .fillEqually
     }

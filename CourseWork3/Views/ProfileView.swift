@@ -12,14 +12,12 @@ final class ProfileView: UIView {
     private enum Constants {
         static let logo: UIImage? = UIImage(named: "logo")
         static let photoWidth: Double = 146
-        static let contentSpacing: Double = 15
         static let imagePadding: Double = 10
         static let buttonTitle: String = "add photo"
         static let buttonFont: UIFont? = UIFont.dl.ralewayMedium(14)
         static let backImageViewColor: UIColor? = UIColor.dl.mainCol()
         static let addButtonColor: UIColor? = UIColor.dl.violetCol()
         static let buttonImage: UIImage? = UIImage(named: "photo")
-        static let error: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
@@ -36,7 +34,7 @@ final class ProfileView: UIView {
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configuration
@@ -56,7 +54,7 @@ final class ProfileView: UIView {
         photoArea.contentMode = .center
         photoArea.layer.cornerRadius = Constants.photoWidth / 2
         
-        button.pinTop(to: photoArea.bottomAnchor, Constants.contentSpacing)
+        button.pinTop(to: photoArea.bottomAnchor, CommonConstants.smallContentSpacing)
         button.pinBottom(to: self)
         
         button.configuration = getConfig()

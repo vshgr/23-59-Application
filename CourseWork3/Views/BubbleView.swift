@@ -12,7 +12,6 @@ class BubbleView: UIButton {
     enum Constants {
         static let width: Double = 30
         static let numOfLines: Int = 1
-        static let error: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
@@ -31,7 +30,7 @@ class BubbleView: UIButton {
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configuration

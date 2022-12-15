@@ -8,12 +8,6 @@
 import UIKit
 
 class GroupsStackView: UIStackView {
-    // MARK: - Constants
-    enum Constants {
-        static let fieldSpacing: Double = 14
-        static let error: String = "init(coder:) has not been implemented"
-    }
-    
     // MARK: - Fields
     private let groupsScroll = BubblesScrollView(isInteractable: true)
     private let groupsLabel = UILabel()
@@ -31,14 +25,14 @@ class GroupsStackView: UIStackView {
     
     @available(*, unavailable)
     required init(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configuration
     
     private func configureUI() {
         axis = .vertical
-        spacing = Constants.fieldSpacing
+        spacing = CommonConstants.smallContentSpacing
         
         configureLabel()
         for view in [groupsLabel, groupsScroll] {

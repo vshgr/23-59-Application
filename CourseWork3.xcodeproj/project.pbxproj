@@ -41,6 +41,7 @@
 		48331F32294B35CC00C65197 /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F31294B35CC00C65197 /* UsersList.swift */; };
 		48331F37294BA84A00C65197 /* VisibilityStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F36294BA84A00C65197 /* VisibilityStackView.swift */; };
 		48331F39294BB02000C65197 /* GroupsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F38294BB02000C65197 /* GroupsStackView.swift */; };
+		48331F3F294BB9B500C65197 /* CommonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F3E294BB9B500C65197 /* CommonConstants.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
 		485B198D29411AE000042F89 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B198C29411AE000042F89 /* Grid.swift */; };
@@ -102,6 +103,7 @@
 		48331F31294B35CC00C65197 /* UsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
 		48331F36294BA84A00C65197 /* VisibilityStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityStackView.swift; sourceTree = "<group>"; };
 		48331F38294BB02000C65197 /* GroupsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsStackView.swift; sourceTree = "<group>"; };
+		48331F3E294BB9B500C65197 /* CommonConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonConstants.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		485B198C29411AE000042F89 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				485B198C29411AE000042F89 /* Grid.swift */,
+				48331F3E294BB9B500C65197 /* CommonConstants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				48331F2B294A678700C65197 /* TasksScrollView.swift in Sources */,
 				3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */,
 				3C10724A294A98920081E6FE /* CodeInputView.swift in Sources */,
+				48331F3F294BB9B500C65197 /* CommonConstants.swift in Sources */,
 				486088662937E57B008B76ED /* AppDelegate.swift in Sources */,
 				485B198D29411AE000042F89 /* Grid.swift in Sources */,
 				3C2626BE2943AF2C00A0D1F1 /* CodeInputController.swift in Sources */,

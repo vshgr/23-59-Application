@@ -10,7 +10,6 @@ import UIKit
 class AddTaskPopup : UIView {
     // MARK: - Constants
     private enum Constants {
-        static let errorMessage: String = "init(coder:) has not been implemented"
         static let cornerRaduis: CGFloat = 20
         static let imagePadding: Double = 8.33
     }
@@ -23,7 +22,7 @@ class AddTaskPopup : UIView {
     // MARK: - Init
     @available (*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError(Constants.errorMessage)
+        fatalError(CommonConstants.errorMessage)
     }
     
     override init(frame: CGRect) {
@@ -59,6 +58,6 @@ class AddTaskPopupController: UIViewController {
     
     @available (*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(CommonConstants.errorMessage)
     }
 }

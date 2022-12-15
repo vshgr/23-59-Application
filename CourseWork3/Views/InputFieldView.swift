@@ -7,6 +7,12 @@ enum InputType {
 }
 
 class InputFieldView: UIView, UITextFieldDelegate {
+    // MARK: - Constants
+    enum Constants {
+        static let underlineSpacind: Double = 8
+        static let errorSpacing: Double = 11
+    }
+    
     // MARK: - Fields
     private let label = UILabel()
     private var input = UITextField()
@@ -36,7 +42,7 @@ class InputFieldView: UIView, UITextFieldDelegate {
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configuration
@@ -76,11 +82,11 @@ class InputFieldView: UIView, UITextFieldDelegate {
         
         label.pinTop(to: self)
         label.pinHorizontal(to: self)
-        input.pinTop(to: label.bottomAnchor, 14)
+        input.pinTop(to: label.bottomAnchor, CommonConstants.smallContentSpacing)
         input.pinHorizontal(to: self)
-        underline.pinTop(to: input.bottomAnchor, 11)
+        underline.pinTop(to: input.bottomAnchor, Constants.errorSpacing)
         underline.pinHorizontal(to: self)
-        errorMessage.pinTop(to: underline.bottomAnchor, 8)
+        errorMessage.pinTop(to: underline.bottomAnchor, Constants.underlineSpacind)
         errorMessage.pinHorizontal(to: self)
         errorMessage.pinBottom(to: self)
     }
@@ -120,6 +126,7 @@ class InputFieldView: UIView, UITextFieldDelegate {
         underline.backgroundColor = .black
     }
     
+    // MARK: - Checker
     func checkInputCorrect(type: InputType, value: String) -> Bool {
         let regEx: String
         let pred: NSPredicate

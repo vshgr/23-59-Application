@@ -8,11 +8,6 @@
 import UIKit
 
 class TimeTextFieldView: UITextField {
-    // MARK: - Constants
-    enum Constants {
-        static let error: String = "init(coder:) has not been implemented"
-    }
-    
     // MARK: - Fields
     private let timePicker = UIDatePicker()
     
@@ -24,7 +19,7 @@ class TimeTextFieldView: UITextField {
     
     @available(*, unavailable)
     required init(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configuration

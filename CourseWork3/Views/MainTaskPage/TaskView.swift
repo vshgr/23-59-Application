@@ -12,12 +12,9 @@ class TaskView: UIView {
     enum Constants {
         static let done: UIImage? = UIImage(named: "done")
         static let add: UIImage? = UIImage(named: "addToGroup")
-        static let mainSpacing: Double = 15
-        static let cornerRadius: Double = 10
         static let taskColor: UIColor = UIColor(rgb: 0xF8F8F8)
         static let separator: String = ", "
         static let multiline: Int = 0
-        static let error: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
@@ -49,7 +46,7 @@ class TaskView: UIView {
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configuration
@@ -72,13 +69,13 @@ class TaskView: UIView {
         configureButtons()
         configureConstraints()
         
-        taskView.layer.cornerRadius = Constants.cornerRadius
+        taskView.layer.cornerRadius = CommonConstants.cornerRadius
         taskView.backgroundColor = Constants.taskColor
     }
     
     private func configureConstraints() {
-        contentSV.pinVertical(to: taskView, Constants.mainSpacing)
-        contentSV.pinHorizontal(to: taskView, Constants.mainSpacing)
+        contentSV.pinVertical(to: taskView, CommonConstants.smallContentSpacing)
+        contentSV.pinHorizontal(to: taskView, CommonConstants.smallContentSpacing)
         
         taskView.pinVertical(to: self)
         taskView.pinLeft(to: self)

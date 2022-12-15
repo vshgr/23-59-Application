@@ -15,7 +15,6 @@ class CreateTaskContentStackView: UIStackView {
         static let descSpacing: Double = 14
         static let basicFont: UIFont? = UIFont.dl.ralewayMedium(14)
         static let descriptionLabelText: String = "Description"
-        static let error: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
@@ -39,7 +38,7 @@ class CreateTaskContentStackView: UIStackView {
     
     @available(*, unavailable)
     required init(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configuration

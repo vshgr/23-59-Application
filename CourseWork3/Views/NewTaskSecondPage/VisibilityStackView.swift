@@ -10,9 +10,7 @@ import UIKit
 class VisibilityStackView: UIStackView {
     // MARK: - Constants
     enum Constants {
-        static let fieldSpacing: Double = 14
         static let labelText: String = "Visibility"
-        static let error: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
@@ -33,14 +31,14 @@ class VisibilityStackView: UIStackView {
     
     @available(*, unavailable)
     required init(coder: NSCoder) {
-        fatalError(Constants.error)
+        fatalError(CommonConstants.errorMessage)
     }
     
     // MARK: - Configuration
     
     private func configureUI() {
         axis = .vertical
-        spacing = Constants.fieldSpacing
+        spacing = CommonConstants.smallContentSpacing
         visibilityScroll.onlyOneSelected = true
         
         configureLabel()

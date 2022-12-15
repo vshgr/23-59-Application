@@ -13,8 +13,8 @@ enum BubblesType {
 }
 
 class BubblesScrollView: UIScrollView {
+    // MARK: - Constants
     enum Constants {
-        static let spacing: Double = 12
         static let height: Double = 40
     }
     
@@ -43,9 +43,10 @@ class BubblesScrollView: UIScrollView {
     
     @available(*, unavailable)
     required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(CommonConstants.errorMessage)
     }
     
+    // MARK: - Configurations
     private func configureUI() {
         clipsToBounds = false
         showsHorizontalScrollIndicator = false
@@ -77,9 +78,10 @@ class BubblesScrollView: UIScrollView {
         }
         
         stack.axis = .horizontal
-        stack.spacing = Constants.spacing
+        stack.spacing = CommonConstants.horizontalStackSpacing
     }
     
+    // MARK: - Functions
     func isSomeSelected() -> Bool {
         for bubble in bubblesData {
             if bubble.bubbleSelected == true {
@@ -89,6 +91,7 @@ class BubblesScrollView: UIScrollView {
         return false
     }
     
+    // MARK: - Actions
     @objc
     func setOnlyOneSelected(sender: BubbleView) {
         if onlyOneSelected == true {
