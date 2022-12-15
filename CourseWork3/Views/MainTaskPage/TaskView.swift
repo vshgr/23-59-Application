@@ -106,7 +106,7 @@ class TaskView: UIView {
     
     private func configureContentSV() {
         contentSV.axis = .vertical
-        contentSV.spacing = Constants.mainSpacing
+        contentSV.spacing = CommonConstants.contentStackSpacing
         
         for view in [friend, permission, taskName, bottomLineSV] {
             contentSV.addArrangedSubview(view)
@@ -121,7 +121,7 @@ class TaskView: UIView {
     
     private func configureBottomLineSV() {
         bottomLineSV.axis = .horizontal
-        bottomLineSV.spacing = Constants.mainSpacing
+        bottomLineSV.spacing = CommonConstants.contentStackSpacing
         
         for view in [dateView, groups] {
             bottomLineSV.addArrangedSubview(view)
@@ -149,7 +149,7 @@ class TaskView: UIView {
         }
         
         buttonsSV.axis = .vertical
-        buttonsSV.spacing = Constants.mainSpacing
+        buttonsSV.spacing = CommonConstants.contentStackSpacing
     }
     
     // MARK: - Actions
