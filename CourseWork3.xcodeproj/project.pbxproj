@@ -12,6 +12,7 @@
 		3C10724D294AAB5E0081E6FE /* DateTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C10724C294AAB5E0081E6FE /* DateTextFieldView.swift */; };
 		3C10724F294AB91B0081E6FE /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C10724E294AB91B0081E6FE /* TimeTextFieldView.swift */; };
 		3C107251294ABEF00081E6FE /* DescriptionFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C107250294ABEF00081E6FE /* DescriptionFieldView.swift */; };
+		3C107253294B93AE0081E6FE /* CreateTaskContentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C107252294B93AE0081E6FE /* CreateTaskContentStackView.swift */; };
 		3C1B79A42948BACF00636D0D /* AddTaskPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */; };
 		3C2626B2293E55FF00A0D1F1 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */; };
 		3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */; };
@@ -70,6 +71,7 @@
 		3C10724C294AAB5E0081E6FE /* DateTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTextFieldView.swift; sourceTree = "<group>"; };
 		3C10724E294AB91B0081E6FE /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
 		3C107250294ABEF00081E6FE /* DescriptionFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionFieldView.swift; sourceTree = "<group>"; };
+		3C107252294B93AE0081E6FE /* CreateTaskContentStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskContentStackView.swift; sourceTree = "<group>"; };
 		3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskPopup.swift; sourceTree = "<group>"; };
 		3C2626B1293E55FF00A0D1F1 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		3C2626B3293FD8AC00A0D1F1 /* UITextField+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Borders.swift"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				3C10724C294AAB5E0081E6FE /* DateTextFieldView.swift */,
 				3C10724E294AB91B0081E6FE /* TimeTextFieldView.swift */,
 				3C107250294ABEF00081E6FE /* DescriptionFieldView.swift */,
+				3C107252294B93AE0081E6FE /* CreateTaskContentStackView.swift */,
 			);
 			path = NewTaskFirstPage;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			files = (
 				486D4DCA2944E33000A23868 /* FilterPageController.swift in Sources */,
 				4815507B2942ACBB008EF3A1 /* CustomTabBarController.swift in Sources */,
+				3C107253294B93AE0081E6FE /* CreateTaskContentStackView.swift in Sources */,
 				48331F172948FCE300C65197 /* UINavigationBar+.swift in Sources */,
 				481550812942B7D8008EF3A1 /* DevelopmentComponent.swift in Sources */,
 				483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */,

@@ -6,19 +6,10 @@
 //
 import UIKit
 
-class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
+class NewTaskFirstPageController: UIViewController {
     // MARK: - Fields
-    private let taskTitle: InputFieldView = InputFieldView(title: "Title", hint: "enter task name", message: "required")
-    private var taskDate: InputFieldView = InputFieldView(title: "Deadline date", hint: "3 Dec, 2022", message: "required")
-    private let taskTime: InputFieldView = InputFieldView(title: "Time", hint: "23:59", message: "required")
-    
-    private let descriptionField = DescriptionFieldView()
-//    private let descriptionField = UITextView()
-    private let descriptionLabel = UILabel()
-    private let descStack = UIStackView()
+    private let contentStack = CreateTaskContentStackView()
     private let continueButon = ButtonView(title: "Continue")
-    
-    private let contentStack = UIStackView()
     
     // MARK: - Load
     override func viewWillAppear(_ animated: Bool) {
@@ -45,20 +36,8 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
             self.view.addSubview(view)
         }
         
-        configureDescriptionLabel()
-        configureDescStack()
-        configureContentStack()
         configureContinueButton()
         configureConstraints()
-    }
-    
-    private func configureContentStack() {
-        contentStack.axis = .vertical
-        contentStack.spacing = 25
-        
-        for view in [taskTitle, descStack, taskDate, taskTime] {
-            contentStack.addArrangedSubview(view)
-        }
     }
     
     private func configureConstraints() {
@@ -73,49 +52,19 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
         continueButon.buttonClicked = continueButtonPressed
     }
     
-    private func configureDescriptionLabel() {
-        descriptionLabel.text = "Description"
-        descriptionLabel.font = UIFont.dl.ralewayMedium(14)
-        descriptionLabel.textColor = .black
-    }
-    
-    private func configureDescStack() {
-        descStack.axis = .vertical
-        descStack.spacing = 14
-        
-        for view in [descriptionLabel, descriptionField] {
-            descStack.addArrangedSubview(view)
-        }
-    }
-    
     // MARK: - Actions
     @objc
     func continueButtonPressed() {
         continueButon.showAnimation {
-            if self.taskTitle.getText() == "" {
-                self.taskTitle.setErrorState()
+            if self.contentStack.getTastTitleText() == "" {
+                self.contentStack.setTaskTitleErrorState()
                 Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
-                    self.taskTitle.setDefaultState()
+                    self.contentStack.setTaskTitleDefaultState()
                 }
             } else {
                 let secondPage = NewTaskSecondPageController()
                 self.navigationController?.pushViewController(secondPage, animated: true)
             }
-        }
-    }
-    
-    // MARK: - Extras
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.dl.hintCol() {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.textColor != UIColor.black || textView.text == "" {
-            textView.text = "enter description"
-            textView.textColor = UIColor.dl.hintCol()
         }
     }
 }

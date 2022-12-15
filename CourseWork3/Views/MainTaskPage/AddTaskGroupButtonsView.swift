@@ -13,7 +13,7 @@ class AddTaskGroupButtonsView: UIStackView {
         static let buttonsSpacing: Double = 12
         static let weight: Double = 133
         static let imagePadding: Double = 8.33
-        static let circleWeight: Double = 40
+        static let circleWeight: Double = 56
         static let shadowRadius: Double = 5
         static let shadowOpacity: Float = 0.3
         static let error: String = "init(coder:) has not been implemented"
@@ -85,22 +85,28 @@ class AddTaskGroupButtonsView: UIStackView {
     // MARK: - Actions
     @objc
     func openPopup() {
-        addTaskGroupButton.isHidden = true
-        addTaskButton.isHidden = false
-        addGroupButton.isHidden = false
-        closeTaskGroupButton.isHidden = false
+        addTaskGroupButton.showAnimation { [self] in
+            self.addTaskGroupButton.isHidden = true
+            self.addTaskButton.isHidden = false
+            self.addGroupButton.isHidden = false
+            self.closeTaskGroupButton.isHidden = false
+        }
     }
 
     @objc
     func closePopup() {
-        addTaskGroupButton.isHidden = false
-        addTaskButton.isHidden = true
-        addGroupButton.isHidden = true
-        closeTaskGroupButton.isHidden = true
+        closeTaskGroupButton.showAnimation { [self] in
+            self.addTaskGroupButton.isHidden = false
+            self.addTaskButton.isHidden = true
+            self.addGroupButton.isHidden = true
+            self.closeTaskGroupButton.isHidden = true
+        }
     }
     
     @objc
     func addTaskPressed() {
-        addTaskClicked?()
+        addTaskButton.showAnimation { [self] in
+            addTaskClicked?()
+        }
     }
 }
