@@ -152,6 +152,4 @@ class CellView: UIStackView, UITextFieldDelegate {
             textField.becomeFirstResponder()
         }
     }
-    
-   
 }

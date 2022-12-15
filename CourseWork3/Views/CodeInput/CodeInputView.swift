@@ -90,6 +90,7 @@ class CodeInputView: UIStackView {
     }
     
     func makeWarningLabelHidden() {
+        cells.setDefaultState()
         warningLabel.isHidden = true
     }
     
