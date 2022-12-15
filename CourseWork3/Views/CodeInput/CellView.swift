@@ -49,10 +49,6 @@ class CellView: UIStackView, UITextFieldDelegate {
         configureStackView()
     }
     
-    private func configureCellSize() {
-        
-    }
-    
     private func configureTextFieldTargets() {
         firstCell.addTarget(self, action: #selector(textfieldDidChange(_:)), for: .editingChanged)
         secondCell.addTarget(self, action: #selector(textfieldDidChange(_:)), for: .editingChanged)
@@ -94,10 +90,33 @@ class CellView: UIStackView, UITextFieldDelegate {
         distribution = .fillEqually
     }
     
-    // MARK: - Setters
+    // MARK: - Getters and etters
     private func setSize(cell: UITextField, size: Double) {
         cell.setWidth(size)
         cell.setHeight(size)
+    }
+    
+    func setDefaultState() {
+        for element in [firstCell, secondCell, thirdCell, fourthCell] {
+            element.layer.borderColor = UIColor.dl.hintCol()?.cgColor
+        }
+    }
+    
+    func getInsertedCode() -> String {
+        var code: String = ""
+        for element in [firstCell, secondCell, thirdCell, fourthCell] {
+            code += element.text ?? "nil"
+        }
+        return code
+    }
+    
+    func clearCells() {
+        for element in [firstCell, secondCell, thirdCell, fourthCell] {
+            element.text?.removeAll()
+            element.attributedPlaceholder = NSAttributedString(
+                string: "1",
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor.dl.hintCol() ?? .systemGray])
+        }
     }
     
     // MARK: - Utilities

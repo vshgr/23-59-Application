@@ -62,12 +62,17 @@ class CodeInputController: UIViewController {
     private func continueButtonPressed() {
         content.configureDefaultStateCell()
         content.makeWarningLabelHidden()
-
-        if content.checkIfCellsAreFilled() {
+        
+        if !content.checkIfCellsAreFilled() {
+            content.setWarningLabelText(text: "please fill all the cells")
+            content.makeWarningLabelVisible()
+        } else if !content.checkIfCodeIsCorrect() {
+            content.setWarningLabelText(text: "code is incorrect")
+            content.makeWarningLabelVisible()
+            content.clearCells()
+        } else {
             let createAccountViewController = CreateAccountViewController()
             navigationController?.pushViewController(createAccountViewController, animated: true)
-        } else {
-            content.makeWarningLabelVisible()
         }
     }
 }
