@@ -11,7 +11,6 @@ class CodeInputController: UIViewController {
     
     // MARK: - Constants
     private enum Constants {
-        static let contentSpacing: Double = 15
         static let imagePadding: Double = 10
         static let buttonFont: UIFont? = UIFont.dl.ralewayMedium(14)
     }

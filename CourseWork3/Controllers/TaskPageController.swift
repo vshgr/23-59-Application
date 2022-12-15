@@ -11,9 +11,7 @@ class TaskPageController: UIViewController {
     // MARK: - Constants
     enum Constants {
         static let nfyImg: UIImage? = UIImage(named: "notification")
-        static let spacing: Double = 17
         static let scrollHeight: Double = 40
-        static let multiline: Int = 0
         static let linesSpacing: Double = 6
     }
     
@@ -60,13 +58,13 @@ class TaskPageController: UIViewController {
     
     private func configureConstraints() {
         taskDesc.pinHorizontal(to: view, Grid.stripe)
-        taskDesc.pinTop(to: taskName.bottomAnchor, Constants.spacing * 2)
+        taskDesc.pinTop(to: taskName.bottomAnchor, CommonConstants.contentStackSpacing)
         
-        taskName.pinTop(to: groupsScroll.bottomAnchor, Constants.spacing)
+        taskName.pinTop(to: groupsScroll.bottomAnchor, CommonConstants.contentStackSpacing)
         taskName.pinHorizontal(to: view, Grid.stripe)
         
         groupsScroll.pinHorizontal(to: view, Grid.stripe)
-        groupsScroll.pinTop(to: friend.bottomAnchor, Constants.spacing)
+        groupsScroll.pinTop(to: friend.bottomAnchor, CommonConstants.contentStackSpacing)
         groupsScroll.setHeight(Constants.scrollHeight)
         
         dateTime.pinCenterY(to: friend.centerYAnchor)
@@ -74,7 +72,7 @@ class TaskPageController: UIViewController {
         
         friend.pinLeft(to: view, Grid.stripe)
         friend.pinRight(to: dateTime)
-        friend.pinTop(to: view.safeAreaLayoutGuide.topAnchor, Constants.spacing)
+        friend.pinTop(to: view.safeAreaLayoutGuide.topAnchor, CommonConstants.contentStackSpacing)
     }
     
     private func configureNotifyBtn() {
@@ -83,7 +81,7 @@ class TaskPageController: UIViewController {
     
     private func configureButtonsSV() {
         buttonsSV.axis = .horizontal
-        buttonsSV.spacing = Constants.spacing
+        buttonsSV.spacing = CommonConstants.smallContentSpacing
         
         for view in [deleteButton, notifyBtn] {
             buttonsSV.addArrangedSubview(view)
@@ -91,7 +89,7 @@ class TaskPageController: UIViewController {
     }
     
     private func configureTaskDesc() {
-        taskDesc.numberOfLines = Constants.multiline
+        taskDesc.numberOfLines = CommonConstants.multiline
         taskDesc.font = UIFont.dl.ralewayMedium(16)
         taskDesc.textColor = .black
         
@@ -106,7 +104,7 @@ class TaskPageController: UIViewController {
     private func configureTaskName() {
         taskName.text = task.name
         taskName.textColor = .black
-        taskName.numberOfLines = Constants.multiline
+        taskName.numberOfLines = CommonConstants.multiline
         taskName.font = UIFont.dl.ralewayBold(23)
     }
     

@@ -14,7 +14,6 @@ class TaskView: UIView {
         static let add: UIImage? = UIImage(named: "addToGroup")
         static let taskColor: UIColor = UIColor(rgb: 0xF8F8F8)
         static let separator: String = ", "
-        static let multiline: Int = 0
     }
     
     // MARK: - Fields
@@ -92,14 +91,14 @@ class TaskView: UIView {
     
     private func configureTaskNameLabel() {
         taskName.text = task.name
-        taskName.numberOfLines = Constants.multiline
+        taskName.numberOfLines = CommonConstants.multiline
         taskName.textColor = .black
         taskName.font = UIFont.dl.ralewayBold(14)
     }
     
     private func configureGroupsLabel() {
         groups.text = task.groups.joined(separator: Constants.separator)
-        groups.numberOfLines = Constants.multiline
+        groups.numberOfLines = CommonConstants.multiline
         groups.textColor = UIColor.dl.hintCol()
         groups.font = UIFont.dl.ralewayMedium(14)
     }

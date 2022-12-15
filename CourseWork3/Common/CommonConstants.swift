@@ -10,5 +10,6 @@ enum CommonConstants {
     static let smallContentSpacing: Double = 14
     static let horizontalStackSpacing: Double = 12
     static let cornerRadius: Double = 10
+    static let multiline: Int = 0
     static let errorMessage: String = "init(coder:) has not been implemented"
 }

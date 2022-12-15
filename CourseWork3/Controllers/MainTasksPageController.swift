@@ -10,12 +10,9 @@ import UIKit
 class MainTasksPageController: UIViewController, UIScrollViewDelegate {
     // MARK: - Constants
     enum Constants {
-        static let bigSpacing: Double = 25
-        static let spacing: Double = 15
         static let tapsNum: Int = 1
         static let offset: Double = 0
         static let picWH: Double = 75
-        static let multiline: Int = 0
         static let filter: UIImage? = UIImage(named: "filter")
         static let title: String = "tasks"
     }
@@ -68,10 +65,10 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         profileInfo.pinTop(to: view.topAnchor, 60)
         profileInfo.pinHorizontal(to: view, Grid.stripe)
         
-        taskFilterSV.pinTop(to: profileInfo.bottomAnchor, Constants.spacing)
+        taskFilterSV.pinTop(to: profileInfo.bottomAnchor, CommonConstants.smallContentSpacing)
         taskFilterSV.pinLeft(to: view, Grid.stripe)
         
-        scrollView.pinTop(to: taskFilterSV.bottomAnchor, Constants.bigSpacing)
+        scrollView.pinTop(to: taskFilterSV.bottomAnchor, CommonConstants.contentStackSpacing)
         scrollView.pinHorizontal(to: view, Grid.stripe)
         scrollView.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
         
@@ -93,7 +90,7 @@ class MainTasksPageController: UIViewController, UIScrollViewDelegate {
         }
         
         taskFilterSV.axis = .horizontal
-        taskFilterSV.spacing = Constants.spacing
+        taskFilterSV.spacing = CommonConstants.smallContentSpacing
     }
     
     

@@ -11,7 +11,6 @@ class ProfileInfoView : UIStackView {
     // MARK: - Constants
     enum Constants {
         static let picWH: Double = 75
-        static let multiline: Int = 0
     }
     
     // MARK: - Fields
@@ -51,7 +50,7 @@ class ProfileInfoView : UIStackView {
     private func configureNameLabel() {
         name.text = user.name
         name.font = UIFont.dl.ralewayBold(20)
-        name.numberOfLines = Constants.multiline
+        name.numberOfLines = CommonConstants.multiline
         name.textColor = .black
     }
     

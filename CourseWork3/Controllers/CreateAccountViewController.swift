@@ -11,7 +11,6 @@ class CreateAccountViewController : UIViewController {
     
     // MARK: - Constants
     private enum Constants {
-        static let spacing: Double = 25
         static let topSpacing: Double = 131
     }
     
@@ -58,7 +57,7 @@ class CreateAccountViewController : UIViewController {
         view.addSubview(stack)
         
         stack.axis = .vertical
-        stack.spacing = Constants.spacing
+        stack.spacing = CommonConstants.contentStackSpacing
         stack.alignment = .fill
         stack.distribution = .fillEqually
         
@@ -66,7 +65,7 @@ class CreateAccountViewController : UIViewController {
         stack.addArrangedSubview(usernameField)
         stack.addArrangedSubview(emailField)
         
-        stack.pinTop(to: profileView.bottomAnchor, Constants.spacing)
+        stack.pinTop(to: profileView.bottomAnchor, CommonConstants.contentStackSpacing)
         stack.pinHorizontal(to: view, Grid.stripe)
     }
     
