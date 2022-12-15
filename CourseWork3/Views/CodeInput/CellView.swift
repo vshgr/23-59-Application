@@ -13,6 +13,8 @@ class CellView: UIStackView, UITextFieldDelegate {
     private var thirdCell: UITextField = UITextField()
     private var fourthCell: UITextField = UITextField()
     
+    var cellTapped: (() -> Void)?
+    
     // MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -120,6 +122,7 @@ class CellView: UIStackView, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.darkGray.cgColor
+        cellTapped?()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -149,4 +152,6 @@ class CellView: UIStackView, UITextFieldDelegate {
             textField.becomeFirstResponder()
         }
     }
+    
+   
 }

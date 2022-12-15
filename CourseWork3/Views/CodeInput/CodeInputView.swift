@@ -11,7 +11,6 @@ class CodeInputView: UIStackView {
     
     // MARK: - Constants
     enum Constants {
-        static let basicFont: UIFont? = UIFont.dl.ralewayMedium(14)
         static let mainFont: UIFont? = UIFont.dl.mainFont(16)
         static let cellSize: Double = 45
     }
@@ -49,6 +48,7 @@ class CodeInputView: UIStackView {
         for element in [checkEmailLabel, cellsTitleLabel, cells, warningLabel, sendBtn] {
             addArrangedSubview(element)
         }
+        cells.cellTapped = makeWarningLabelHidden
         makeWarningLabelHidden()
         axis = .vertical
         spacing = CommonConstants.smallContentSpacing
@@ -57,8 +57,8 @@ class CodeInputView: UIStackView {
     
     private func configureLabels() {
         configureLabel(label: checkEmailLabel, font: Constants.mainFont ?? .systemFont(ofSize: 16), text: "check your email", textColor: .black)
-        configureLabel(label: cellsTitleLabel, font: Constants.basicFont ?? .systemFont(ofSize: 14), text: "Code", textColor: .black)
-        configureLabel(label: warningLabel, font: Constants.basicFont ?? .systemFont(ofSize: 14), textColor: UIColor.dl.attentionCol() ?? .red)
+        configureLabel(label: cellsTitleLabel, font: CommonConstants.mainLabelFont ?? .systemFont(ofSize: 14), text: "Code", textColor: .black)
+        configureLabel(label: warningLabel, font: CommonConstants.mainLabelFont ?? .systemFont(ofSize: 14), textColor: UIColor.dl.attentionCol() ?? .red)
     }
     
     private func configureLabel(label: UILabel, font: UIFont, text: String = "", textColor: UIColor) {
