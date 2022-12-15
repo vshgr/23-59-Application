@@ -21,12 +21,9 @@ class NewTaskSecondPageController: UIViewController {
     // MARK: - Fields
     private let linkField: InputFieldView = InputFieldView(title: "Link", hint: "url")
     private let createButton = ButtonView(title: "Create task")
-    private let groupsScroll = BubblesScrollView(isInteractable: true)
-    
-    private let groupsLabel = UILabel()
-    private let groupsStack = UIStackView()
+    private let visibilityStack = VisibilityStackView()
+    private let groupsStack = GroupsStackView()
 
-    private let visibilityStack = UIStackView()
     private let repeatButton = ButtonWithArrowView(title: "Repeat")
     private var config = UIButton.Configuration.plain()
     
@@ -55,9 +52,7 @@ class NewTaskSecondPageController: UIViewController {
         for view in [contentStack, createButton] {
             self.view.addSubview(view)
         }
-        
-        configureGroupsLabel()
-        configureGroupsStack()
+
         configureRepeatButton()
         configureCreateButton()
         configureContentStack()
@@ -81,35 +76,18 @@ class NewTaskSecondPageController: UIViewController {
         return config
     }
     
-    private func configureGroupsLabel() {
-        groupsLabel.text = "Groups"
-        groupsLabel.font = UIFont.dl.ralewayMedium(14)
-        groupsLabel.textColor = .black
-    }
-    
-    private func configureGroupsStack() {
-        groupsStack.axis = .vertical
-        groupsStack.spacing = Constants.fieldSpacing
-        
-        for view in [groupsLabel, groupsScroll] {
-            groupsStack.addArrangedSubview(view)
-        }
-        
-        groupsScroll.pinHorizontal(to: groupsStack)
-    }
-    
-    
     private func configureContentStack() {
         contentStack.axis = .vertical
         contentStack.spacing = Constants.bigSpacing
         contentStack.alignment = .leading
         
-        for view in [linkField, groupsStack, repeatButton] {
+        for view in [linkField, groupsStack, visibilityStack, repeatButton] {
             contentStack.addArrangedSubview(view)
         }
         
         linkField.pinHorizontal(to: contentStack)
         groupsStack.pinHorizontal(to: contentStack)
+        visibilityStack.pinHorizontal(to: contentStack)
     }
     
     private func configureConstraints() {
@@ -127,9 +105,16 @@ class NewTaskSecondPageController: UIViewController {
     // MARK: - Actions
     @objc
     func continueButtonPressed() {
-        createButton.showAnimation {
-            let tabController = CustomTabBarController()
-            self.navigationController?.pushViewController(tabController, animated: true)
+        if !visibilityStack.isSomeSelected() {
+            visibilityStack.setErrorState()
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
+                self.visibilityStack.setDefaultState()
+            }
+        } else {
+            createButton.showAnimation {
+                let tabController = CustomTabBarController()
+                self.navigationController?.pushViewController(tabController, animated: true)
+            }
         }
     }
     

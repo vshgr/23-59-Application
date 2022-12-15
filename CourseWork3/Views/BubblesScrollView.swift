@@ -23,11 +23,20 @@ class BubblesScrollView: UIScrollView {
     private let stack = UIStackView()
     private var type = BubblesType.stroked
     private let isInteractable: Bool
+    private let data: [String]
+    private var bubblesData: [BubbleView]
+    var onlyOneSelected = false
     
     // MARK: - Init
-    init(frame: CGRect = .zero, type: BubblesType = .stroked, isInteractable: Bool = false) {
+    init(frame: CGRect = .zero, type: BubblesType = .stroked, isInteractable: Bool = false, data: [String] = []) {
         self.type = type
+        bubblesData = []
         self.isInteractable = isInteractable
+        if data == [] {
+            self.data = task.groups
+        } else {
+            self.data = data
+        }
         super.init(frame: frame)
         configureUI()
     }
@@ -45,27 +54,53 @@ class BubblesScrollView: UIScrollView {
         
         addSubview(stack)
         stack.pinCenterY(to: centerYAnchor)
-    
+        
         configureStack()
     }
     
-    private func getGroup(title: String) -> UIView {
+    private func getBubble(title: String) -> UIView {
         let group = BubbleView(text: title, isInteractable: isInteractable)
         if type == .filled {
             group.backgroundColor = UIColor.dl.mainCol()
             group.setBorder(width: 0, color: .white)
         }
+        group.addTarget(self, action: #selector(setOnlyOneSelected(sender: )), for: .touchUpInside)
+        bubblesData.append(group)
         return group
     }
     
     private func configureStack() {
         stack.pin(to: self)
-        for view in task.groups {
-            let gr = getGroup(title: view)
+        for view in data {
+            let gr = getBubble(title: view)
             stack.addArrangedSubview(gr)
         }
         
         stack.axis = .horizontal
         stack.spacing = Constants.spacing
+    }
+    
+    func isSomeSelected() -> Bool {
+        for bubble in bubblesData {
+            if bubble.bubbleSelected == true {
+                return true
+            }
+        }
+        return false
+    }
+    
+    @objc
+    func setOnlyOneSelected(sender: BubbleView) {
+        if onlyOneSelected == true {
+            for bubble in bubblesData {
+                if bubble == sender {
+                    continue
+                } else {
+                    if bubble.bubbleSelected == true {
+                        bubble.setUnselected()
+                    }
+                }
+            }
+        }
     }
 }

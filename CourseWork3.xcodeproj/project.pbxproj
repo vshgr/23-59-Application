@@ -39,6 +39,8 @@
 		48331F2B294A678700C65197 /* TasksScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F2A294A678700C65197 /* TasksScrollView.swift */; };
 		48331F30294B21EE00C65197 /* BubblesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F2F294B21EE00C65197 /* BubblesScrollView.swift */; };
 		48331F32294B35CC00C65197 /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F31294B35CC00C65197 /* UsersList.swift */; };
+		48331F37294BA84A00C65197 /* VisibilityStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F36294BA84A00C65197 /* VisibilityStackView.swift */; };
+		48331F39294BB02000C65197 /* GroupsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48331F38294BB02000C65197 /* GroupsStackView.swift */; };
 		483EAA4B293F6C4100A72D7F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */; };
 		483EAA52293F7AA700A72D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483EAA51293F7AA700A72D7F /* Assets.xcassets */; };
 		485B198D29411AE000042F89 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B198C29411AE000042F89 /* Grid.swift */; };
@@ -98,6 +100,8 @@
 		48331F2A294A678700C65197 /* TasksScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksScrollView.swift; sourceTree = "<group>"; };
 		48331F2F294B21EE00C65197 /* BubblesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesScrollView.swift; sourceTree = "<group>"; };
 		48331F31294B35CC00C65197 /* UsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
+		48331F36294BA84A00C65197 /* VisibilityStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityStackView.swift; sourceTree = "<group>"; };
+		48331F38294BB02000C65197 /* GroupsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsStackView.swift; sourceTree = "<group>"; };
 		483EAA4A293F6C4100A72D7F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		483EAA51293F7AA700A72D7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		485B198C29411AE000042F89 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 		48331F1B2949CE7300C65197 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				48331F35294BA83200C65197 /* NewTaskSecondPage */,
 				4815507A2942ACBB008EF3A1 /* CustomTabBarController.swift */,
 				4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */,
 				4886AC4B2940EF0B00640A4B /* ProfileView.swift */,
@@ -223,6 +228,15 @@
 				48331F2A294A678700C65197 /* TasksScrollView.swift */,
 			);
 			path = MainTaskPage;
+			sourceTree = "<group>";
+		};
+		48331F35294BA83200C65197 /* NewTaskSecondPage */ = {
+			isa = PBXGroup;
+			children = (
+				48331F36294BA84A00C65197 /* VisibilityStackView.swift */,
+				48331F38294BB02000C65197 /* GroupsStackView.swift */,
+			);
+			path = NewTaskSecondPage;
 			sourceTree = "<group>";
 		};
 		485B19882941175800042F89 /* Extentions */ = {
@@ -385,6 +399,7 @@
 				3C10724F294AB91B0081E6FE /* TimeTextFieldView.swift in Sources */,
 				48331F20294A202400C65197 /* NewTaskFirstPageController.swift in Sources */,
 				485B198F29411F4F00042F89 /* UIFont+.swift in Sources */,
+				48331F37294BA84A00C65197 /* VisibilityStackView.swift in Sources */,
 				4815507929425E57008EF3A1 /* UIButton+Select.swift in Sources */,
 				481D44F3293FCAB1006764A4 /* ButtonView.swift in Sources */,
 				48331F1E2949DC4300C65197 /* Observable.swift in Sources */,
@@ -415,6 +430,7 @@
 				3C2626B8294231CA00A0D1F1 /* Code.swift in Sources */,
 				3C2626B4293FD8AC00A0D1F1 /* UITextField+Borders.swift in Sources */,
 				485B19992941FEEC00042F89 /* UIView+Pin.swift in Sources */,
+				48331F39294BB02000C65197 /* GroupsStackView.swift in Sources */,
 				4894B3A2293E5B5B008CE633 /* User.swift in Sources */,
 				3C107251294ABEF00081E6FE /* DescriptionFieldView.swift in Sources */,
 				3C1B79A42948BACF00636D0D /* AddTaskPopup.swift in Sources */,

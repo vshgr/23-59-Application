@@ -11,12 +11,14 @@ class BubbleView: UIButton {
     // MARK: - Constants
     enum Constants {
         static let width: Double = 30
+        static let numOfLines: Int = 1
+        static let error: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
     private let dateLabel = UILabel()
     private let bubbleText: String
-    private var bubbleSelected: Bool = false
+    var bubbleSelected: Bool = false
     private let isInteractable: Bool
     
     // MARK: - Init
@@ -29,7 +31,7 @@ class BubbleView: UIButton {
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(Constants.error)
     }
     
     // MARK: - Configuration
@@ -45,7 +47,7 @@ class BubbleView: UIButton {
         setTitleColor(.black, for: .normal)
         titleLabel?.font = titleLabel?.font.withSize(12)
         titleLabel?.textAlignment = .center
-        titleLabel?.numberOfLines = 1
+        titleLabel?.numberOfLines = Constants.numOfLines
         setHeight(intrinsicContentSize.height + Constants.width / 6)
         setWidth(intrinsicContentSize.width + Constants.width)
         setBorder(width: 1, color: .black)
@@ -56,16 +58,29 @@ class BubbleView: UIButton {
         return bubbleText
     }
     
+    // MARK: - Setters
+    func setSelected() {
+        bubbleSelected = true
+        backgroundColor = .black
+        setTitleColor(.white, for: .normal)
+    }
+    
+    func setUnselected() {
+        bubbleSelected = false
+        backgroundColor = .clear
+        setTitleColor(.black, for: .normal)
+    }
+    
+    // MARK: - Actions
     @objc
     func bubbleClicked() {
         if isInteractable {
-            bubbleSelected.toggle()
-            if bubbleSelected == true {
-                backgroundColor = .black
-                setTitleColor(.white, for: .normal)
-            } else {
-                backgroundColor = .clear
-                setTitleColor(.black, for: .normal)
+            showAnimation { [self] in
+                if bubbleSelected == true {
+                    setUnselected()
+                } else {
+                    setSelected()
+                }
             }
         }
     }

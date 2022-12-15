@@ -11,10 +11,11 @@ class CreateTaskContentStackView: UIStackView {
     
     // MARK: - Constants
     enum Constants {
-        static let error: String = "init(coder:) has not been implemented"
         static let contentSpacing: Double = 25
         static let descSpacing: Double = 14
         static let basicFont: UIFont? = UIFont.dl.ralewayMedium(14)
+        static let descriptionLabelText: String = "Description"
+        static let error: String = "init(coder:) has not been implemented"
     }
     
     // MARK: - Fields
@@ -68,7 +69,7 @@ class CreateTaskContentStackView: UIStackView {
     }
     
     private func configureDescriptionLabel() {
-        descriptionLabel.text = "Description"
+        descriptionLabel.text = Constants.descriptionLabelText
         descriptionLabel.font = Constants.basicFont
         descriptionLabel.textColor = .black
     }

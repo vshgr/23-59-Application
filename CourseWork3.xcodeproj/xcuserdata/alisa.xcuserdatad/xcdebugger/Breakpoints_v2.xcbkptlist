@@ -191,5 +191,68 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3DAC8C48-84AD-427D-BC54-8ABE3BE58A28"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseWork3/Views/NewTaskSecondPage/GroupsStackView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "GroupsStackView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "3DAC8C48-84AD-427D-BC54-8ABE3BE58A28 - bf04d340b805b19e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_3_59.GroupsStackView.init(frame: __C.CGRect) -&gt; _3_59.GroupsStackView"
+                  moduleName = "23:59"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alisa/Documents/23-59-Application/CourseWork3/Views/NewTaskSecondPage/GroupsStackView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "3DAC8C48-84AD-427D-BC54-8ABE3BE58A28 - 72f6498e8d536b85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_3_59.GroupsStackView.init(frame: __C.CGRect, size: Swift.Double) -&gt; _3_59.GroupsStackView"
+                  moduleName = "23:59"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alisa/Documents/23-59-Application/CourseWork3/Views/NewTaskSecondPage/GroupsStackView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "3DAC8C48-84AD-427D-BC54-8ABE3BE58A28 - 8d11368e767bda97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "_3_59.GroupsStackView.init(coder: __C.NSCoder) -&gt; _3_59.GroupsStackView"
+                  moduleName = "23:59"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alisa/Documents/23-59-Application/CourseWork3/Views/NewTaskSecondPage/GroupsStackView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
