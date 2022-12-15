@@ -7,9 +7,9 @@
 import UIKit
 
 class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
-    
+    // MARK: - Fields
     private let taskTitle: InputFieldView = InputFieldView(title: "Title", hint: "enter task name", message: "required")
-    private let taskDate: InputFieldView = InputFieldView(title: "Deadline date", hint: "3 Dec, 2022", message: "required")
+    private var taskDate: InputFieldView = InputFieldView(title: "Deadline date", hint: "3 Dec, 2022", message: "required")
     private let taskTime: InputFieldView = InputFieldView(title: "Time", hint: "23:59", message: "required")
     
     private let descriptionField = UITextView()
@@ -19,6 +19,10 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
     
     private let contentStack = UIStackView()
     
+    private let datePicker = UIDatePicker()
+    private let timePicker = UIDatePicker()
+    
+    // MARK: - Load
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
@@ -34,6 +38,7 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    // MARK: - Configuration
     private func configureUI() {
         view.backgroundColor = .white
         
@@ -44,6 +49,8 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
         
         configureDescriptionLabel()
         configureDescriptionField()
+        configureDeadlineDate()
+        configureDeadlineTime()
         configureDescStack()
         configureContentStack()
         configureContinueButton()
@@ -106,18 +113,49 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
         }
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.dl.hintCol() {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }
+    private func configureDeadlineDate() {
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.addTarget(self, action: #selector(dateChanged), for: UIControl.Event.valueChanged)
+        
+        taskDate.input.inputView = datePicker
+        taskDate.input.text = formatDate(date: Date())
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.textColor != UIColor.black || textView.text == "" {
-            textView.text = "enter description"
-            textView.textColor = UIColor.dl.hintCol()
-        }
+    private func configureDeadlineTime() {
+        timePicker.datePickerMode = .time
+        timePicker.preferredDatePickerStyle = .wheels
+        timePicker.addTarget(self, action: #selector(timeChanged), for: UIControl.Event.valueChanged)
+        timePicker.locale = Locale(identifier: "ru")
+        timePicker.date = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: Date()) ?? Date()
+        
+        taskTime.input.inputView = timePicker
+        taskTime.input.text = formatTime(date: timePicker.date)
+    }
+    
+    // MARK: - Formatter
+    private func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMM, yyyy"
+        return formatter.string(from: date)
+    }
+    
+    private func formatTime(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ru")
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: date)
+    }
+    
+    // MARK: - Actions
+    @objc
+    private func dateChanged() {
+        taskDate.input.text = formatDate(date: datePicker.date)
+    }
+    
+    @objc
+    private func timeChanged() {
+        taskTime.input.text = formatTime(date: timePicker.date)
     }
     
     @objc
@@ -132,6 +170,21 @@ class NewTaskFirstPageController: UIViewController, UITextViewDelegate {
                 let secondPage = NewTaskSecondPageController()
                 self.navigationController?.pushViewController(secondPage, animated: true)
             }
+        }
+    }
+    
+    // MARK: - Extras
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.dl.hintCol() {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.textColor != UIColor.black || textView.text == "" {
+            textView.text = "enter description"
+            textView.textColor = UIColor.dl.hintCol()
         }
     }
 }

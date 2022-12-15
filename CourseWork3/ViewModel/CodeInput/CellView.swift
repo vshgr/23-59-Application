@@ -1,6 +1,6 @@
 import UIKit
 
-class CellComponent: UIStackView, UITextFieldDelegate {
+class CellView: UIStackView, UITextFieldDelegate {
     
     // MARK: - Fields
     //private var title: UILabel = UILabel()

@@ -23,7 +23,7 @@ class CodeInputView: UIStackView {
     private let checkEmailLabel = UILabel()
     private let warningLabel: UILabel = UILabel()
     private let cellsTitleLabel: UILabel = UILabel()
-    private let cells: CellComponent = CellComponent(size: Constants.cellSize)
+    private let cells: CellView = CellView(size: Constants.cellSize)
     private let sendBtn = ButtonWithArrowView(title: "send code again")
     private let securityCodeTextField = UITextField()
     private var count: Int = 59

@@ -3,7 +3,7 @@ import UIKit
 class InputFieldView: UIView, UITextFieldDelegate {
     // MARK: - Fields
     private let label = UILabel()
-    private let input = UITextField()
+    var input = UITextField()
     private let underline = UIView()
     private let errorMessage = UILabel()
     private var keyboardType = UIKeyboardType.default
@@ -87,6 +87,10 @@ class InputFieldView: UIView, UITextFieldDelegate {
         input.attributedPlaceholder = NSAttributedString(
             string: hint,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.dl.hintCol() ?? .systemGray])
+    }
+    
+    func setText() {
+        
     }
     
     func setErrorMessage(message: String){
