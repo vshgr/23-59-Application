@@ -162,19 +162,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		481D44F1293FCA36006764A4 /* Сomponents */ = {
-			isa = PBXGroup;
-			children = (
-				4815507A2942ACBB008EF3A1 /* CustomTabBarController.swift */,
-				4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */,
-				4886AC4B2940EF0B00640A4B /* ProfileView.swift */,
-				488B8C65294216D000ED8B0C /* FriendAccountSVConponent.swift */,
-				481550802942B7D8008EF3A1 /* DevelopmentComponent.swift */,
-				3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */,
-			);
-			path = "Сomponents";
-			sourceTree = "<group>";
-		};
 		48331F1A2949CDF900C65197 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +175,12 @@
 		48331F1B2949CE7300C65197 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4815507A2942ACBB008EF3A1 /* CustomTabBarController.swift */,
+				4886AC492940E39A00640A4B /* PhotoPickerPopup.swift */,
+				4886AC4B2940EF0B00640A4B /* ProfileView.swift */,
+				488B8C65294216D000ED8B0C /* FriendAccountSVConponent.swift */,
+				481550802942B7D8008EF3A1 /* DevelopmentComponent.swift */,
+				3C1B79A32948BACF00636D0D /* AddTaskPopup.swift */,
 				3C10724B294AAB3D0081E6FE /* NewTaskFirstPage */,
 				3C107248294A98710081E6FE /* CodeInput */,
 				48331F27294A563800C65197 /* MainTaskPage */,
@@ -273,7 +266,6 @@
 		486088642937E57B008B76ED /* CourseWork3 */ = {
 			isa = PBXGroup;
 			children = (
-				481D44F1293FCA36006764A4 /* Сomponents */,
 				485B198B29411AC300042F89 /* Common */,
 				485B19882941175800042F89 /* Extentions */,
 				3C2626B92943373800A0D1F1 /* Utilities */,
