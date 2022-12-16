@@ -44,7 +44,7 @@ class BubbleView: UIButton {
         addTarget(self, action: #selector(bubbleClicked), for: .touchUpInside)
         setTitle(bubbleText, for: .normal)
         setTitleColor(.black, for: .normal)
-        titleLabel?.font = titleLabel?.font.withSize(12)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         titleLabel?.textAlignment = .center
         titleLabel?.numberOfLines = Constants.numOfLines
         setHeight(intrinsicContentSize.height + Constants.width / 6)
