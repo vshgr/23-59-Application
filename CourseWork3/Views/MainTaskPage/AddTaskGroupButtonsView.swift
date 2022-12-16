@@ -105,6 +105,7 @@ class AddTaskGroupButtonsView: UIStackView {
     func addTaskPressed() {
         addTaskButton.showAnimation { [self] in
             addTaskClicked?()
+            closePopup()
         }
     }
 }
