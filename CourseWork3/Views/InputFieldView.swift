@@ -27,6 +27,7 @@ class InputFieldView: UIView, UITextFieldDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
+        input.clearButtonMode = .whileEditing
     }
     
     init(frame: CGRect = .zero, title: String = "", hint: String = "", message: String = "", keyboard: UIKeyboardType = UIKeyboardType.default) {
